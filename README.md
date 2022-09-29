@@ -1,4 +1,4 @@
-# Healthcare company project
+# Healthcare Frontend project
 ## Getting Started
 
     nvm install
