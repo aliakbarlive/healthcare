@@ -1,46 +1,93 @@
-# Getting Started with Create React App
+# Healthcare company project
+## Getting Started
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    nvm install
+    npm install
+    npm start
 
-## Available Scripts
+Use VSCode, install the ESLint extension. The workspace is configured to auto-format and
+show lint warnings/errors so that your PR will pass CI.
 
-In the project directory, you can run:
+## File Naming Conventions
 
-### `npm start`
+1. Uppercase if exports a single (or the file is mainly about a single) component or class
+2. Lowercase otherwise
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Styling
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+We use SASS for CSS, **use it**.
 
-### `npm test`
+The root content element is `#content`, its styling can be configured with a `useEffect` hook:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```ts
+useEffect(() => {
+  const el = document.getElementById('content')
+  if (!el) return
+  el.style.maxWidth = '1200px'
+  return () => { el.style.maxWidth = '' }
+})
+```
 
-### `npm run build`
+So if you need to set the background color or padding of the `#content` element, do it as above.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`#content` has some default rules you may want to override, eg.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```css
+#content {
+  min-width: 1000px;
+  max-width: fit-content;
+  padding: 2rem;
+  margin: 0 auto;
+}
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## `react-use`
 
-### `npm run eject`
+We import `react-use` and it’s pretty great, familiarize yourself with its capabilities:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+> https://github.com/streamich/react-use
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Note that we motly use `useAsync`, `useAsyncRetry` and `useToggle`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## `useUser`, `useGroupManager`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+We make it easy to get the current user or group-manager, use these functions, **do not**
+call the underlying APIs yourself.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Everything else is considered “production” per this document
+and code that interprets configuration based on this parameter.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Configuring Backend
+
+For locahost builds (only) you can set `REACT_APP_PHARAOH`, eg:
+
+    REACT_APP_PHARAOH=http://localhost:8080 npm start
+
+Otherwise Backend is determined based on hostname.
+
+## Configuring the White-Label
+
+Valid White-labels must be in the `white_label` table of
+the database.
+
+Label is determined from the group or if that is not available query-string (eg. `?label=jhc`).
+
+## “Environments”
+
+|------------|-------------|------------|
+| Env        | RDS        | Pharaoh    |
+|------------|------------|------------|
+| Develop    | Staging    | Develop    |
+| Staging    | Staging    | Staging    |
+| Production | Production | Production |
+|------------|------------|------------|
+
+This table provided for reference.
+
+## Dependencies To Remove
+
+Possibly:
+
+* react-progress-button (it's useful, but not that fleible, want better)
+* react-tooltip (react-datepicker imports popper.js and popper is better)
