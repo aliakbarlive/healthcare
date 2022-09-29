@@ -75,7 +75,7 @@ Label is determined from the group or if that is not available query-string (eg.
 
 ## “Environments”
 
-|------------|-------------|------------|
+|------------|------------|-----------|
 | Env        | RDS        | Pharaoh    |
 |------------|------------|------------|
 | Develop    | Staging    | Develop    |
