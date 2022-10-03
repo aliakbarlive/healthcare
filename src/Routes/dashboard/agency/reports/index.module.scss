@@ -1,0 +1,251 @@
+@import 'Components/global.scss';
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+.content > :first-child {
+  margin-bottom: 42px;
+}
+
+/* TODO: skip the last child */
+.content > div {
+  margin-bottom: 16px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.row > :not(:last-child) {
+  margin-right: 16px;
+}
+
+.status {
+  flex: 1 0 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 536px;
+  height: 309px;
+}
+
+.status > :first-child {
+  margin-bottom: 16px;
+}
+
+.statusBox {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 260px;
+  height: 147px;
+  text-decoration: none;
+}
+
+.statusPurple:before,
+.statusGreen:before,
+.statusOrange:before,
+.statusBlue:before {
+  display: block;
+  position: absolute;
+  left: 0;
+  content: '';
+  width: 16px;
+  height: 147px;
+}
+
+.statusPurple {
+  background-image: linear-gradient(180deg, #f4f4ff 0%, #e2e5ff 100%);
+}
+
+.statusPurple:before {
+  background-image: linear-gradient(180deg, #b8baf7 0%, #7292ea 100%);
+}
+
+.statusGreen {
+  background-image: linear-gradient(180deg, #ebfffa 0%, #cafcf1 100%);
+}
+
+.statusGreen:before {
+  background-image: linear-gradient(180deg, #4be0d4 0%, #29b473 100%);
+}
+
+.statusOrange {
+  background-image: linear-gradient(180deg, #fff3eb 0%, #f5d7c4 100%);
+}
+
+.statusOrange:before {
+  background-image: linear-gradient(to top, #e86f39 0%, #ffb78b 100%);
+}
+
+.statusBlue {
+  background-image: linear-gradient(180deg, #f2faff 0%, #d0edff 100%);
+}
+
+.statusBlue:before {
+  background-image: linear-gradient(180deg, #71c6fc 0%, #3f8fc1 100%);
+}
+
+.statusNumber,
+.statusCopy {
+  display: block;
+  color: $secondary-color;
+}
+
+.statusNumber {
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  margin-bottom: 20px;
+}
+
+.statusCopy {
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+
+.todos {
+  flex: 1 0 45%;
+  display: flex;
+}
+
+.todoList {
+  flex-grow: 1;
+  width: 536px;
+  height: 309px;
+}
+
+.todoList > div:nth-child(2) {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.todoList > div:nth-child(2) > span {
+  flex-grow: 1;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  height: 240px;
+  width: 260px;
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.boxBlue {
+  border: 2px solid rgba(72, 163, 219, 0.08);
+}
+
+.boxGrey {
+  border: 2px solid #f5f5f5;
+}
+
+.boxOrange {
+  border: 2px solid rgba(252, 169, 118, 0.15);
+}
+
+.agencyLocations {
+  display: flex;
+  justify-content: space-between;
+  flex: 1 0 45%;
+}
+
+.box > :not(:last-child) {
+  margin-right: 16px;
+}
+
+.seamlessBox table {
+  /* important because the definitions for the table part are in a separate module */
+  margin-top: 0 !important;
+  border: 0 !important;
+}
+
+.box h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: $secondary-color;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.agencyLocations p {
+  margin: 0;
+  white-space: pre-line;
+  line-height: 24px;
+  overflow-y: auto;
+}
+
+.commissions {
+  flex: 1 0 45%;
+  padding: 16px;
+}
+
+.carriers h2 {
+  color: $secondary-color;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.carriers > div {
+  border: none;
+}
+
+table.carriersList {
+  border: none !important;
+}
+
+.zoho {
+  margin-top: 52px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.zoho > .box {
+  display: flex;
+  height: 2100px;
+  width: 100%;
+  padding: 0;
+}
+
+.zoho h1 {
+  margin: 0;
+  margin-bottom: 16px;
+  color: $secondary-color;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+.locations {
+  position: relative;
+}
+
+.locations > div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  height: 100%;
+}

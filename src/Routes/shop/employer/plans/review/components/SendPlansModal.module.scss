@@ -1,0 +1,101 @@
+@import 'Components/global.scss';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 780px;
+  max-width: 100%;
+
+  p {
+    color: $secondary-color;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 0;
+  }
+}
+
+.searchBar{
+  font-size: 20px;
+  color: navy-blue();
+  height: 60px;
+  background-color: $gray;
+  line-height: 50px;
+  margin: 20px 0 0;
+  border: 0px;
+  padding: 20px;
+  border-radius: 6px;
+  transform: translate3d(0, 0, 0);
+}
+
+.searchBar::placeholder {
+  color: $primary-color;
+}
+
+.sendButton{
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  background-color: #3564B9;
+  color: #ffffff;
+  height: 70px;
+  border-radius: 8px;
+  width: 450px;
+  transition: background-color 200ms ease-in;
+}
+
+.sendButton:hover {
+  background-color: #1F4AA0;
+}
+
+.membersListContainer {
+  flex-grow: 1;
+  margin: 30px 0 0;
+}
+
+.memberList {
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.memberItem {
+  font-size: 16px;
+  font-weight: 500;
+  height: 65px;
+  border-radius: 8px;
+  padding: 0 20px;
+  max-width: 100%;
+  transition: color 200ms ease-in, background-color 200ms ease-in;
+  text-align: left;
+}
+
+.memberItem > span {
+  font-size: 13px;
+}
+
+.memberItemDeselected {
+  background-color: #EBEBEB;
+  color: #959595;
+  transition: background-color 200ms ease-in;
+}
+
+.memberItemDeselected:hover {
+  background-color: #D8D8D8;
+}
+
+.memberItemSelected {
+  background-color: $blue;
+  color: #ffffff;
+  transition: background-color 200ms ease-in;
+}
+
+.memberItemSelected:hover {
+  background-color: #2593D6;
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+}

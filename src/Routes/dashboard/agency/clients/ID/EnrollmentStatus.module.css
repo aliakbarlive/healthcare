@@ -1,0 +1,17 @@
+.container {
+  width: 345px;
+  /* height: 175px; */
+  background-image: linear-gradient(180deg, #eaf4ff 0%, #d8ebfd 100%);
+  padding: 16px;
+}
+
+.content {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 16px;
+}
+
+.status {
+  font-weight: 700;
+}

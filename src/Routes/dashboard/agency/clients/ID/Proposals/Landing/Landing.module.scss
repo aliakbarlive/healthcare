@@ -1,0 +1,134 @@
+.landingMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px;
+
+  position: relative;
+  width: 792px;
+  height: 612px;
+  margin-top: 15px;
+
+  background: #FFFFFF;
+
+  .brokerNameText {
+    position: relative;
+    height: fit-content;
+
+    order: 2;
+    bottom: 5%;
+
+    p {
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 140%;
+      color: #333333;
+      margin: 0;
+    }
+  }
+  .frame2425 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    height: 103px;
+    margin-bottom: 135px;
+
+    order: 1;
+    align-self: stretch;
+    .completePackage {
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 120%;
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: #16346F;
+
+      margin: 16px 0px;
+    }
+
+    .proposalCreated {
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 140%;
+
+      text-align: center;
+      color: #16346F;
+
+      order: 1;
+    }
+
+    .dateProposalCreated {
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 140%;
+
+      text-align: center;
+
+      color: #16346F;
+
+      order: 2;
+      margin: 16px 0px;
+    }
+  }
+
+  .frame2821 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: relative;
+    height: 39px;
+
+    order: 0;
+    align-self: stretch;
+    .frame2376{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      position: relative;
+      width: 100px;
+      height: 50%;
+
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+      .logoText {
+        position: relative;
+        height: 11px;
+        font-family: Proxima Nova;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 115%;
+
+        text-align: center;
+        letter-spacing: 0.035em;
+        text-transform: uppercase;
+
+        color: #686868;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin: 0px 10px;
+      }
+    }
+  }
+}

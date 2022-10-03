@@ -1,0 +1,416 @@
+@import "Components/global.scss";
+
+.label {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 2px;
+  left: 3px;
+  transform: translate(8px, 5px);
+  font-size: 12px;
+  transition: opacity 0.1s ease-in;
+  white-space: nowrap;
+  z-index: 1;
+  color: #aaaaaa !important;
+  padding-top: 6px;
+  padding-left: 12px;
+}
+.main_chek_con {
+  width: 896px;
+  margin: 0 auto;
+
+  .content {
+    h3 {
+      margin-bottom: 1.5rem;
+      color: #16346f;
+      text-align: center;
+      margin-top: 0;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 120%;
+    }
+    .billling {
+      margin-bottom: 5px;
+      margin-top: 35px;
+      font-weight: 700;
+      font-size: 30px;
+      line-height: 42px;
+    }
+    .infoText {
+      text-align: center;
+      font-size: 18px;
+      margin: 0px 0 26px 0px;
+      p {
+        font-weight: 500;
+        color: #16346f;
+        margin: 8px 0 0;
+      }
+    }
+    .payment_container {
+      background: #efeefa;
+      padding: 1rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1fr 10px;
+      color: navy-blue();
+      margin-bottom: 2.5rem;
+      #payment_txt {
+        color: #16346f;
+        font-size: 18px;
+        line-height: 21.6px;
+        font-weight: 500;
+        text-align: left;
+        border-left: 3px solid #6258d1;
+        padding-left: 9px;
+      }
+      p {
+        font-family: $zilla;
+        padding-left: 1.25rem;
+        border-left: 4px solid periwinkle(30);
+        margin-right: 5rem;
+        span {
+          font-weight: 700;
+        }
+      }
+    }
+  }
+}
+.cart {
+  padding: 1.2rem;
+  margin-bottom: 2.5rem;
+  border-radius: 4px;
+  border: 2px solid #aaaaaa;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 26px;
+  .paym_due {
+    color: #16346f;
+    text-transform: uppercase;
+  }
+  .cart_date {
+    color: #16346f;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 115%;
+    padding-left: 0px;
+    margin: 0;
+  }
+
+  div {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: $secondary-color;
+
+    span {
+      color: $periwinkle;
+    }
+  }
+
+  .amt {
+    color: #29b473;
+    font-size: 2.25rem;
+    font-weight: 500;
+    margin: 0.25rem 0;
+
+    .price {
+      color: #29b473;
+      font-weight: 700;
+      font-size: 48px;
+    }
+  }
+}
+
+.promoCodeForm {
+  position: relative;
+  .inpGroup {
+    background: #f4f4f4;
+    padding: 20px;
+    border-radius: 7px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+    .allInpFields {
+      display: flex !important;
+      align-items: center;
+    }
+  }
+  .mmcv {
+    width: 291px !important;
+  }
+  .ccinputsField {
+    position: relative;
+    width: 598px;
+    font-size: 16px;
+    color: #16346f;
+    .ccnInputsField {
+      width: 100%;
+    }
+  }
+  .bankAccountName{
+    width: 600px !important;
+    .bchkName{
+      width: 100%;
+    }
+
+  }
+  .inputsField {
+    position: relative;
+    width: 291px;
+    margin-right: 16px !important;
+
+    .candorInput {
+      color: #16346f;
+      outline: none;
+      border: none;
+      border-radius: 6px;
+      transition: all 0.1s ease-in;
+      width: 100%;
+      padding: 0 20px 0 20px;
+      font-size: 16px;
+
+      &:placeholder-shown {
+        padding: 0 20px 0 20px !important;
+
+        ~ .label {
+          opacity: 0;
+        }
+      }
+
+      ~ .label {
+        opacity: 1;
+      }
+
+      &.hasPlaceholder {
+        padding: 6px 20px 0 20px;
+      }
+    }
+
+    .candorInput:read-only {
+      color: #a2a2a2;
+      background-color: #e2e2e2;
+    }
+
+    .candorInput:focus {
+      box-shadow: 0px 0px 4px $blue;
+    }
+
+    .hasPlaceholder::placeholder {
+      /* Chrome, Firefox, Opera, Safari 10.1+ */
+      color: #a2a2a2;
+      opacity: 1; /* Firefox */
+      font-size: inherit;
+    }
+
+    .hasPlaceholder::-ms-input-placeholder {
+      /* Microsoft Edge */
+      color: #a2a2a2;
+      font-size: inherit;
+    }
+  }
+
+  .card_icon {
+    position: absolute;
+    top: 26px;
+    left: 28px;
+    z-index: 10;
+  }
+  .credit_con {
+    display: flex;
+    display: flex !important;
+    align-items: flex-end;
+    padding-top: 10px;
+    .credit_card {
+      // color: #16346f;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 100%;
+    }
+  }
+
+  .crc_txt {
+    width: 600px;
+    p {
+      text-align: left !important;
+      margin: 0px;
+      color: #16346f;
+      font-size: 12px;
+      line-height: 140%;
+      margin-top: 5px;
+      font-weight: 400;
+    }
+    .pay_detail {
+      font-weight: 600;
+      font-size: 14px;
+    }
+  }
+  * {
+    display: inline-block !important;
+    // font-size: .625rem !important;
+    font-weight: 600;
+    // width: 598px;
+    &:not(:last-child) {
+      margin-right: 0rem;
+    }
+  }
+
+  div {
+    color: $periwinkle;
+  }
+
+  input[type="text"] {
+    height: 3.375rem;
+    width: 12rem;
+    letter-spacing: 0.08rem;
+    margin: 7px 6px;
+    background: #ffffff;
+    border-radius: 6px;
+    font-weight: 500 !important;
+    font-size: 16px;
+    line-height: 140%;
+    padding: 24px 21px;
+    border: 1px solid #aaaaaa !important;
+  }
+  #first_input {
+    width: 598px;
+    padding-left: 55px !important;
+    .label {
+      left: 60 !important;
+    }
+  }
+  #bnk_first_input {
+    padding-left: 20px;
+    width: 598px;
+  }
+  input[type="text"].acount_number {
+    width: 18.26rem !important;
+  }
+  input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #fff inset;
+  }
+
+  input[type="submit"] {
+    height: 1.375rem;
+    width: 3.75rem;
+    min-width: unset;
+    padding: unset;
+    margin: unset;
+  }
+}
+.bank_Acc {
+  background: #f4f4f4;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  padding: 14px 25px;
+  cursor: pointer;
+  border-radius: 7px;
+  p {
+    margin: 0;
+    padding: 10px 10px;
+    color: #16346f;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 100%;
+  }
+}
+.deltaRadio:checked,
+.deltaRadio:not(:checked) {
+  position: absolute;
+  left: -9999px;
+}
+.deltaRadio:checked + label,
+.deltaRadio:not(:checked) + label {
+  position: relative;
+  padding-left: 32px;
+  padding-top: 4px;
+  cursor: pointer;
+  line-height: 20px;
+  display: inline-block;
+  color: $navy-blue;
+}
+.deltaRadio:checked + label:before,
+.deltaRadio:not(:checked) + label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: #fff;
+  border: 2px solid #959595;
+}
+.deltaRadio:checked + label:after,
+.deltaRadio:not(:checked) + label:after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: $navy-blue;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 100%;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+.deltaRadio:not(:checked) + label:after {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+.deltaRadio:checked + label:after {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+.footer_cont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  align-items: center;
+
+  .leftMove {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    cursor: pointer;
+    color: #595959;
+  }
+  .bt_price {
+    padding: 0 16px;
+  }
+
+  .rightMove {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 6px;
+
+    .paymentButton {
+      width: 192px;
+    }
+
+    .sav_finish {
+      cursor: pointer;
+      color: #3564b9;
+      font-weight: 600;
+      font-size: 16px;
+      margin-right: 20px;
+    }
+  }
+}
+.updatePBtn {
+  display: flex;
+  justify-content: flex-end;
+     input[type="submit"] {
+     background: #3564b9 ;
+     font-weight: 600 !important;
+   }
+ }
+ .bAcc{
+   margin-bottom: 40px !important;
+ }

@@ -1,0 +1,396 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+
+  position: static;
+  width: 1280px;
+  height: 1624.03px;
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: -170px 0px;
+
+  .innerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: static;
+    width: 896px;
+    height: 1494.03px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 50px 0px;
+
+    .innerContainerLayer1 {
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0px;
+
+      position: static;
+      width: 896px;
+      height: 1398.03px;
+      margin-bottom: 42px;
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+
+      .advantageDetailsContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+
+        position: static;
+        width: 896px;
+        height: 951.03px;
+
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+
+        li {
+          list-style-image: url(./liststylebullet.svg);
+
+          font-family: 'proxima-nova';
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 140%;
+          margin-left: -10px;
+          margin-bottom: 12px;
+
+          color: #16346F;
+
+          p {
+            margin: 0;
+            padding: 2px 0px 7px 7px;
+            vertical-align: top;
+            display: inline-block;
+            margin-top: -7px;
+          }
+
+        }
+
+        .speedUpContainer {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 54px;
+
+          position: static;
+          width: 866px;
+          height: 335.03px;
+
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+
+          .speedUpDetails {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+
+            position: static;
+            width: 457px;
+            height: 324px;
+            left: 409px;
+            top: 5.51px;
+
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            margin: 0px 59px;
+
+            .speeduptext {
+              position: static;
+              width: 457px;
+              height: 74px;
+              margin-bottom: 10px;
+
+              font-family: 'proxima-nova';
+              font-style: normal;
+              font-weight: bold;
+              font-size: 32px;
+              line-height: 115%;
+
+              color: #16346F;
+            }
+          }
+
+          .devFocusContainer {
+            position: static;
+            width: 350px;
+            height: 335.03px;
+            margin-top: 80px;
+            margin-right: 70px;
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+          }
+        }
+
+        .subscriptionDetailsContainer {
+
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0px;
+
+          position: static;
+          width: 896px;
+          height: 536px;
+          left: 0px;
+          margin-top: 34px;
+          margin-bottom: -70px;
+
+          .businessManContainer {
+            position: static;
+            width: 320.03px;
+            height: 278.51px;
+            left: 575.97px;
+            top: 128.75px;
+
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+            margin: 0px 0px;
+          }
+
+          .subscriptionDetails {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0px;
+
+            position: static;
+            width: 549px;
+            height: 536px;
+            left: 0px;
+            top: 0px;
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+
+            ul {
+              width: 457px
+            }
+
+            .includedtext {
+              font-family: 'proxima-nova';
+              font-style: normal;
+              font-weight: bold;
+              font-size: 24px;
+              line-height: 115%;
+              margin: 0px;
+
+              letter-spacing: 0.035em;
+              text-transform: uppercase;
+
+              color: #372DA3;
+            }
+
+            .wereheretext {
+              width: 457px;
+              font-family: 'proxima-nova';
+              font-style: normal;
+              font-weight: bold;
+              font-size: 32px;
+              line-height: 115%;
+              margin-bottom: 10px;
+              margin-top: 20px;
+
+              color: #16346F;
+            }
+          }
+        }
+      }
+
+      .myHealthilyAdvantageContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0px;
+
+        position: static;
+        width: 613px;
+        height: 367px;
+        left: 141.5px;
+        margin-top: 150px;
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+
+        .pricingContainer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          padding: 0px;
+
+          position: static;
+          width: 613px;
+          height: 170px;
+          left: 0px;
+          top: 197px;
+
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+
+          .pricingCaveatContainer {
+            position: static;
+            width: 613px;
+            height: 38px;
+            left: 0px;
+            top: 132px;
+
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+
+            .monthlyfeetext {
+              font-family: 'proxima-nova';
+              font-style: italic;
+              font-weight: normal;
+              font-size: 16px;
+              line-height: 120%;
+
+              text-align: center;
+
+              color: #16346F;
+            }
+          }
+
+          .pricing {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 25px 65px;
+
+            position: static;
+            width: 265px;
+            height: 108px;
+            left: 174px;
+            top: 0px;
+
+            background: #EFEEFA;
+
+            border: 3px solid #6258D1;
+            border-radius: 4px;
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+            margin: 24px 0px;
+
+            .pricingtext {
+              font-family: 'proxima-nova';
+              font-style: normal;
+              font-weight: 500;
+              font-size: 32px;
+              line-height: 120%;
+
+              display: flex;
+              align-items: center;
+              text-align: center;
+
+              color: #3E33BA;
+            }
+          }
+        }
+
+        .advantageContainerSubLayer {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          padding: 0px;
+
+          position: static;
+          width: 613px;
+          height: 157px;
+          left: 0px;
+          top: 0px;
+
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+
+          .advantageDetailsContainer {
+            position: static;
+            width: 613px;
+            height: 75px;
+            left: 0px;
+            top: 82px;
+
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+
+            .turntext {
+              font-family: 'proxima-nova';
+              font-style: normal;
+              font-weight: normal;
+              font-size: 20px;
+              line-height: 140%;
+              text-align: center;
+              width: 603px;
+              margin-top: 16px;
+
+              color: #16346F;
+            }
+          }
+
+          .headerContainer {
+            position: static;
+            width: 613px;
+            height: 58px;
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+
+            .myhealthilytext {
+              font-family: 'proxima-nova';
+              font-style: normal;
+              font-weight: 800;
+              font-size: 48px;
+              line-height: 120%;
+
+              display: flex;
+              align-items: center;
+              text-align: center;
+
+              color: #16346F;
+            }
+
+            .purplebox {
+              position: relative;
+              width: 241px;
+              height: 20px;
+              left: 373px;
+              top: -24px;
+              z-index: -1;
+
+              background: #D0CDF1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

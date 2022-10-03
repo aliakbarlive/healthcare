@@ -1,0 +1,92 @@
+@import 'Components/global.scss';
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding:30px 20px 20px;
+  background-color: white;
+  margin-bottom:25px;
+  position: relative;
+
+  h4 {
+    letter-spacing: .1rem;
+    margin: 0 0 1rem;
+    text-align: left;
+  }
+
+  hr {
+    border: none;
+    border-bottom: 2px solid $gray;
+    margin: 0 0 1rem;
+  }
+
+}
+
+.nameRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 0 1rem;
+
+  > *:not(:last-child) {
+    margin-right: 1rem;
+  }
+
+  .name {
+    font-size: 1.125rem;
+    flex: 1;
+  }
+
+  button {
+    flex: 0 0 6rem;
+    font-size: .875rem;
+    font-weight: 600;
+    color: white;
+    height: 2rem;
+    border-radius: .4rem;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+
+    &.edit {
+      background-color: #24a769;
+    }
+
+    &.delete {
+      background-color: #FF9A7A;
+    }
+
+  }
+
+}
+
+.dependentButtonContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+
+  button {
+    border-radius: .5rem;
+    height: 3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: white;
+    background-color: $blue;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+
+    &:disabled {
+      background-color: $sky-blue;
+      cursor: not-allowed;
+    }
+
+  }
+
+}
+
+.form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .625rem;
+  margin-bottom: 1.5rem;
+}

@@ -1,0 +1,584 @@
+@import 'Components/global.scss';
+
+.mainContainer {
+  form { @include default-content-sizing }
+.contirbHeading{
+  padding: 20px 0;
+  font-weight: 700;
+}
+  h3 {
+    font-family: $zilla;
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: navy-blue();
+    margin: 40px 0;
+    text-align: center;
+  }
+
+  h4 {
+    font-size: 1.125rem;
+    color: periwinkle();
+    line-height: 140%;
+    @include uppercase;
+    font-weight: 700;
+
+    span {
+      font-family: $zilla;
+      font-style: italic;
+      font-weight: 600;
+      color: navy-blue();
+      text-transform: capitalize;
+      letter-spacing: .04em;
+    }
+  }
+
+  h5 {
+    font-size: .875rem;
+    @include uppercase;
+    color: inherit;
+    font-weight: 700;
+    margin: 0;
+  }
+}
+
+:is(.mainContainer, .oc_container) h2 {
+  font-family: $proxima;
+  font-size: 1.875rem;
+  font-weight: 800;
+  color: $navy-blue;
+  letter-spacing: 0.02em;
+  margin: 10px 0 50px 0;
+}
+
+.disclaimer {
+  font-size: .75rem;
+  font-style: italic;
+  color: navy-blue();
+  margin-bottom: 1rem;
+}
+
+.baseContributionContainer {
+  background: blue(10);
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1rem;
+
+  h3 {
+    text-align: left;
+    border-left: 4px solid periwinkle(30);
+    padding-left: 1rem;
+    margin: 0;
+  }
+}
+
+.baseContributionInputContainer {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1rem;
+}
+
+.planContributionTable {
+  display: block;
+  width: 100%;
+  margin: 3rem auto 1.5rem;
+  overflow-x: auto;
+  border-spacing: 0;
+  table-layout: fixed;
+  letter-spacing: .02em;
+
+  & + .planContributionTable { margin-top: 0 }
+
+  thead, tbody, tfoot, tr { display: block }
+  thead, tbody { padding: 1.5rem 3rem }
+  tfoot { padding: 1.5rem 3rem 1.5rem 1.5rem }
+
+  thead {
+    background: periwinkle();
+    color: white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+
+    th { height: 82px }
+  }
+
+  tbody {
+    background: gray(5);
+    font-size: .75rem;
+    text-align: left;
+    color: navy-blue();
+
+    tr:not(:first-child) {
+      margin-top: 1rem;
+      line-height: 1.25rem;
+
+      th { @include uppercase }
+      td {
+        font-size: .875rem;
+        font-weight: 500;
+        span { font-size: .75rem }
+      }
+    }
+  }
+
+  tfoot {
+    tr {
+      th, td {
+        display: inline-block;
+        min-width: 150px;
+        text-align: left;
+      }
+
+      th:first-child {
+        width: 324px !important;
+        min-width: 324px !important;
+      }
+    }
+
+    th {
+      font-size: .875rem;
+      @include uppercase;
+      padding-left: 1.5rem;
+      border-left: 4px solid periwinkle(30);
+      color: gray()
+    }
+
+    td {
+      color: navy-blue();
+      font-size: 1rem;
+      font-weight: 600;
+      span { font-size: .875rem }
+    }
+  }
+
+  :is(thead, tbody) tr {
+    th, td {
+      display: inline-block;
+      min-width: 150px;
+      text-align: left;
+    }
+
+    th:first-child {
+      width: 300px !important;
+      min-width: 300px !important;
+    }
+  }
+
+  &[data-columns=four-col] {
+    :is(thead, tbody) :is(th, td) {
+      width: calc(calc(100% - 300px) / 3);
+    }
+
+    tfoot :is(th, td) {
+      width: calc(calc(100% - 324px) / 3);
+    }
+  }
+
+  &[data-columns=five-col] {
+    :is(thead, tbody) :is(th, td) {
+      width: calc(calc(100% - 300px) / 4);
+    }
+
+    tfoot :is(th, td) {
+      width: calc(calc(100% - 324px) / 4);
+    }
+  }
+}
+
+.planTypeCellWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.columnHeader {
+  font-size: .875rem;
+  @include uppercase;
+}
+
+.columnTier {
+  font-size: .75rem;
+  font-weight: 500;
+  margin-bottom: .5rem;
+}
+
+.numberOfEmployees {
+  font-size: .75rem;
+  line-height: 40px;
+}
+
+.contributionInput {
+  height: 40px;
+  font-size: 1rem;
+  padding: 0 1rem;
+  border-radius: 6px;
+  border: 1px solid gray(80);
+  width: 90px;
+  color: navy-blue();
+
+  &::placeholder { color: gray(70) }
+}
+
+.categoryCartContainer {
+  position: relative;
+  text-align: center;
+  background: rgba($color: green(), $alpha: .85);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin-bottom: 40px;
+}
+
+.cc_name {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+  margin-top: 1rem;
+
+  span {
+    font-size: .75rem;
+    font-weight: 500;
+  }
+}
+
+.cc_cost {
+  font-size: 2.625rem;
+  font-weight: 600;
+
+  span {
+    font-size: 1rem;
+    font-weight: 800;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 2.5rem;
+    margin-right: .075rem;
+  }
+}
+
+.cc_costSchedule {
+  font-size: .625rem;
+  font-weight: 700;
+  @include uppercase;
+}
+
+.cc_disclaimer {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  text-align: right;
+  font-size: .625rem;
+  font-family: $zilla;
+  font-style: italic;
+  letter-spacing: .04em;
+}
+
+.allAncillaryCart {
+  text-align: center;
+  color: navy-blue();
+
+  > h5 {
+    color: gray();
+    margin-bottom: 1rem;
+  }
+}
+
+.oc_container {
+  background: mint(20);
+  padding: 80px;
+  color: navy-blue();
+}
+
+.oc_inner { @include default-content-sizing }
+
+.oc_cartsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.oc_cart {
+  background: white;
+  border: 1px solid green(20);
+  width: calc(calc(100% - 2rem) / 2);
+  margin: 0 0 2rem 0;
+  padding: 2rem 3rem;
+
+  &:last-child:nth-child(odd) {
+    margin: 0 auto 2rem auto
+  }
+  hr { border: 1px solid blue() }
+}
+
+.oc_line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: .75rem;
+
+  &:last-child .oc_label {
+    font-weight: 700;
+  }
+}
+
+.oc_label {
+  font-size: .875rem;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+.oc_included {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: .02em;
+}
+
+.oc_cost {
+  font-size: 1.5rem;
+  font-weight: 600;
+
+  span {
+    font-size: .875rem;
+    font-weight: 700;
+
+    &:first-of-type {
+      display: inline-block;
+      vertical-align: top;
+      line-height: 1.25rem;
+      margin-right: .075rem;
+    }
+  }
+}
+
+.oc_cart_plans {
+  font-size: .875rem;
+  font-weight: 700;
+}
+
+.contributionModeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: blue(10);
+  padding: 1rem 1.5rem;
+  color: navy-blue();
+  margin-bottom: 2rem;
+
+  > * { margin-bottom: 1.5rem; }
+
+  p {
+    font-size: 1.25rem;
+    font-family: $zilla;
+    text-align: center;
+    letter-spacing: .015em;
+    font-weight: bold;
+  }
+
+  input {
+    width: 200px;
+    margin-right: 0;
+    text-align: center;
+  }
+}
+
+.contributionModeSwitch {
+  height: 58px !important;
+  width: 200px !important;
+  border-radius: 8px !important;
+  border: solid 1px gray() !important;
+
+  button[data-state=unselected] {
+    background-color: white !important;
+  }
+}
+
+.ancillaryPlanPremiumContainer {
+ /* Frame 51 */
+
+  /* Auto Layout */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0px;
+
+  position: relative;
+  width: 1200;
+  height: 300px;
+  left: 425px;
+  top: 100px;
+}
+
+.planCarrier {
+  /* Principal PPO 100/80/50 1000 Ch Ortho MAC */
+
+  position: static;
+  width: 1200px;
+  height: 20px;
+  left: 115.5px;
+  top: 0px;
+
+  font-family: Proxima Nova, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  /* Navy Blue / Base */
+  color: #16346F;
+
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+
+.planName {
+  position: static;
+  width: 1200px;
+  height: 22px;
+  top: 0px;
+
+  font-family: Proxima Nova, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+  /* or 22px */
+  text-align: center;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  /* Navy Blue / Base */
+  color: #16346F;
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-top: 6px;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+.planPremiumText {
+  position: static;
+  width: 1200px;
+  height: 16px;
+  /*left: 179.5px;*/
+  /*top: 10px; 25px*/
+  font-family: Proxima Nova,sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 140%;
+  /* identical to box height, or 20px */
+  text-align: center;
+  margin-left: 12px;
+  margin-right: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  /* Navy Blue / Base */
+
+  color: #16346F;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-top: 8px;
+}
+
+.planTier {
+  /* Auto Layout */
+  display: flex;
+  position: static;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px;
+  justify-content: center;
+
+  text-align: center;
+  width: 1200px;
+  height: 34px;
+  top: 50px;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  margin-right: 12px;
+
+
+  .planTierUpper {
+    position: static;
+    width: 150px;
+    height: 20px;
+    top: 0px;
+
+    font-family: Proxima Nova, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 140%;
+    text-align: center;
+    /* identical to box height, or 20px */
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+
+    /* Navy Blue / Base */
+    color: #16346F;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 4px 0px;
+  }
+
+  .planTierLower {
+    position: static;
+    width: 150px;
+    height: 20px;
+    top: 0px;
+
+    font-family: Proxima Nova,sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    text-align: center;
+    /* identical to box height, or 20px */
+    /*letter-spacing: 0.04em;*/
+
+    /* Navy Blue / Base */
+    color: #16346F;
+
+
+    /* Inside Auto Layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-top: 4px;
+  }
+}
+
+.planBottomSpace {
+  width: 1200px;
+  height: 26px;
+}

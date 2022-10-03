@@ -1,0 +1,32 @@
+@import 'Components/global.scss';
+
+.form {
+  > fieldset > div:first-child {
+    background-color: #f9f9f9;
+    padding: 1.75rem;
+
+    > span {
+      font-size: .75rem;
+      letter-spacing: .125em;
+    }
+
+    > div {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1rem;
+      font-size: unset;
+      letter-spacing: unset;
+      margin: 1rem 0 3rem;
+
+      &:last-child { margin-bottom: 0 }
+      > * input { background-color: white }
+    }
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: .8rem;
+}

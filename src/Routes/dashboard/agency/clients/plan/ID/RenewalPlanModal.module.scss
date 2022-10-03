@@ -1,0 +1,236 @@
+@import 'Components/global.scss';
+
+.modalContainer { position: relative }
+
+.compareTable {
+  display: block;
+  max-width: 650px;
+  margin: 0 auto;
+  overflow-x: auto;
+  //white-space: nowrap;
+  margin-left: 12.5rem;
+  border-spacing: 0;
+
+  td, th {
+    border-right: 1px solid $disabled-gray;
+
+    &:first-child {
+      position: absolute;
+      left: 1.5rem;
+      background-color: white;
+      min-width: 12.5rem;
+      width: 100%;
+      max-width: 12.5rem;
+      min-height: 58px;
+    }
+
+    &:not(:first-child) {
+      min-width: 12rem;
+      width: 100%;
+      max-width: 12rem;
+      text-align: center;
+    }
+
+  }
+
+  th {
+    padding: 0 .5rem;
+    height: 67px;
+  }
+
+  td {
+    padding: 1rem;
+    &:first-child { padding: 1rem .75rem 1rem 0 }
+  }
+
+  // Modal title
+  th:first-child {
+    color: $periwinkle;
+    font-weight: 700;
+    text-align: left;
+    padding: 1.5rem .75rem 1.5rem 0;
+  }
+
+  tbody tr {
+    &:nth-child(odd) {
+      background-color: rgba($mint, .4);
+    }
+
+    // Last row: "Savings with us"
+    &:last-child td {
+      color: $green !important;
+
+      &:not(:first-child) {
+        background-color: $mint;
+      }
+    }
+
+    td {
+      color: $navy-blue;
+      font-weight: 500;
+    }
+
+    // Row header
+    td:first-child {
+      color: $navy-blue;
+      font-size: .875rem;
+      font-weight: 600;
+
+      span {
+        display: block;
+        font-size: .75rem;
+        font-weight: 300;
+      }
+    }
+
+    td:nth-child(2) {
+      background-color: rgba($mint, .3);
+    }
+  }
+
+  // User current plan inputs
+  input, .prosperBenefitToggle {
+    color: inherit;
+    font-size: inherit;
+    text-align: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    background-color: transparent;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid darken($color: $disabled-gray, $amount: 10);
+
+    &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus {
+      box-shadow: 0 0 0px 1000px #fff inset;
+    }
+
+    &:not(output):-moz-ui-invalid {
+      box-shadow: none
+    }
+  }
+
+}
+
+// 2nd column header
+.currentPlan {
+  font-size: .825rem;
+  background-color: rgba($mint, .5);
+
+  span {
+    display: block;
+    font-family: $zilla;
+    font-weight: 400;
+    font-size: .75rem;
+  }
+}
+
+// User selected plans
+.selected {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: .625rem;
+  position: relative;
+
+  img { max-width: 120px }
+
+  *:nth-child(2) { margin-top: .5rem }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .125rem;
+    background-color: $gray;
+    color: $primary-color;
+    border-radius: 50%;
+    font-size: 1rem;
+  }
+}
+
+// Cell in rows with the best value
+.best { color: $green !important }
+
+// For prosper buttons and
+.notIncluded {
+  color: $orange !important;
+  text-transform: capitalize;
+}
+
+.small {
+  font-size: .75rem;
+  line-height: .75rem;
+}
+
+// True cost of care
+.tcoc div {
+  display: flex;
+  flex-direction: column;
+
+  &:nth-child(2) {
+    color: $green;
+    margin-top: .75rem;
+  }
+
+  span {
+    text-transform: uppercase;
+    color: $primary-color;
+    font-size: .625rem;
+    letter-spacing: .09rem;
+  }
+}
+
+.confirmButton {
+  width: 215px;
+  height: 53px;
+  left: 0px;
+  top: 0px;
+
+  background: linear-gradient(180deg, #71C6FC 0%, #3F8FC1 100%);
+  border-radius: 4px;
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 18px 14px 0px 150px;
+
+  font-family: proxima();
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 16px;
+  /* identical to box height */
+  align-items: center;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}
+
+.cancelButton {
+  width: 215px;
+  height: 53px;
+  left: 227px;
+  top: 0px;
+
+  background: linear-gradient(180deg, #B7BCC3 0%, #707070 100%);
+  border-radius: 4px;
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 0;
+
+  font-family: proxima();
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 16px;
+  /* identical to box height */
+  align-items: center;
+  text-transform: uppercase;
+
+  color: #FFFFFF;
+}

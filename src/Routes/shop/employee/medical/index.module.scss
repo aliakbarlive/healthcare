@@ -1,0 +1,76 @@
+@import 'Components/global.scss';
+@import 'Components/Rudimentary/CandorSwitch.module.scss';
+
+.mainContainer {
+  margin: 0 auto;
+  text-align: center;
+
+  h1 {
+    margin-top: 10px;
+  }
+
+}
+
+.header {
+  width: 800px;
+  margin: 0 auto;
+}
+
+.form {
+  width: 75%;
+  margin: 0 auto;
+  column-gap: 20px;
+  row-gap: 25px;
+  margin-top: 50px;
+  text-align: left;
+  counter-reset: question;
+
+  > div {
+    margin-bottom: 1.5rem;
+
+    > p {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: navy-blue(100);
+      margin-bottom: .75rem;
+
+      ~ div {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid gray(20);
+
+        > p {
+          grid-column: 1 / -1;
+          font-size: 1rem;
+          font-weight: 600;
+          color: blue(120);
+          margin-bottom: .75rem;
+        }
+      }
+    }
+  }
+}
+
+.checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+
+  label {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    span {
+      display: block;
+      margin-bottom: .5rem;
+    }
+  }
+}
+
+.flat {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}

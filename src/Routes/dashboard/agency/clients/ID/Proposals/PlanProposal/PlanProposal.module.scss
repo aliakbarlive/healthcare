@@ -1,0 +1,408 @@
+.medicalPlanPropPrint {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 40px;
+
+  position: relative;
+  width: 792px;
+  height: 612px;
+
+  background: #ffffff;
+
+  .frame2615 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: relative;
+    right: 235px;
+    top: 15px;
+
+    .frame2614 {
+      display: flex;
+      flex-direction: column;
+
+      position: relative;
+      width: 236px;
+      height: 44px;
+
+      order: 1;
+
+      .groupNameText {
+        font-family: Proxima Nova;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 9px;
+        line-height: 120%;
+
+        display: flex;
+        align-items: center;
+
+        color: #333333;
+
+        margin: 0px 0px;
+      }
+    }
+
+    .frame2613 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      position: relative;
+      height: fit-content;
+
+      margin-bottom: 10px;
+    }
+  }
+
+  .frame2675 {
+    height: 548px;
+    margin: 10px 0px;
+
+    .frame2671 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      position: relative;
+      bottom: 21px;
+      margin: 0;
+
+      .frame2670 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+
+        order: 1;
+
+        .frame2669 {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .frame2657 {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+
+            position: relative;
+            width: 712px;
+            top: 9px;
+
+            .frame2407 {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              padding: 4px;
+
+              position: relative;
+              width: 112px;
+
+              background: #f4f4f4;
+              .frame2409 {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+
+                position: relative;
+                right: 15px;
+
+                order: 1;
+                margin: 4px 0px;
+
+                .frame24071 {
+                  display: flex;
+                  flex-direction: column;
+                  right: 10px;
+
+                  position: relative;
+
+                  order: 1;
+                  .enrollNums {
+                    font-family: Proxima Nova;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 7px;
+                    margin: 2px;
+
+                    color: #333333;
+                  }
+                }
+                .frame2408 {
+                  display: flex;
+                  flex-direction: column;
+                  align-items: flex-start;
+
+                  width: 70px;
+                  margin: 0px 22px;
+                  .enrollTitle {
+                    font-family: Proxima Nova;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 7px;
+                    line-height: 115%;
+
+                    text-transform: capitalize;
+
+                    color: #333333;
+                    margin: 2px 0px;
+                  }
+                }
+              }
+              .currEnrollment {
+                position: relative;
+                left: 7px;
+
+                font-family: Proxima Nova;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 7px;
+                line-height: 115%;
+
+                display: flex;
+                align-items: center;
+
+                color: #16346f;
+                margin: 4px 0px;
+              }
+            }
+            .frame2459 {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+
+              width: 120px;
+
+              .carrierLogo {
+                display: flex;
+                order: 1;
+                position: relative;
+                height: 38px;
+                align-items: center;
+
+                img {
+                  max-width: 110px;
+                  max-height: 38px;
+                }
+              }
+
+              .frame1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                padding: 1px;
+
+                position: relative;
+                width: 104px;
+                height: 22px;
+
+                background: #eaeaea;
+
+                flex: none;
+                order: 2;
+                flex-grow: 0;
+
+                .planName {
+                  position: relative;
+                  width: fit-content;
+
+                  font-family: Proxima Nova;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 6px;
+                  line-height: 120%;
+
+                  display: flex;
+                  align-items: center;
+                  text-align: center;
+                  text-transform: capitalize;
+
+                  color: #000000;
+                }
+              }
+
+              .logoSvg {
+                left: 30.5px;
+                top: 12px;
+
+                flex: none;
+                order: 1;
+                flex-grow: 0;
+                margin: 4px 0px;
+              }
+
+              .timeLineText {
+                position: absolute;
+                height: 8px;
+
+                font-family: Proxima Nova;
+                font-style: normal;
+                font-weight: bold;
+                font-size: 8px;
+                line-height: 115%;
+
+                display: flex;
+                align-items: center;
+                text-align: center;
+                letter-spacing: 0.035em;
+                text-transform: uppercase;
+
+                color: #16346f;
+
+                top: 0;
+                flex: none;
+                order: 0;
+                flex-grow: 0;
+              }
+            }
+          }
+          .frame2668 {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            position: relative;
+            margin: 8px 0px;
+
+            .frame2637 {
+              display: flex;
+
+              position: relative;
+              width: fit-content;
+              height: 27px;
+
+              background: #fafafa;
+
+              .frame2632 {
+                display: flex;
+                position: relative;
+                order: 1;
+
+                .frame2631 {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+
+                  position: relative;
+                  width: 120px;
+
+                  background: white;
+                  border: 1px solid #f1f1f1;
+
+                  .medicalVisitAndPrescLabel {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+
+                    position: relative;
+
+                    p {
+                      margin: 0;
+                      font-family: Proxima Nova;
+                      font-style: normal;
+                      font-weight: 500;
+                      line-height: 115%;
+
+                      display: flex;
+                      align-items: center;
+                      text-align: center;
+
+                      color: #000000;
+                    }
+                  }
+
+                  .percentValue {
+                    font-family: Proxima Nova;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 8px;
+                    line-height: 115%;
+                    width: fit-content;
+
+                    display: flex;
+                    align-items: center;
+                    text-align: center;
+
+                    color: #000000;
+                  }
+                }
+              }
+              .frame2635 {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                align-items: center;
+                padding: 0px 12px;
+
+                position: relative;
+                width: 112px;
+                height: 27px;
+
+                background: #fafafa;
+
+                flex: none;
+                order: 0;
+                align-self: stretch;
+                flex-grow: 0;
+                margin: 0px 0px;
+
+                .percentChangeText {
+                  font-family: Proxima Nova;
+                  font-style: normal;
+                  font-weight: bold;
+                  font-size: 8px;
+                  line-height: 115%;
+
+                  display: flex;
+                  align-items: center;
+                  text-align: right;
+                  letter-spacing: 0.035em;
+                  text-transform: uppercase;
+
+                  color: #16346f;
+
+                  flex: none;
+                  order: 0;
+                  flex-grow: 0;
+                  margin: 0px 10px;
+                }
+              }
+            }
+          }
+        }
+        .noteRates {
+          position: relative;
+          font-family: Proxima Nova;
+          font-style: italic;
+          font-weight: normal;
+          font-size: 7px;
+          line-height: 140%;
+          margin: 0;
+          color: #16346f;
+
+          order: 1;
+        }
+      }
+      .medicalPlanPropParagraph {
+        font-family: Proxima Nova;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 10px;
+        line-height: 115%;
+
+        letter-spacing: 0.035em;
+        text-transform: uppercase;
+        margin: 0;
+
+        color: #16346f;
+      }
+    }
+  }
+}

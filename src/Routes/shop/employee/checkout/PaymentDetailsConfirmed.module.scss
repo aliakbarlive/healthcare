@@ -1,0 +1,43 @@
+@import 'Components/global.scss';
+
+.paymentMadeContainer {
+  background-color: white;
+  border-radius: .5rem;
+  border: 1px solid $periwinkle;
+  color: $periwinkle;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem 6.5rem;
+  text-align: center;
+
+  i {
+    font-size: 4.5rem;
+    margin-right: .5rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.08rem;
+    color: inherit;
+  }
+
+  p {
+    font-size: .875rem;
+    margin: 1rem 0 0;
+    font-weight: 500;
+  }
+
+  button {
+    display: inline;
+    font-size: inherit;
+    color: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    border-bottom: 1px solid $periwinkle;
+  }
+
+}

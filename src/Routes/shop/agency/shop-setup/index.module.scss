@@ -1,0 +1,146 @@
+@import 'Components/global.scss';
+@import 'Components/atoms.scss';
+
+.shopSetup {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 900px;
+
+  h1 {
+    color: #16346F;
+    font-size: px(48);
+    font-weight: 800;
+  }
+
+  > section,
+  > article {
+    margin-bottom: px(24)
+  }
+
+  a.secondary {
+    @include atomButtonSecondary()
+  }
+
+  button.tertiary {
+    @include atomButtonTertiary()
+  }
+
+  .landingPageUrl {
+    margin-top: px(24);
+  }
+
+  .landingSection {
+    position: relative;
+    overflow-x: auto;
+    border: px(16) solid #999;
+    border-radius: px(16);
+    padding: px(20);
+    margin-bottom: px(16);
+  }
+
+  .landing {
+    width: 1300px;
+    height: 750px;
+  }
+
+  .logoUpload {
+    display: grid;
+    grid-gap: 16px;
+
+    .logo {
+      background: #fff;
+      padding: px(5);
+      border-radius: px(5);
+      display: grid;
+      grid-auto-flow: column;
+      align-items: center;
+
+      .uploadButton {
+        @include atomButtonPrimary()
+      }
+
+      .removeButton {
+        @include atomButtonSecondary()
+      }
+
+      .uploadButton, .removeButton {
+        margin-bottom: px(5);
+        width: 164px;
+      }
+    }
+  }
+
+  .formSection {
+    background: #F4F4F4;
+    border-radius: 4px;
+    padding: 30px 40px;
+
+    .formSectionHeader {
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 100%;
+      /* identical to box height, or 18px */
+
+      /* Navy Blue / Base */
+      color: $navy-blue;
+      text-transform: none;
+    }
+
+    .formInput {
+      background: #FFF;
+      border-radius: 6px;
+    }
+
+    textArea {
+      position: relative;
+      color: #48a3db;
+      background-color: $gray;
+      outline: none;
+      border: none;
+      border-radius: px(6);
+      transition: all 0.1s ease-in;
+      width: 100%;
+      padding: px(20);
+      font-size: px(16);
+      resize: vertical;
+
+      &.hasPlaceholder {
+        padding: 20px;
+      }
+
+
+      &:read-only {
+        color: #a2a2a2;
+        background-color: #e2e2e2;
+      }
+
+      &:focus {
+        box-shadow: px(0 0 4) $blue;
+      }
+
+      &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: #a2a2a2;
+        opacity: 1; /* Firefox */
+        font-size: inherit;
+      }
+    }
+
+    .calendlyNotes {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 140%;
+      color: $secondary-color;
+    }
+
+    .notes3 {
+      margin: 0;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 120%;
+      color: #686868;
+    }
+  }
+}

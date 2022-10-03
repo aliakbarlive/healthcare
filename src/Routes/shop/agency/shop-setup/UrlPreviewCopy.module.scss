@@ -1,0 +1,27 @@
+@import 'Components/global.scss';
+@import 'Components/atoms.scss';
+
+.UrlPreviewCopy {
+  border: px(1) solid #777;
+  white-space: nowrap;
+  border-radius: px(5);
+  background: #F4F4F4;
+  display: flex;
+  align-self: center;
+
+  span {
+    padding: px(10);
+    flex-grow: 1;
+    font-weight: 600;
+    align-self: center;
+  }
+
+  button, a {
+    @include atomButtonTertiaryInverse();
+    align-self: center;
+
+    svg {
+      width: 16px;
+    }
+  }
+}

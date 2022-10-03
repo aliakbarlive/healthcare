@@ -1,0 +1,60 @@
+@import 'Components/global.scss';
+
+.content { padding: 0 }
+
+.container {
+  max-width: 100%;
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.employer, .employee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  color: white;
+  flex: 1;
+  height: 300px;
+  border-radius: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+
+  p {
+    font-size: .875rem;
+    font-family: $zilla;
+    font-style: italic;
+    font-weight: 400;
+  }
+
+  button {
+    font-family: $zilla;
+    font-size: .875rem;
+    font-style: italic;
+    font-weight: 500;
+    color: white;
+    transition: all 100ms ease-out;
+
+    &:hover, :focus{
+      transform: scale(.99);
+    }
+
+    &:active {
+      transform: scale(.98);
+    }
+
+  }
+}
+
+.employer {
+  background-color: navy-blue();
+}
+
+.employee {
+  background-color: purple();
+}

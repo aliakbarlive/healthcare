@@ -1,0 +1,85 @@
+@import 'Components/global.scss';
+
+.cartContainer {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 2rem;
+  margin: 0 auto;
+  text-align: left;
+  align-items: center;
+}
+.reviewPlans{
+  h1{
+    font-weight: 700;
+    color: white;
+    margin: 0;
+    padding-top: 30px;
+  }
+}
+.cartContainer h1 {
+  margin: 0 0 0 .75rem;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-align: left;
+}
+
+.orderedList {
+  list-style: none;
+  counter-reset: item;
+  margin-right: 30px;
+
+  li {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 10px;
+    counter-increment: item;
+    padding-left: 1em;
+    text-indent: -2em;
+
+    &::before {
+      content: counter(item);
+      color: white;
+      font-size: 36px;
+      font-family: 'Zilla Slab';
+      font-weight: 700;
+      text-align: right;
+      display: inline-block;
+      width: 10px;
+      margin-right: .7em;
+    }
+  }
+}
+
+
+
+.plansContainer {
+  @include default-content-sizing;
+
+  h2 {
+    font-family: $proxima;
+    font-weight: 600;
+    margin: 2.5rem 0 1.5rem 0;
+    text-align: left !important;
+  }
+}
+
+.medicalSectionHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.backToPlans {
+  display: inline-block;
+  font-family: $zilla;
+  font-weight: 600;
+  font-style: italic;
+  text-align: center;
+  font-size: 12px;
+  color: navy-blue();
+  text-decoration: underline;
+  margin-left: 1rem;
+  margin-bottom: 1.7rem;
+}

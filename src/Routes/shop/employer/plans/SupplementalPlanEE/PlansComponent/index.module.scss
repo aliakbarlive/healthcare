@@ -1,0 +1,153 @@
+@import 'Components/global.scss';
+.ee_aflac_accident_plan_module_Cont{
+  display: flex;
+  background-color: #f4f4f4;
+}
+
+.planBodyContainer {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  background-color: #f4f4f4;
+  border-bottom-left-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  position: relative;
+  overflow: hidden;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+// cancer plan
+
+.section {
+  margin: 0rem 0.625rem 0 0;
+}
+
+.custom_specs {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding-right: 0.625rem;
+  padding-bottom: 0.625rem;
+}
+.spanval{
+  font-family: 'Proxima Nova';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 140%;
+/* or 20px */
+
+text-align: center;
+
+/* Navy Blue / Base */
+
+color: #16346F;
+
+
+}
+.custom_specs table {
+  width: 100%;
+  height: 100%;
+  font-size: .875rem;
+  text-align: left;
+  border: none;
+  padding: 0;
+  color: #707070;
+  border-collapse: collapse;
+  background: white;
+}
+
+.custom_specs table thead {
+  background: #29B473;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.custom_specs table th {
+  color: white;
+  height: 2rem;
+  vertical-align: middle;
+}
+
+.custom_specs table th, .custom_specs table td {
+  margin: 0;
+  font-size: .875rem;
+}
+
+.custom_specs table td {
+  color: #203C6F;
+  // font-weight: 500 !important;
+  vertical-align: text-top;
+  padding: 12.5px 0;
+}
+
+.custom_specs table :is(td, th):first-child {
+  font-weight: 700;
+  width: 50%;
+  padding-left: 2rem;
+  padding-right: 1rem;
+}
+
+.custom_specs table :is(td, th):nth-child(2) {
+  width: 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.custom_specs table :is(td, th):last-child {
+  width: 50%;
+  padding-left: 1rem;
+  padding-right: 2rem;
+}
+.custom_specs table :is(td):last-child{
+  border-left: 1px solid #EAEAEA;
+}
+.custom_specs table tbody tr:nth-child(even) {
+  background-color:rgba(148, 217, 185, 0.5);
+}
+.std_benefit_amount{
+  width: 300px !important;
+    margin-right: 14px;
+    margin-top: 5px;
+}
+.criticalIllnessTitile{
+  margin-bottom: 20px;
+}
+.criticalPlanTitle {
+  width: 100%;
+  height: 3.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: $gray;
+  padding-right: 1.25rem;
+  min-width: 0;
+  position: relative;
+  overflow: hidden;
+  > span:first-child { margin-left: 1.25rem; }
+}
+.title {
+  flex: 1;
+  flex-shrink: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 1.5rem;
+  min-width: 0;
+  margin-top: .25rem; // To Visually center
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &, & > div:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}

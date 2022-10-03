@@ -1,0 +1,73 @@
+@import 'Components/global.scss';
+
+.container {
+  display: grid;
+  gap: 35px;
+  grid-template-columns: 1fr 352px;
+
+  //Make healthcare news span two columns if it is the last child
+  & > :nth-child(2):last-child, & > :nth-child(3):last-child {
+    grid-column: span 2;
+    max-width: calc(100% - 377px);
+  }
+
+  header {
+    color: $secondary-color;
+    width: 550px;
+
+    h1 {
+      padding-top: 2.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+      margin-top: 30px;
+    }
+  }
+
+}
+
+.inviteContainer {
+
+  background: linear-gradient(#daf8f6 0%, #b9efe0 100%);
+  box-shadow: 3px 8px 8px rgba(0, 0, 0, 0.09);
+  text-align: center;
+  padding: 2.5rem;
+  margin-top: 3rem;
+
+  h2 {
+    font-family: $zilla;
+    font-weight: 300;
+    font-style: italic;
+    font-size: 1.875rem;
+    margin-top: 0;
+
+    b {
+      font-weight: 600;
+    }
+  }
+
+  p {
+    font-family: $zilla;
+    font-size: 1rem;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  button {
+    width: 207px;
+    height: 55px;
+    border-radius: 4px;
+    background: linear-gradient(#b3c1ed 0%, #7a91d0 100%);
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+}
+
+.todo {
+  width: unset;
+}

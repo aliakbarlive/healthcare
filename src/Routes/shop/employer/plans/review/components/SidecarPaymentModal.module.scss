@@ -1,0 +1,31 @@
+@import 'Components/global.scss';
+
+.paymentForm {
+  width: 600px;
+  max-width: 100%;
+
+  h2 {
+    font-size: 1rem;
+    text-align: left;
+    color: navy-blue(80);
+    font-family: $proxima;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  p { font-size: .75rem }
+}
+
+.loadingContainer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba($color: blue(50), $alpha: .5);
+}
+
+.cardElementContainer div {
+  background-color: $gray;
+  border-radius: .5rem;
+  padding: 1rem .25rem 1rem 1.25rem;
+  max-height: 56px;
+  overflow: hidden;
+}

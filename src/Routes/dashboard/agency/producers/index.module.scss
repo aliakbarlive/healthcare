@@ -1,0 +1,84 @@
+@import 'Components/global.scss';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.h2 {
+  color: $blue;
+  margin-top: 4rem;
+}
+
+$select-height: 48px;
+
+.assignBrokerForm {
+  display: grid;
+  width: 80%;
+  margin: 40px 0 20px;
+  grid-template-columns: 1fr 40px 1fr 170px;
+  gap: 20px;
+  align-items: end;
+
+  fieldset {
+    display: contents;
+  }
+
+  * {
+    display: inline-block;
+
+    select {
+      margin-top: 15px;
+      margin-bottom: 2px;
+      width: 100%;
+      display: block;
+      height: $select-height;
+      border: none;
+      font-family: $barlow;
+      font-size: 1rem;
+      font-weight: 400;
+      letter-spacing: 0.02rem;
+
+      &.placeholder {
+        color: $placeholder-gray
+      }
+    }
+
+  }
+
+  input[type=submit] {
+
+    transition: all 300ms ease-out;
+    background-image: $blue-gradient;
+
+    &:disabled {
+      color: $dodo;
+      background: $gray;
+      border: 4px solid $dodo;
+    }
+  }
+
+  label, p {
+    text-transform: uppercase;
+    font-size: .75rem;
+    letter-spacing: 0.1rem;
+    text-align: left;
+    color: $secondary-color;
+  }
+
+  p {
+    text-align: center;
+
+    margin: 0;
+    height: $select-height;
+    line-height: $select-height;
+  }
+
+}
+
+.addTodo {
+  color: $green;
+  width: 100%;
+}

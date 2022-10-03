@@ -1,0 +1,102 @@
+.prosperMain {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	padding: 60px;
+	position: relative;
+	width: 792px;
+	height: 612px;
+	bottom: 30px;
+	background: #FFFFFF;
+
+	.frame2431 {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		margin: 0px 10px;
+
+		.frame2428 {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			padding: 0px;
+			position: relative;
+
+			top: 60px;
+			order: 1;
+			margin: 24px 0px;
+
+			.frame2381 {
+				display: flex;
+				flex-direction: column;
+				align-items: flex-start;
+				margin-bottom: 14px;
+
+				.headerIncludedItem {
+					font-family: Proxima Nova;
+					font-style: normal;
+					font-weight: bold;
+					font-size: 12px;
+					line-height: 140%;
+					letter-spacing: 0.6px;
+					text-transform: uppercase;
+					color: #16346F;
+					margin: 4px 0px;
+				}
+
+				.bodyIncludedItem {
+					font-family: Proxima Nova;
+					font-style: normal;
+					font-weight: normal;
+					font-size: 12px;
+					line-height: 140%;
+					color: #333333;
+					flex: none;
+					margin: 4px 0px;
+				}
+			}
+		}
+
+		.frame2430 {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			height: 45px;
+
+			.frame2429 {
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				height: 27px;
+				margin: 8px 0px;
+
+				.includedText {
+					width: 195px;
+					font-family: Proxima Nova;
+					font-style: normal;
+					font-weight: bold;
+					font-size: 18px;
+					line-height: 140%;
+					color: #16346F;
+				}
+
+				svg {
+					width: 94.17px;
+					order: 1;
+					margin: 0px 16px;
+				}
+			}
+
+			.prosperBenefitsParagraph {
+				width: 672px;
+				font-family: Proxima Nova;
+				font-style: normal;
+				font-weight: bold;
+				font-size: 12px;
+				line-height: 140%;
+				color: #16346F;
+				margin: 8px 0px;
+			}
+		}
+	}
+}

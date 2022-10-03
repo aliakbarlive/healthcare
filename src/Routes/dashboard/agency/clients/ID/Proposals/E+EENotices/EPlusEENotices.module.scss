@@ -1,0 +1,138 @@
+.mainFrame {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 60px;
+
+  position: relative;
+  width: 792px;
+  height: 612px;
+
+  background: #ffffff;
+
+  .frame2825 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: relative;
+    order: 0;
+    flex-grow: 0;
+
+    .frame2824 {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+
+      position: relative;
+      order: 1;
+
+      .frame2763 {
+        display: flex;
+        flex-direction: column;
+
+        .frame2761 {
+          display: flex;
+          flex-direction: column;
+          width: 320px;
+
+          .leftParagraphsSubheader {
+            font-family: Proxima Nova;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 11px;
+            line-height: 140%;
+            color: #3564b9;
+
+            margin: 4px 0px;
+          }
+
+          .leftParagraphs {
+            font-family: Proxima Nova;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 140%;
+
+            color: #333333;
+            margin: 4px 0px;
+          }
+        }
+      }
+
+      .frame2823 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        order: 1;
+        margin: 0px 16px;
+
+        .frame2377 {
+          position: relative;
+          width: 320px;
+          height: 90px;
+          top: 57px;
+
+          background: #eaeaea;
+
+          flex: none;
+          order: 1;
+          flex-grow: 0;
+
+          .rememberParagraph {
+            position: relative;
+            width: 296px;
+            height: 70px;
+            left: 12px;
+
+            font-family: Proxima Nova;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 140%;
+
+            color: #333333;
+          }
+        }
+
+        .frame2765 {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .rightParagraphsSubheader {
+            font-family: Proxima Nova;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 11px;
+            line-height: 140%;
+            color: #3564b9;
+
+            margin: 4px 0px;
+          }
+
+          .rightParagraphs {
+            font-family: Proxima Nova;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 140%;
+
+            color: #333333;
+            margin: 4px 0px;
+          }
+        }
+      }
+    }
+
+    .headerText {
+      position: relative;
+
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      color: #16346f;
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@import 'Components/global.scss';
+
+.prosperContainer {
+  @include default-content-sizing;
+  margin: 40px auto;
+}
+
+.prosperInner {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  gap: 2rem;
+  background: linear-gradient(90deg, #48A3DB 0.63%, #3564B9 100%);
+  align-items: center;
+  padding: 2rem;
+  border-radius: 6px;
+
+  div {
+    text-align: center;
+    color: white;
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+.prosperLogo {
+  display: block;
+  width: auto;
+  height: 50px;
+}

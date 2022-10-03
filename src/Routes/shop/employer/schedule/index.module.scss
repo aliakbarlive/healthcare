@@ -1,0 +1,56 @@
+@import 'Components/global.scss';
+
+// body {
+//   background-color: #edf6fb;
+// }
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: 615px 464px;
+  gap: 73px;
+
+  .illustration {
+    width: 100%;
+    height: auto;
+  }
+
+  div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // background: white;
+    box-shadow: 0px 10px 20px rgba(218, 242, 255, 0.3);
+    border-radius: 6px;
+    font-family: Proxima Nova;
+    font-style: normal;
+
+    * {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    h1 {
+      padding-top: 36px;
+      color: navy-blue();
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 120%;
+      text-align: left;
+    }
+
+    p {
+      color: navy-blue();
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 140%;
+    }
+
+    a { font-family: inherit; }
+
+    button {
+      margin: 1rem 40px 40px 40px;
+      text-transform: none;
+    }
+  }
+}

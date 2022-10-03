@@ -1,0 +1,282 @@
+  @import 'Components/global.scss';
+
+  .ee_aflac_accident_plan_module_Cont{
+    width: 953px;
+    margin: 0 auto;
+    display: flex;
+  margin-top: 2rem;
+  }
+  .individual_tier_container{
+  width: 280px;
+  padding: 0 10px 0 0px;
+  }
+  .heading{
+  background: #29B473;
+  border-radius: 4px 4px 0px 0px;
+  padding: 8px 71px;
+  }
+
+  .individual_tier{
+  font-weight: 700;
+  font-size: 14px;
+  margin: 0;
+  text-align: center;
+  color: white;
+  }
+  .individual_tier_price{
+  padding: 31px 16px;
+  border-width: 0px 1px 1px 1px;
+  border-style: solid;
+  border-color: #EAEAEA;
+  border-radius: 0px 0px 4px 4px;
+  text-align: center;
+  background: white;
+  }
+  .eeContprice{
+  margin-top: 21px;
+  color: #29B473;
+  padding: 0px 30px 0;
+.dolar{
+  font-weight: 500;
+  font-size: 24px;
+  vertical-align: top;
+}
+  }
+
+  .mon{
+  font-size: 24px;
+  font-weight: 500;
+  }
+  .amount{
+  font-weight: 600;
+  font-size: 48px;
+  }
+  .after_employer_contribution{
+  color: #29B473;
+  font-weight: 700;
+  font-size: 12px;
+  padding: 0px 16px;
+  padding-top: 5px;
+  }
+  .your_employer_contri{
+  color: #707070;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 10px 30px 10px;
+  line-height: 17px;
+  }
+  .dolarMonth{
+  font-weight: 700;
+  }
+  .accident_deathBenefit{
+  width: 300px;
+  text-align: center;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 250px;
+  margin-right: 5px;
+  }
+  .accidental_death_benefit_Heading{
+  padding: 0px 16px;
+  }
+  .accidental_death_benefit_Heading>p{
+  margin-bottom: 8px;
+  }
+  .accidental_death_price{
+    .amount{
+    font-weight: 600;
+    font-size: 24px;
+    color: #16346F;
+    }
+    .dolar{
+      font-size: 14px;
+      font-weight: 600;
+      color: #16346f;
+      vertical-align: top;
+    }
+
+  }
+
+  .hospital_benifit_amoutn{
+  padding: 6px 46px 4px;
+  }
+
+  .hospitalization_benefit{
+  width: 320px;
+  padding: 0 5px 0 8px;
+  }
+  .initial_hospitalization_benefit{
+  margin-bottom: 10px;
+  text-align: center;
+  height: 120px;
+  width: 320px;
+  background: white;
+  }
+
+  .hospital_confinement{
+  font-weight: 700;
+  font-size: 12px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #16346f;
+  padding-bottom: 23px;
+  }
+  .confinement__benefit{
+  background: white;
+  }
+  .initial_accident_hospitalization_benefit{
+  padding: 23px 16px 0;
+  }
+  .accident_hospital_confinement_benefit{
+  padding: 32px 16px 0;
+  }
+  .hospital_benifit_confinement{
+  padding-bottom:34px;
+  }
+  .benefit_amount_label{
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #16346F;
+    margin-top: 4px;
+}
+.amountContainer{
+  background-color: white;
+  color: blue;
+}
+.amount_container{
+  width: 200px;
+  margin: 0 5px;
+}
+
+.benefit_amount{
+  padding: 10px 16px;
+  text-align: center;
+  background: #FFFFFF;
+border: 1px solid #EEEEEE;
+border-radius: 4px;
+.benefit_amount{
+  font-weight: 700;
+  font-size: 14px;
+  text-transform: capitalize;
+}
+}
+.base_on_your_income{
+  font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #16346F;
+}
+.std_benifit_amoutn{
+  padding: 22px 1px 6px;
+}
+.spanval{
+  font-family: 'Proxima Nova';
+font-style: normal;
+font-weight: 700;
+font-size: 14px;
+line-height: 140%;
+/* or 20px */
+
+text-align: center;
+
+/* Navy Blue / Base */
+
+color: #16346F;
+
+
+}
+.remindAll {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background: #F4F4F4;
+  padding: 1.5rem;
+  margin: 2rem 0;
+
+  p {
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    /* or 19px */
+
+
+    /* Navy Blue / Base */
+
+    color: #16346F;
+    border-left: 4px solid #89E4BA;
+    padding-left: 20px;
+    margin: 0;
+  }
+
+
+}
+.beneftiClassVtl{
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+
+  /* Gray / 130 */
+
+  color: #686868;
+}
+.amountVtl{
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 90%;
+  /* identical to box height, or 22px */
+
+
+  /* Navy Blue / Base */
+
+  color: #16346F;
+}
+.benefit_amount_label_vtl{
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 15px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  /* Navy Blue / Base */
+
+  color: #16346F;
+
+}
+.initial_accident_hospitalization_benefit_vtl{
+  font-family: 'Proxima Nova';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  /* identical to box height */
+
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+
+  /* Gray / 130 */
+
+  color: #686868;
+}

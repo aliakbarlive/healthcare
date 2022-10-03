@@ -1,0 +1,8 @@
+.us-state-map path {
+  pointer-events: all;
+}
+
+/* .us-state-map path:hover {
+  opacity: 0.50;
+  cursor: pointer;
+} */

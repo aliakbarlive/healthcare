@@ -1,0 +1,40 @@
+@import 'Components/global.scss';
+
+.SectionInfo {
+  display: flex;
+  flex-direction: row;
+  padding: 30px 40px;
+
+  background-color: #EDF6FB;
+  border-radius: px(4);
+  color: #16346F;
+
+  .main {
+    display: flex;
+    flex-direction: column;
+    width:100%;
+
+    header {
+      font-weight: 700;
+      font-size: px(16);
+      line-height: 100%;
+      letter-spacing: px(0.06);
+      text-transform: uppercase;
+    }
+
+    main {
+      margin-top: px(8);
+      font-style: italic;
+      font-weight: 400;
+      font-size: px(16);
+      line-height: 140%;
+    }
+  }
+
+  aside {
+    width:100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+  }
+}

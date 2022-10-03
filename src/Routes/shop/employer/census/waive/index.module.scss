@@ -1,0 +1,78 @@
+@import 'Components/global.scss';
+
+.censusWaivingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  header {
+    height: 170px;
+    background-color: $navy-blue;
+    height: fit-content;
+    width: 100%;
+    padding: $shop-h1-font-size 0 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+      color: white !important;
+    }
+
+    h2 {
+      color: white !important;
+    }
+
+    > *, ~ * {
+      max-width: $container-max-width;
+      min-width: $container-min-width;
+      padding: 0 5%;
+    }
+
+  }
+
+}
+
+.buttonsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 3rem;
+  position: relative;
+}
+
+.backButton {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  left: 5%;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  color: #b9b9b9;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.note {
+  color: $periwinkle;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  margin-top: 30px;
+  line-height: 1.5rem;
+}
+
+.listContainer {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 15px;
+  column-gap: 40px;
+  width: 100%;
+}

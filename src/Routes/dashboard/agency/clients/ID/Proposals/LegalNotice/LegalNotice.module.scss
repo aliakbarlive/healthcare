@@ -1,0 +1,88 @@
+.legalNoticeMain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 60px;
+
+  position: relative;
+  width: 792px;
+  height: 612px;
+
+  background: #ffffff;
+
+  .frame2755 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 10px 0px;
+
+    .frame2752 {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      order: 1;
+
+      .frame2748 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        position: relative;
+        width: 320px;
+
+        .frame2745 {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          .noticeParagraph {
+            font-family: Proxima Nova;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 140%;
+
+            color: #333333;
+
+            flex: none;
+            flex-grow: 0;
+            margin: 4px 0px;
+          }
+        }
+      }
+      .frame2751 {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0px 32px;
+
+        .frame2750 {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
+          .rightSideParagraphs {
+            position: relative;
+            width: 320px;
+
+            font-family: Proxima Nova;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 10px;
+            line-height: 140%;
+            color: #333333;
+            margin: 4px 0px;
+          }
+        }
+      }
+    }
+
+    .legalNoticeHeader {
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 140%;
+      color: #16346f;
+    }
+  }
+}

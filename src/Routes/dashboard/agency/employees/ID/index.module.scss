@@ -1,0 +1,33 @@
+@import 'Components/global.scss';
+
+.profileContainer {
+  display: grid;
+  grid-template-columns: $profile-section-grid;
+  justify-items: center;
+  gap: 1.5rem;
+  margin-bottom: 30px;
+}
+
+.profileSectionContainer > * {
+  padding-top: 10px;
+  margin-bottom: 30px;
+  border-top: 2px solid rgba(72, 163, 219, 0.08);
+}
+
+.header {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.qualifyingLifeEvent {
+  position: relative;
+  top: 0;
+  margin-bottom: 20px;
+  justify-self: flex-end;
+
+  i {
+    background-color: $mint;
+    color: $secondary-color
+  }
+
+}

@@ -1,0 +1,172 @@
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.header {
+  background-color: #3564B9;
+  height: 230px;
+  width: 100%;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.header > div:first-of-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.ddr4 {
+  height: 386px;
+  width: 386px;
+  margin: 30px 5px 0 0;
+}
+
+.header > div > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.confirmCheck {
+  height: 44px;
+  width: 44px;
+  background-color: #29b573;
+  margin-right: 25px;
+  border-radius: 4px;
+}
+
+.confirmCheck i {
+  font-size: 44px;
+  line-height: 44px;
+  width: 100%;
+  color: #ffffff;
+  text-align: center;
+}
+
+.header h1 {
+  color: #ffffff;
+  font-weight: 670;
+  margin: 0;
+}
+
+.header p {
+  font-family: 'Zilla Slab';
+  font-size: 28px;
+  color: #ffffff;
+  font-weight: 300;
+  letter-spacing: .5px;
+  margin: 10px 0 0 70px;
+}
+
+.header b {
+  font-weight: 600;
+}
+
+.confetti {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.confetti > svg {
+  height: 73px;
+  width: 150px;
+  margin-bottom: 25px;
+}
+
+.linksContainer {
+  display: flex;
+  flex-direction: column;
+  width: 900px;
+  margin: 30px auto;
+  padding: 25px;
+  background-color: rgba(255, 255, 255, 0.95);
+}
+
+.linksContainer > div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.linksContainer h3, .linksContainer p {
+  width: 36%;
+  margin: 0 30px 0 0;
+  color: #16346F
+}
+
+.linksContainer h3 {
+  position: relative;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.linksContainer h3 > b {
+  font-weight: 600;
+}
+
+.linksContainer p {
+  font-size: 18px;
+}
+
+.inviteButtons {
+  display: flex;
+  flex-direction: row;
+  width: 550px;
+  width: 64%;
+}
+
+.linksContainer a {
+  width: 64%;
+  text-decoration: none;
+}
+
+.laterButton {
+  height: 62px;
+  flex: 0 0 calc(50% - 5px);
+  border-radius: 8px;
+  border: 1px solid #48A3DB;
+  background-color: #ffffff;
+  color: #48A3DB;
+  font-size: 20px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.exploreDashboard {
+  width: 100%;
+}
+
+.exploreDashboard > button {
+  background-color: #D4F8EF;
+  height: 62px;
+  width: 100%;
+  font-size: 20px;
+  color: #48A3DB;
+  border-radius: 8px;
+}
+
+.infoIcon {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  top: -7px;
+  right: -10px;
+  border-radius: 50%;
+  border: 1px solid #3564B9;
+  cursor: pointer;
+}
+
+/* Changing color of the 'i' */
+.infoIcon > g > g > g:last-of-type path {
+  fill: #3564B9;
+}

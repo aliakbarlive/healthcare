@@ -1,0 +1,502 @@
+@import 'Components/global.scss';
+
+.sidecarContainer {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  section {
+    display: block;
+    background: #fff;
+    padding: 30px 20px;
+    margin: 0;
+    font-family: 'proxima-nova', sans-serif;
+  }
+
+  h1 {
+    color: #24446C;
+    font-size: 32px;
+    line-height: 40px;
+    margin: 0 0 20px;
+    padding: 0;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  h2 {
+    color: #000;
+    font-size: 18px;
+    line-height: 25px;
+    margin: 30px 0 10px;
+    font-weight: bold;
+    text-align: center;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  h3 {
+    color: #000;
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: bold;
+    margin: 30px 0 10px;
+  }
+
+  p {
+    color: #555;
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0 0 20px;
+  }
+
+  li {
+    color: #555;
+    font-size: 18px;
+    line-height: 25px;
+    margin: 0 0 10px;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  img, svg {
+    max-width: 100%;
+  }
+
+  a {
+    color: #64c5af;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+      color: #2C949A;
+    }
+  }
+
+  .odd {
+    background: #F1F5F9;
+  }
+
+  .margins {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+
+  .row {
+    margin: 0 -10px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .col {
+    padding: 0 10px;
+    box-sizing: border-box;
+  }
+
+  .quarter {
+    width: 50%;
+  }
+
+  .third, .twoThirds {
+    width: 100%;
+  }
+
+  .half p, .quarter p {
+    text-align: center;
+  }
+
+  .planSummary {
+    background: #fff;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 100, 0.25) 0px 2px 5px;
+    overflow: hidden;
+  }
+
+  .planSummaryContent, .planSummaryPrice {
+    box-sizing: border-box;
+  }
+
+  .planSummaryContent {
+    border-bottom: 1px solid #aaa;
+  }
+
+  .planSummaryContentHeader {
+    border-bottom: 1px solid #aaa;
+    padding: 20px;
+
+    svg {
+      float: left;
+      margin: 0 20px 0 0;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      line-height: 25px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    p {
+      font-size: 12px;
+      line-height: 20px;
+      margin: 0;
+      color: #888;
+    }
+  }
+
+  .planSummaryContentBullets {
+    list-style: none;
+    margin: 0;
+    padding: 20px 20px 0;
+    overflow: hidden;
+
+    li {
+      padding: 0;
+      margin: 0 0 20px;
+      float: left;
+      width: 50%;
+      color: #888;
+      font-size: 12px;
+      line-height: 20px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    strong {
+      color: #000;
+      font-size: 16px;
+    }
+  }
+
+  .planSummaryPrice {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .planSummaryPricePremium {
+    font-size: 12px;
+    line-height: 20px;
+    color: #888;
+
+    strong {
+      font-weight: bold;
+      color: #000;
+      font-size: 32px;
+      line-height: 40px;
+    }
+  }
+
+  .planSummaryPrice button {
+    background: #ff5745;
+    border: none;
+    box-shadow: 0 5px 15px #ffe3e0;
+    display: block;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-radius: 0;
+    height: 44px;
+    padding: 0 20px;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: 'proxima-nova', sans-serif;
+
+    &:hover {
+      opacity: 0.88;
+    }
+
+    svg {
+      vertical-align: middle;
+      float: right;
+    }
+  }
+
+  .iconHighlights {
+    svg {
+      display: block;
+      margin: 0 auto;
+      max-width: 150px;
+    }
+
+    h2 {
+      margin-top: 20px;
+    }
+  }
+
+  .paymentCard .row {
+    align-items: center;
+  }
+
+  .howItWorks {
+    padding-bottom: 0;
+
+    .row {
+      align-items: flex-end;
+    }
+
+    .col {
+      &:nth-child(3), &:nth-child(4) {
+        margin-top: 30px;
+      }
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .uploadBill {
+    background: url(https://sidecarhealth.com/assets/bill-photo.png) right (top / 100%) no-repeat rgb(241, 245, 249);
+    padding-top: 250px;
+  }
+
+  .shouldCost {
+    padding: 30px 0 0;
+
+    .margins {
+      padding: 0 20px;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  .comparePrices {
+    padding-bottom: 0;
+
+    .row {
+      align-items: center;
+      flex-direction: column-reverse;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .benefits .row {
+    align-items: center;
+  }
+
+  .faqCategories {
+    background: #fff;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    box-shadow: rgba(100, 100, 100, 0.25) 0px 2px 5px;
+    padding: 20px;
+    margin: 0 0 20px;
+
+    ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    a {
+      display: block;
+      padding: 10px 0;
+    }
+  }
+
+  .faq {
+    h2 {
+      text-align: left;
+      margin-top: 50px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
+    .twoThirds h2 {
+      font-size: 28px;
+      line-height: 35px;
+    }
+  }
+
+  .video_wrapper {
+    padding: 0px 0px 56.25%;
+    position: relative;
+    height: 0px;
+
+    iframe {
+      position: absolute;
+      left: 0px;
+    }
+  }
+
+  .disclaimers p {
+    color: #888;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+  @media screen and (min-width: 400px) {
+    .uploadBill {
+      padding-top: 300px;
+    }
+  }
+
+  @media screen and (min-width: 480px) {
+    .row {
+      margin: 0 -20px;
+    }
+
+    .col {
+      padding: 0 20px;
+    }
+
+    .uploadBill {
+      padding-top: 375px;
+    }
+  }
+
+  @media screen and (min-width: 600px) {
+    h1 {
+      font-size: 36px;
+      line-height: 45px;
+    }
+
+    h2 {
+      font-size: 24px;
+      line-height: 30px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 25px;
+    }
+
+    section {
+      padding: 80px 20px;
+    }
+
+    .half {
+      width: 50%;
+
+      h1, p {
+        text-align: left;
+      }
+    }
+
+    .third {
+      width: 33.3333%;
+    }
+
+    .twoThirds {
+      width: 66.6666%;
+    }
+
+    .planSummaryContent, .planSummaryPrice {
+      float: left;
+    }
+
+    .planSummaryContent {
+      border-bottom: none;
+      border-right: 1px solid #aaa;
+      width: 70%;
+    }
+
+    .planSummaryContentHeader {
+      padding: 30px;
+    }
+
+    .planSummaryContentBullets {
+      padding: 30px 30px 10px;
+
+      li {
+        width: 25%;
+        padding-right: 10px;
+        text-align: left;
+
+        &:last-child {
+          padding-right: 0;
+        }
+      }
+    }
+
+    .planSummaryPrice {
+      padding: 30px;
+      width: 30%;
+    }
+
+    .howItWorks .col {
+      margin-top: 0 !important;
+      width: 25%;
+    }
+
+    .uploadBill {
+      background: url(https://sidecarhealth.com/assets/bill-photo.png) right (top / 50%) no-repeat rgb(241, 245, 249);
+      padding-top: 80px;
+    }
+
+    .comparePrices {
+      .row {
+        flex-direction: row;
+      }
+
+      .col {
+        &:first-child {
+          align-self: flex-end;
+        }
+
+        &:last-child {
+          padding-bottom: 80px;
+        }
+      }
+    }
+
+    .shouldCost {
+      padding-top: 80px;
+    }
+  }
+
+  @media screen and (min-width: 960px) {
+    .quarter {
+      width: 25%;
+    }
+
+    .threeFourths {
+      width: 75%;
+    }
+
+    .planSummaryContent {
+      width: 70%;
+    }
+
+    .planSummaryPrice {
+      width: 30%;
+    }
+
+    .uploadBill {
+      padding-top: 80px;
+
+      .half {
+        width: 50%;
+        margin-top: 0;
+      }
+    }
+
+    .faqCategories {
+      padding: 30px;
+      position: sticky;
+      top: 11rem;
+    }
+  }
+}
+
+h2.anchorLocations {
+  margin-top: -200px !important;
+  padding-top: 200px;
+  display: block;
+}

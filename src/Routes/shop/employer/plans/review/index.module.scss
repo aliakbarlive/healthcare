@@ -1,0 +1,222 @@
+@import 'Components/global.scss';
+
+.heading {
+  background-color: blue(10);
+  color: navy-blue();
+  margin-bottom: 0;
+}
+
+.headingInner {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+
+  h1 { text-align: left; }
+
+  > div:first-child {
+    position: relative;
+    box-sizing: border-box;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -2.5rem;
+      height: 190px;
+      border-left: 5px solid periwinkle(30);
+    }
+
+    ol { list-style: none; }
+
+    li {
+      position: relative;
+      font-family: $zilla;
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+      counter-increment: item;
+
+      &::before {
+        position: absolute;
+        font-family: $proxima;
+        content: counter(item);
+        color: periwinkle(30);
+        font-size: 2.25rem;
+        font-weight: 700;
+        text-align: right;
+        display: block;
+        width: 1.5rem;
+        top: -.25rem;
+        left: -2.5rem;
+      }
+    }
+
+    a {
+      font-weight: 600;
+      letter-spacing: .02em;
+      color: periwinkle();
+    }
+
+    button { margin: 0 0 2rem }
+  }
+
+  div:last-child {
+    width: fit-content;
+    justify-self: flex-end;
+  }
+}
+
+.disclaimer {
+  width: fit-content;
+  font-size: .75rem;
+  font-family: $zilla;
+  font-style: italic;
+  letter-spacing: .04em;
+  margin: 1rem 0 0;
+}
+
+.plansContainer {
+  @include default-content-sizing;
+  margin-bottom: 3rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-family: $proxima;
+    text-align: left;
+    font-weight: 600;
+
+    &:first-child { margin-top: 0 }
+  }
+
+  .hbaDisclaimer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 5px 20px;
+
+    background: #EAEFF9;
+    border-radius: 4px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    margin: 12px 0px;
+
+    .innerBox {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0px;
+
+      /* Inside Auto Layout */
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      margin: 10px 0px;
+
+      svg {
+        /* Inside Auto Layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+        margin: 8px 0px;
+      }
+
+      p {
+        font-family: $proxima;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 120%;
+        /* or 17px */
+
+        /* Navy Blue / Base */
+        color: navy-blue();
+
+        /* Inside Auto Layout */
+        flex: none;
+        order: 1;
+        flex-grow: 0;
+        margin: 8px 0px;
+
+        a {
+          color: navy-blue()
+        }
+      }
+    }
+  }
+}
+
+:is(.headingInner, .plansContainer + section) button { padding: 0 3rem }
+
+.backToContainer {
+  padding: 0px 5%;
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  max-width: 1366px;
+  min-width: 1100px;
+  padding-top: 50px;
+
+  svg {
+    vertical-align: middle;
+  }
+
+  a {
+    font-weight: 600;
+    letter-spacing: .02em;
+    color: periwinkle();
+    padding-left: 10px;
+    vertical-align: middle;
+  }
+}
+
+.contributionLine {
+  background: blue(10);
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 1rem;
+  color: navy-blue();
+  font-size: .875rem;
+  font-weight: 600;
+  padding: 1rem 1.25rem;
+  align-items: center;
+  margin-bottom: 1rem;
+  border-radius: .25rem;
+
+  // Carrier + plan name
+  div:first-child {
+    padding-left: 1rem;
+    border-left: 2px solid periwinkle(30);
+
+    span {
+      font-size: 1.125rem;
+      margin-right: 1rem;
+      font-weight: 700;
+    }
+  }
+
+  // Contribution
+  div:nth-child(2) {
+    text-align: right;
+    @include uppercase;
+  }
+
+  a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background: periwinkle();
+    color: white;
+    font-size: .75rem;
+    padding: .5rem;
+    border-radius: .25rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+  }
+}
+
+.multiLineContribution {
+  margin-top: 5rem;
+
+  span { font-size: 1rem !important }
+}

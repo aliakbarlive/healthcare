@@ -1,0 +1,190 @@
+@import 'Components/global.scss';
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 1157px;
+  > :not(:first-child):not(:first-child) {
+    margin: 30px 0 10px;
+    border-top: 2px solid rgba(72, 163, 219, 0.08);
+  }
+.dashHeading{
+  margin-top: 50px;
+}
+  h3 {
+    display: block;
+    margin: 0;
+    margin-bottom: 10px;
+    font-size: .75rem;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    line-height: normal;
+    margin: 0 0 10px;
+  }
+
+  .explainerCopy {
+    font-size: .9rem;
+    margin-top: 0;
+    color: $primary-color;
+    text-align: center;
+    line-height: normal;
+  }
+
+}
+
+.miscDetails {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: $profile-section-grid;
+  padding: 50px 0 0;
+}
+
+.ass {
+  width: 170px;
+
+  h3 { text-align: left }
+
+  .asses {
+    color: #707070;
+    font-family: "Barlow Semi Condensed";
+    font-size: 20px;
+    font-weight: 700;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+
+    li {
+      display: inline;
+
+      a {
+        text-decoration: none;
+        line-height: 1.7rem;
+
+        span {
+          color: #707070;
+          border-bottom: 1px solid $border-gray;
+          transition: border-bottom 200ms ease-out;
+        }
+      }
+
+      &:after { content: ", " }
+      &:last-child:after { content: "" }
+      :hover a span { border-bottom: 2px solid $secondary-color }
+    }
+  }
+}
+
+.actionLinksContainer {
+  margin: 0 auto;
+  padding: 0 20px;
+  color: #707070;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+
+  .actionLinks {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 1000px;
+    flex-wrap: wrap;
+    margin-left: 11px;
+  }
+
+  .upload {
+    background: $submit-gradient;
+    color: white;
+    margin: 0 10px;
+  }
+
+  .links {
+    &:link, &:visited, &:hover, &:active, &.payrollDeductions { color: white }
+    color: white;
+    width: 284px;
+    margin: 0 10px 8px;
+  }
+
+  .proposalDisclaimer {
+    font-family: $barlow;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    /* identical to box height */
+    display: flex;
+    align-items: center;
+    margin: 0;
+    margin-left: 10px;
+    color: #959595;
+  }
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 915px;
+  flex-wrap: wrap;
+  margin: 0 12.55rem;
+
+  .links {
+    &:link, &:visited, &:hover, &:active, &.payrollDeductions { color: white }
+    color: white;
+    width: 284px;
+    margin: 0 10px 10px;
+  }
+}
+.dashbText{
+  margin-left: 210px;
+}
+
+.links {
+  height: 53px;
+  width: 215px;
+  line-height: 53px;
+  background: $blue-gradient;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: transform 200ms ease-out;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 auto 0 20px;
+
+  &:link, &:visited, &:hover, &:active, &.payrollDeductions { color: white }
+  &:hover { transform: scale(1.01) }
+  &:active { transform: scale(.99) }
+}
+
+.toolTipContainer {
+  display: flex;
+  flex-direction: row;
+
+  .info {
+    font-family: $zilla;
+    font-size: 16px;
+    font-weight: 600;
+    font-style: italic;
+    background: navy-blue(70);
+    color: white;
+    border-radius: 50%;
+    line-height: 18px;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    transition: all 100ms ease-out;
+
+    &:hover, &:focus { transform: scale(.97) }
+    &:active {transform: scale(.95)}
+  }
+  .toolTipBtn{
+    display: flex;
+    align-items: center;
+    margin-top: 30px;
+    height: 30px;
+  }
+}

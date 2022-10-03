@@ -1,0 +1,166 @@
+@import "Components/global.scss";
+$border-width: 0.125rem;
+$font-weight: 400;
+.tablContainer {
+  display: flex;
+  flex-wrap: wrap;
+  .innerT{
+    width: 64%;
+  }
+  .todoList {
+    width: 30%;
+    margin: 30px 0 0 30px;
+  }
+}
+.headText {
+  display: flex;
+}
+
+table.homeTable {
+  table-layout: auto;
+  border: $border-width solid #f0f8fc;
+  background-color: $off-white;
+  height: 100%;
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 32px;
+
+  th {
+    border-bottom: $border-width solid #f0f8fc;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 0.075rem;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  &.hoverable tbody tr:hover:not(.unselectable) {
+    background: $mint;
+    cursor: pointer;
+
+    td:not(:last-child) {
+      border-right: $border-width solid transparent;
+    }
+  }
+
+  thead div {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    line-height: 120%;
+    text-align: inherit;
+    padding: 8px 0;
+  }
+  .btnCell {
+    text-align: center;
+  }
+
+  td {
+    font-family: $barlow;
+    font-weight: 400;
+    padding: $border-width + 0.0625rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    overflow-wrap: break-word;
+    line-height: 19px;
+    font-size: 1rem;
+    color: #959595;
+    &:not(:last-child) {
+      border-right: $border-width solid #f0f8fc;
+    }
+    .viewButton {
+      height: 1.75rem;
+      align-items: center;
+      background: $blue-gradient;
+      padding: 4px 26px;
+      border-radius: 4px;
+      color: white;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin: 0 0 0 auto;
+    }
+    .dismisBtn {
+      height: 1.75rem;
+      background: white;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 12px;
+      color: $blue;
+      border: 1px solid $blue;
+      border-radius: 4px;
+      padding: 4px 16px;
+      text-transform: uppercase;
+    }
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  tr {
+    background-color: $off-white;
+  }
+}
+.myHealthily {
+  margin: 40px 0;
+  h2 {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    color: $blue;
+  }
+}
+.knowelContainer {
+  display: flex;
+  max-width: 700px;
+  .beyonceCont {
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    span{
+      font-family: proxima-nova, sans-serif;
+    }
+  }
+  .beyonceCont > span:first-child {
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 700;
+    letter-spacing: 0.012em;
+    text-transform: uppercase;
+  }
+  .beyonceCont > span:nth-child(2) {
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    padding-top: 4px;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+  }
+  .jay_z > p > span,
+  .knowel > p > span {
+    font-weight: 500;
+    font-family:  $barlow;
+    line-height: 19px;
+  }
+}
+.onBoardBtn{
+  width: 278px;
+  margin-top: 25px;
+  button{
+    display: flex;
+  }
+}
+.tAndC{
+  margin: 24px 0;
+  a{
+    font-weight: 600;
+    text-decoration: underline;
+    &:hover{
+      cursor: pointer;
+    }
+  }
+}

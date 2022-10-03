@@ -1,0 +1,208 @@
+@import 'Components/global.scss';
+
+.mainContainer{
+  max-width: 800px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 0;
+  flex: 1;
+
+  h1 {
+    margin: 40px auto 16px;
+    text-align: center;
+
+    font-family: $proxima;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 140%;
+    /* identical to box height, or 42px */
+    text-align: center;
+
+    /* Navy Blue / Base */
+    color: #16346F;
+  }
+
+  h2 {
+    margin-top: 0 !important;
+    margin-bottom: 40px;
+    font-family: $proxima;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 140%;
+    /* or 22px */
+    text-align: center;
+
+    /* Navy Blue / Base */
+    color: #16346F;
+  }
+}
+
+.noticeBox {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 24px 20px;
+
+  position: static;
+
+  background: rgba(255, 118, 18, 0.1);
+
+  p {
+    font-family: $proxima;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+    /* or 22px */
+
+    color: #16346F;
+
+    flex: none;
+    order: 1;
+    flex-grow: 1;
+    margin: 0px 19px;
+    width: 100%;
+    padding-right: 20px;
+  }
+
+  span {
+    height: 43px;
+    width: 4px;
+    background-color: #E56100;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+}
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.formSectionHeader {
+  color: $navy-blue;
+}
+
+.slugURL {
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 0;
+}
+
+.associations > * {
+  width: 100%;
+}
+
+.associations.halfWidth > * > * {
+  display: inline-block;
+  width: calc(50% - 5px);
+}
+
+
+.associations > * > *:not(h3) {
+  margin-top: 35px;
+}
+
+.associations.halfWidth > * > *:nth-child(odd) {
+  margin-right: 10px;
+}
+
+.termsContainer {
+  margin: 0 0 1.5rem auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+
+  button {
+    color: #3B91D2;
+  }
+}
+
+p.caveats {
+  font-size: 80%;
+  margin-top: 0px;
+  margin-bottom: .5em;
+  color: navy-blue();
+}
+
+.leftShifted {
+  margin-left: -30px;
+}
+
+.individualOptOut {
+  font-family: $proxima;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 140%;
+
+  /* identical to box height, or 14px */
+
+  /* Caution / Base */
+  color: #FF8159;
+
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  *:first-child {
+    flex: 1;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.info {
+  font-family: $zilla;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  background: navy-blue(70);
+  color: white;
+  border-radius: 50%;
+  line-height: 18px;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin-left: 1rem;
+  transition: all 100ms ease-out;
+
+  &:hover, &:focus { transform: scale(.97) }
+  &:active {transform: scale(.95)}
+}
+
+.einModal {
+  max-width: 600px;
+}
+
+.loadingContainer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba($color: blue(50), $alpha: .5);
+}
+
