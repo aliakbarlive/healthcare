@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="536" height="234" viewBox="0 0 536 234">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#e86f39"/>
+      <stop offset="1" stop-color="#ffb78b"/>
+    </linearGradient>
+  </defs>
+  <g id="Group_2446" data-name="Group 2446" transform="translate(-691 -866)">
+    <rect id="Rectangle_2095" data-name="Rectangle 2095" width="18" height="208" transform="translate(1207 890)" fill="url(#linear-gradient)"/>
+    <rect id="Rectangle_2096" data-name="Rectangle 2096" width="18" height="22" transform="translate(1207 868)" fill="#f4f4f4"/>
+    <g id="Rectangle_2084" data-name="Rectangle 2084" transform="translate(691 866)" fill="none" stroke="rgba(252,169,118,0.15)" stroke-width="2">
+      <rect width="536" height="234" stroke="none"/>
+      <rect x="1" y="1" width="534" height="232" fill="none"/>
+    </g>
+    <text id="Billing" transform="translate(712 883)" fill="#707070" font-size="16" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="0" y="12">Billing</tspan></text>
+    <text id="_1_200_1_000_1_000_1_000_1_000_1_000_1_000" data-name="1,200
+1,000
+1,000
+1,000
+1,000
+1,000
+1,000" transform="translate(739 916)" fill="#707070" font-size="16" font-family="Helvetica" letter-spacing="0.05em"><tspan x="0" y="12">1,200</tspan><tspan x="0" y="36">1,000</tspan><tspan x="0" y="60">1,000</tspan><tspan x="0" y="84">1,000</tspan><tspan x="0" y="108">1,000</tspan><tspan x="0" y="132">1,000</tspan><tspan x="0" y="156">1,000</tspan></text>
+    <text id="JAN_FEB_MAR_APR_MAY_JUN_JUL" data-name="JAN
+FEB
+MAR
+APR
+MAY
+JUN
+JUL" transform="translate(713 922)" fill="#d0d0d0" font-size="10" font-family="Helvetica" letter-spacing="0.05em"><tspan x="0" y="8">JAN</tspan><tspan x="0" y="32">FEB</tspan><tspan x="0" y="56">MAR</tspan><tspan x="0" y="80">APR</tspan><tspan x="0" y="104">MAY</tspan><tspan x="0" y="128">JUN</tspan><tspan x="0" y="152">JUL</tspan></text>
+    <text id="_900_OF_1_000_Amount_Spent_of_Monthly_Allowance_enrollment_digital_support_phone_support_Increase_Allowance" data-name="$900 OF $1,000
+
+Amount Spent of Monthly Allowance  
+enrollment / digital support / 
+phone support
+
+Increase Allowance" transform="translate(833 906)" fill="#707070" font-size="27.998" font-family="Helvetica" letter-spacing="0.1em"><tspan x="16.495" y="37" baseline-shift="15.998399848290543">$</tspan><tspan y="37" font-size="48" font-family="Helvetica-Bold, Helvetica" font-weight="700">900</tspan><tspan y="37" font-size="24" font-family="Helvetica-Bold, Helvetica" font-weight="700"> </tspan><tspan y="37" fill="#fca976" font-size="24" font-family="Helvetica-Bold, Helvetica" font-weight="700">OF</tspan><tspan y="37" font-size="24" font-family="Helvetica-Bold, Helvetica" font-weight="700"> </tspan><tspan y="37" baseline-shift="15.998399848290543">$</tspan><tspan y="37" font-size="48" font-family="Helvetica-Bold, Helvetica" font-weight="700">1,000</tspan><tspan font-size="14"><tspan x="155.5" y="69"></tspan><tspan x="43.432" y="86" xml:space="preserve">Amount Spent of Monthly Allowance  </tspan></tspan><tspan font-size="12"><tspan x="35.728" y="101">ENROLLMENT / DIGITAL SUPPORT / </tspan><tspan x="96.398" y="115">PHONE SUPPORT</tspan><tspan x="155.5" y="129"></tspan><tspan x="75.831" y="143">INCREASE ALLOWANCE</tspan></tspan></text>
+    <text id="_90_" data-name="90%" transform="translate(1200 908)" fill="#707070" font-size="16" font-family="Helvetica-Bold, Helvetica" font-weight="700"><tspan x="-32.023" y="0">90</tspan><tspan y="0" font-family="Helvetica" font-weight="400">%</tspan></text>
+    <text id="_100_" data-name="100%" transform="translate(1200 886)" fill="#d0d0d0" font-size="12" font-family="Helvetica" letter-spacing="0.05em"><tspan x="-32.491" y="0">100%</tspan></text>
+    <text id="_80_" data-name="80%" transform="translate(1200 931)" fill="#d0d0d0" font-size="12" font-family="Helvetica" letter-spacing="0.05em"><tspan x="-25.218" y="0">80%</tspan></text>
+    <text id="_70_" data-name="70%" transform="translate(1200 954)" fill="#d0d0d0" font-size="12" font-family="Helvetica" letter-spacing="0.05em"><tspan x="-25.218" y="0">70%</tspan></text>
+    <text id="_60_" data-name="60%" transform="translate(1200 977)" fill="#d0d0d0" font-size="12" font-family="Helvetica" letter-spacing="0.05em"><tspan x="-25.218" y="0">60%</tspan></text>
+    <text id="_50_" data-name="50%" transform="translate(1200 1000)" fill="#d0d0d0" font-size="12" font-family="Helvetica" letter-spacing="0.05em"><tspan x="-25.218" y="0">50%</tspan></text>
+    <text id="_40_" data-name="40%" transform="translate(1200 1023)" fill="#d0d0d0" font-size="12" font-family="Helvetica" letter-spacing="0.05em"><tspan x="-25.218" y="0">40%</tspan></text>
+    <text id="_30_" data-name="30%" transform="translate(1200 1046)" fill="#d0d0d0" font-size="12" font-family="Helvetica" letter-spacing="0.05em"><tspan x="-25.218" y="0">30%</tspan></text>
+    <text id="_20_" data-name="20%" transform="translate(1200 1069)" fill="#d0d0d0" font-size="12" font-family="Helvetica" letter-spacing="0.05em"><tspan x="-25.218" y="0">20%</tspan></text>
+    <text id="_10_" data-name="10%" transform="translate(1200 1092)" fill="#d0d0d0" font-size="12" font-family="Helvetica" letter-spacing="0.05em"><tspan x="-25.218" y="0">10%</tspan></text>
+    <line id="Line_157" data-name="Line 157" x1="23.56" transform="translate(1201.44 913.5)" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.695"/>
+    <line id="Line_168" data-name="Line 168" x1="23.56" transform="translate(1201.44 890.5)" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.695"/>
+    <line id="Line_160" data-name="Line 160" x1="23.56" transform="translate(1201.44 1075.5)" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.695"/>
+    <line id="Line_161" data-name="Line 161" x1="23.56" transform="translate(1201.44 1052.5)" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.695"/>
+    <line id="Line_162" data-name="Line 162" x1="23.56" transform="translate(1201.44 1029.5)" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.695"/>
+    <line id="Line_163" data-name="Line 163" x1="23.56" transform="translate(1201.44 1006.5)" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.695"/>
+    <line id="Line_164" data-name="Line 164" x1="23.56" transform="translate(1201.44 983.5)" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.695"/>
+    <line id="Line_165" data-name="Line 165" x1="23.56" transform="translate(1201.44 959.5)" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.695"/>
+    <line id="Line_166" data-name="Line 166" x1="23.56" transform="translate(1201.44 936.5)" fill="none" stroke="#d0d0d0" stroke-width="1" opacity="0.695"/>
+    <line id="Line_158" data-name="Line 158" y1="226" transform="translate(811 870)" fill="none" stroke="rgba(252,169,118,0.15)" stroke-width="2"/>
+    <line id="Line_159" data-name="Line 159" x2="157" transform="translate(911.5 1060.5)" fill="none" stroke="#fca976" stroke-width="1"/>
+    <line id="Line_169" data-name="Line 169" y2="172" transform="translate(793.5 909.5)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="2" opacity="0.145"/>
+    <line id="Line_170" data-name="Line 170" y2="34" transform="translate(793.5 914.5)" fill="none" stroke="#707070" stroke-linecap="round" stroke-width="4"/>
+  </g>
+</svg>

@@ -1,0 +1,266 @@
+@import 'Components/global.scss';
+
+// Global CSS _only_
+
+* {
+  box-sizing: border-box;
+  font-family: $proxima;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  font-family: $proxima;
+  color: $primary-color;
+  min-height: 100vh;
+  font-size: 16px;
+}
+
+// Globally Remove Safari borders on Submit and ensure they all have a dropshadow+
+input[type=submit] {
+  border-width: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.36);
+  cursor: pointer;
+}
+
+[role=button] {
+  cursor: pointer;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+button {
+  outline: none;
+  user-select: none;
+  font-family: $proxima;
+  letter-spacing: .03rem;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+fieldset {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $secondary-color;
+  font-weight: $header-weight;
+}
+
+:is(b, span) { font-family: inherit }
+
+.dashboard h1 {
+  color: $blue;
+  font-size: 40px;
+  font-weight: 500;
+  margin: 5px 30px 0 0;
+}
+
+.dashboard input[type=submit] {
+  min-width: 10rem;
+  padding: 0 1.25rem;
+  height: 3.5rem;
+  border-radius: 4px;
+  background: $submit-gradient;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-weight: bold;
+  font-size: 1rem;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: $white;
+}
+
+.shop input[type=submit], .shop-next-button {
+  display: block;
+  min-width: 12rem;
+  height: 3.5rem;
+  width: fit-content;
+  border-radius: .5rem;
+  background: $blue;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-size: 1rem;
+  letter-spacing: 0.03rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  margin: 0 auto;
+  color: $white;
+  cursor: pointer;
+  transition: transform 100ms ease-out;
+
+  &:focus { outline: none }
+
+  &:active { transform: scale(.97, .97) }
+
+  &:disabled {
+    opacity: .3;
+    cursor: not-allowed;
+  }
+
+}
+
+// Remove Firefox invalid input red
+:not(output):-moz-ui-invalid {
+  box-shadow: 0 0 1.5px 1px $orange;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+
+  > *:not(#content) {
+    flex: 0;
+  }
+
+}
+
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+#content {
+  padding: $container-padding-top $container-padding-horizontal 4.5rem;
+  margin: 0 auto;
+  width: 100%;
+  min-width: $container-min-width;
+  max-width: $container-max-width;
+  flex: 1;
+}
+
+a {
+  color: $blue;
+
+  &:visited {
+    color: darken($blue, $amount: 20);
+  }
+  &:hover {
+    color: lighten($blue, $amount: 10);
+  }
+}
+
+.link-button {
+  color: $blue;
+  display: inline;
+  text-decoration: underline;
+  font-size: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+  letter-spacing: inherit;
+  line-height: inherit;
+}
+
+.react-datepicker-popper {
+  z-index: 2 !important;
+}
+.employerBenfits{
+  p{
+    font-family: $zilla;
+    font-size: 20px;
+    font-weight: 700;
+    color: $navy-blue;
+  }
+}
+.shop h1 {
+  font-size: $shop-h1-font-size;
+  font-weight: $shop-h1-font-weight-800;
+  color: $periwinkle;
+  margin-top: 0;
+  text-align: center;
+}
+
+.shop h2 {
+  font-size: 1.25rem;
+  font-family: $zilla;
+  color: $navy-blue;
+  text-align: center;
+  font-weight: 600;
+
+}
+
+.form-error {
+  color: #e86f39;
+  margin-top: .25em;
+  &::before {
+    display: inline;
+    content: "⚠ ";
+  }
+}
+
+// override shitty ReactTooltip defaults
+.__react_component_tooltip {
+  transition: all 0.5s ease-in-out !important;
+  opacity: 0 !important;
+  visibility: visible;
+  box-shadow: 0 3px 5px rgba(0,0,0,0.2);
+  font-size: 1rem !important;
+}
+
+.__react_component_tooltip.show {
+  transition: all 0.08s ease-in-out !important;
+  visibility: visible;
+  opacity: 1 !important;
+}
+
+/*
+  Ensure there is a corresponding entry for each .employee and .employer
+  for each new variable you add
+*/
+.employee {
+  --bg-main: #{green(150)};
+  --bg-variant: #{green(100)};
+  --bg-tint: #{green(20)};
+  --bg-shade: #{green(170)};
+  --planPrimary: #{green()};
+}
+
+.employer {
+  --bg-main: #{navy-blue()};
+  --bg-variant: #{periwinkle(90)};
+  --bg-tint: #{blue(10)};
+  --bg-shade: #{navy-blue(140)};
+  --planPrimary: #{periwinkle()};
+}
+
+.blue {
+  --color: #{blue()};
+  --color10: #{blue(10)};
+}
+.navy-blue {
+  --color: #{navy-blue()};
+  --color10: #{navy-blue(10)};
+}
+.green {
+  --color: #{green()};
+  --color10: #{green(10)};
+}
+.purple {
+  --color: #{purple()};
+  --color10: #{purple(10)};
+}
+.gray {
+  --color: #{gray(120)};
+  --color10: #{gray(10)};
+}
+.caution {
+  --color: #{caution()};
+  --color10: #{caution(10)};
+}
+.concern {
+  --color: #{concern()};
+  --color10: #{concern(10)};
+}
