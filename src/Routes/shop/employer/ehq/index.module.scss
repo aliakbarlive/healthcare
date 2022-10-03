@@ -1,0 +1,73 @@
+@import 'Components/global.scss';
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: 615px 464px;
+  gap: 73px;
+  background: #EDF6FB;
+
+  .illustration {
+    width: 100%;
+    height: auto;
+  }
+
+  .innerBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    // background: white;
+    box-shadow: 0px 10px 20px rgba(218, 242, 255, 0.3);
+    border-radius: 6px;
+    font-family: proxima();
+    font-style: normal;
+
+    width: 696px;
+    height: 295px;
+    margin: 100px 0 0 41px;
+
+    background: #FFFFFF;
+    box-shadow: 0px 10px 20px rgba(218, 242, 255, 0.1);
+    border-radius: 6px;
+
+    * {
+      padding-left: 40px;
+      padding-right: 40px;
+    }
+
+    h1 {
+      padding-top: 36px;
+      color: navy-blue();
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 120%;
+      text-align: left;
+    }
+
+    p {
+      color: navy-blue();
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 140%;
+      margin: 6px 0;
+    }
+  }
+
+  .footnote {
+    font-family: proxima();
+    font-style: italic;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 140%;
+
+    /* Navy Blue / Base */
+    color: #16346F;
+
+    margin-left: 41px;
+  }
+
+  svg {
+    height: 412px;
+    margin: 60px;
+  }
+}

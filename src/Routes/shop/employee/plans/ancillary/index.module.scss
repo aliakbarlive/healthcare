@@ -1,0 +1,155 @@
+@import 'Components/global.scss';
+
+.mainContainer {
+  @include default-content-sizing;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  h2 {
+    font-weight: 700;
+    text-align: left;
+    margin: 2rem 0;
+  }
+
+  > button {
+    margin-top: 1rem;
+
+    &.imqButton { background-color: #5C90D5 }
+  }
+}
+.ancilaryHeading{
+h1{
+  font-weight: 700;
+}
+  .ancilaryHeading{
+    font-size: 18px;
+  }
+}
+.contributionModeContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: blue(10);
+  padding: 1rem 1.5rem;
+  color: navy-blue();
+  margin-bottom: 2rem;
+
+  > * { margin-bottom: 1.5rem; }
+
+  p {
+    font-size: 1.25rem;
+    font-family: $zilla;
+    text-align: center;
+    letter-spacing: .015em;
+    font-weight: 600;
+  }
+
+  input {
+    text-align: center;
+    width: 200px;
+    margin-right: 0;
+  }
+}
+
+.contributionModeSwitch {
+  height: 58px !important;
+  width: 200px !important;
+  border-radius: 8px !important;
+  border: solid 1px gray() !important;
+
+  button[data-state=unselected] {
+    background-color: white !important;
+  }
+}
+
+.contributionContainer {
+  background-color: gray(5);
+  padding: 1rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  color: navy-blue();
+  margin-bottom: 2rem;
+
+  p {
+    font-family: $zilla;
+    padding-left: 1.25rem;
+    border-left: 4px solid periwinkle(30);
+    margin-right: 5rem;
+
+    span { font-weight: 700 }
+  }
+}
+
+.allAncillarySection {
+  background: green(25);
+  padding: 3rem;
+  margin-bottom: 1rem;
+}
+
+.aa_cart {
+  background-color: white;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  border-radius: 4px;
+
+  h2 {
+    font-size: 1.5rem;
+    font-family: $proxima;
+    color: navy-blue();
+    margin: 0;
+  }
+
+  p {
+    font-family: $zilla;
+
+    &.disclaimer {
+      font-size: .75rem;
+      font-style: italic;
+    }
+
+    &.remaining {
+      color: periwinkle();
+      font-weight: 600;
+      font-style: italic;
+      margin-bottom: .5em;
+    }
+  }
+
+  .amount {
+
+    font-size: 3rem;
+    font-weight: 600;
+
+    &.ee { color: periwinkle() }
+    &.er { color: green() }
+
+    span {
+      font-size: .5em;
+      font-weight: 700;
+      line-height: 1.8em;
+
+      &:first-child {
+        display: inline-block;
+        vertical-align: top;
+      }
+    }
+  }
+}
+
+.planTypeInfo {
+  font-size: 1rem;
+  color: navy-blue();
+  background: gray(5);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+
+  p {
+    font-family: $zilla;
+    padding: 0 0 0 1.25rem;
+    border-left: 2px solid mint(120);
+  }
+}

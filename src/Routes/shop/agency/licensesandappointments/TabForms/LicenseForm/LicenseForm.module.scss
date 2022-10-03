@@ -1,0 +1,81 @@
+@import 'Components/global.scss';
+
+.pleaseAddParagraph {
+  font-family: $proxima;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+  text-align: center;
+
+  color: #16346F;
+}
+
+.selectCarrierParagraph {
+  font-family: $proxima;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 140%;
+
+  color: #16346f;
+}
+
+.stateLicensesSubcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  justify-content: center;
+  .stateInput {
+    width: 120px;
+    height: 56px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-right: 15px;
+    div {
+      color: #16346F;
+      div {
+        background-color: #F4F4F4;
+      }
+    }
+  }
+  .licenseInput {
+    width: 282px;
+    height: 56px;
+    background: #F4F4F4;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    color: #16346F;
+  }
+  label {
+    z-index: 0;
+  }
+
+  .delete {
+    font-family: $proxima;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    color: #F13A00;
+    padding: 18px;
+  }
+
+  .append {
+    width: 95px;
+    height: 32px;
+    font-family: 'Proxima Nova';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    text-align: center;
+    color: #FFFFFF;
+    background: #3564B9;
+    border-radius: 6px;
+    margin-top: 12px;
+    margin-left: 10px;
+  }
+}

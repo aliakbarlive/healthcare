@@ -1,0 +1,56 @@
+@import 'Components/global.scss';
+
+.mainDiv {
+  .form {
+    h1 {
+      font-family: $proxima;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 20px;
+      line-height: 24px;
+      color: #3564B9;
+    }
+
+    input {
+      background: white;
+      border-radius: 8px;
+    }
+
+    .submitOptions {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      margin-top: 18px;
+    }
+
+    .compensationButton {
+      width: 150px;
+      height: 40px;
+      background: #48A3DB;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+      border-radius: 6px;
+      margin-right: 12px;
+      font-family: $proxima;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 15px;
+      text-align: center;
+      color: #FFFFFF;
+    }
+
+    .skipButton {
+      width: 70px;
+      height: 40px;
+      background: #FFFFFF;
+      border: 1px solid #777777;
+      box-sizing: border-box;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+      border-radius: 6px;
+    }
+  }
+
+  .proposalContainer {
+    position: absolute;
+  }
+}

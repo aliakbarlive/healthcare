@@ -1,0 +1,402 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  height: fit-content;
+  background-image: linear-gradient(96deg, #63b0e0 0%, #48a3db 100%);
+}
+
+.upperContent {
+  margin-top: 60px;
+  min-height: 170px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.upperContainer {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  align-items: center;
+}
+
+.bottomContainer::before {
+  content: "";
+  height: 100%;
+  width: 110%;
+  border-top: 10px solid #d4f8ef;
+  transform: rotate(-4deg);
+  background-image: linear-gradient(250deg, #1b3c7c 0%, #16346f 100%);
+  top: 5vw;
+  left: -5%;
+  position: absolute;
+}
+
+.mainContainer > .bottomContainer * {
+  z-index: 1;
+}
+
+.bottomContainer {
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 38%;
+  overflow: hidden;
+  width: 100%;
+  flex-grow: 1;
+  padding: 70px 0;
+  border-bottom: 10px solid #d4f8ef;
+}
+
+.footer {
+  z-index: 0;
+  height: 100px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ffffff;
+}
+
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.footerContainer > div:first-child {
+  flex-basis: 30%;
+}
+
+.footerContainer > span {
+  flex-basis: 30%;
+}
+
+.buttonContainer {
+  width: 100%;
+  text-align: center;
+}
+
+.emailInput {
+  width: 522px;
+  height: 61px;
+  border-radius: 8px;
+  background-color: #f8f8f8;
+  opacity: 0.8;
+  outline: none;
+  border: none;
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #48a3db;
+  margin-bottom: 38px;
+}
+
+.emailContainer {
+  position: relative;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.nextButton {
+  outline: none;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 0;
+  box-shadow: 0 3px 30px rgba(0, 0, 0, 0.16);
+  background-color: #f8f8f8;
+  width: 265px;
+  height: 62px;
+  color: #48a3db;
+  font-size: 20px;
+  font-weight: 700;
+  z-index: 1;
+}
+
+.nextButton:disabled {
+  color: #e4e4e4;
+}
+
+.stripes {
+  position: absolute;
+  top: 30%;
+}
+
+.info {
+  display: flex;
+  align-items: center;
+  flex-basis: 28%;
+  color: #3564b9;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
+.infoContainer {
+  display: flex;
+  width: 875px;
+  margin: 0 auto;
+  margin-top: 5vw;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.infoIcon {
+  margin-right: 12px;
+  min-width: 41px;
+  min-height: 41px;
+  cursor: pointer;
+}
+
+.infoIcon > g > g > g > path {
+  stroke: #3564b9;
+}
+
+.infoIcon > g > g > g > g > g > path {
+  fill: #3564b9;
+}
+
+.infoLeft {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+}
+
+.eeFaq {
+  margin-left: 53px;
+  color: #3564b9;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  line-height: 26px;
+  text-transform: uppercase;
+}
+
+.healthCareContainer {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%;
+}
+
+.healthCare {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 400;
+  flex-basis: 28%;
+  margin-top: 0;
+}
+
+.healthCareProsper {
+  border-bottom: 5px solid #3564b9;
+  cursor: pointer;
+}
+
+.download {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 309px;
+  height: 56px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.16);
+  border-radius: 4px;
+  background-color: #3564b9;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.benefits {
+  color: #7997d1;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.left, .left * {
+  font-weight: 700;
+}
+
+.benefits h3 {
+  color: #7997d1;
+  margin: 0;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.benefitsProsper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.prosper {
+  height: 56px;
+  width: 67px;
+  margin-right: 12px;
+  fill: #3564b9;
+}
+
+.leftImage {
+  position: absolute;
+  width: 267px;
+  height: 253px;
+  left: -267px;
+  top: 0;
+}
+
+.rightImage {
+  position: absolute;
+  width: 293px;
+  height: 265px;
+  right: -293px;
+  top: 0;
+  z-index: 1;
+}
+
+.tooltips {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  min-width: 512px;
+  padding: 20px;
+  opacity: 1 !important;
+  background-image: linear-gradient(6deg, #29b5aa 0%, #29b473 100%) !important;
+}
+
+.tooltips:after {
+  border: none !important;
+}
+
+.tooltips > h1 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 24px;
+  margin: 0;
+}
+
+.tooltips ul {
+  padding: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 20px 0;
+  margin-left: 20px;
+}
+
+.tooltips p {
+  line-height: 24px;
+  font-size: 16px;
+}
+
+.tooltips p > span {
+  display: block;
+}
+
+.tooltipClose {
+  box-shadow: 0 0 16px rgba(151, 177, 217, 0.5);
+  background-color: #29b473;
+  color: white;
+}
+
+.emailIcon {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 12px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+.employeeModal {
+  color: black;
+}
+
+.employeeModal b {
+  color: #3564b9;
+}
+
+.modalContainer {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 18px;
+}
+
+.cantFind {
+  color: grey;
+  background: none;
+  outline: none;
+  text-decoration: underline;
+  font-size: 18px;
+}
+
+.terms {
+  background: none;
+  outline: none;
+  color: white;
+  text-decoration: underline;
+  font-size: 16px;
+}
+
+.new {
+  color: #27436e;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+}
+
+.closeModal {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(151, 177, 217, 0.5);
+  margin: 10px;
+  padding: 0;
+  height: 52px;
+  width: 52px;
+}
+
+.closeModal > i {
+  color: #e3eeff;
+  font-size: 52px;
+}
+
+.link {
+  text-decoration: underline;
+  background: none;
+  color: #7997d1;
+  padding: 0;
+  font-size: 16px;
+}

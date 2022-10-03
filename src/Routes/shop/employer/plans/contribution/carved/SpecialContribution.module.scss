@@ -1,0 +1,205 @@
+@import 'Components/global.scss';
+
+.container {
+  height: 100%;
+
+  .header {
+    width: 100%;
+    height: fit-content;
+    padding: $shop-top-spacing 0;
+    background-color: $navy-blue;
+    margin-bottom: $shop-top-spacing;
+
+    > *:not(button) {
+      width: 600px;
+      margin: 0 auto;
+    }
+
+    ~ * {
+      width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: $shop-h1-font-size;
+      font-weight: $shop-h1-font-weight;
+      color: white;
+    }
+
+    p {
+      padding-left: 50px;
+      margin: 20px auto 15px;
+      font-size: 1.25rem;
+      color: white;
+      font-family: $zilla;
+      font-weight: 300;
+    }
+
+    ol {
+      padding-left: 50px;
+      margin-bottom: 30px;
+      counter-reset: counter;
+      list-style: none;
+
+      li {
+        counter-increment: counter;
+        font-size: 1.25rem;
+        color: white;
+        font-family: $zilla;
+        font-weight: 300;
+
+        &:before {
+          content: counter(counter) ". ";
+          font-weight: bold;
+          margin-right: 10px;
+        }
+
+        &:not(last-of-type) { margin-bottom: 7px }
+
+        span {
+          font-size: 1rem;
+          font-family: inherit;
+          font-weight: inherit;
+        }
+      }
+    }
+  }
+
+  h2 {
+    font-weight: 600;
+    font-family: $zilla;
+    text-align: center;
+    font-size: 1.5rem;
+    color: $navy-blue;
+
+    span {
+      font-family: inherit;
+      font-size: 1.25rem;
+    }
+
+  }
+
+}
+
+.boolContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+  margin: 50px auto;
+
+  .boolButton {
+    height: 98px;
+    color: $navy-blue;
+    border-radius: 12px;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    p {
+      font-size: 1.125rem;
+      font-family: $zilla;
+      margin: 0;
+      font-style: italic;
+    }
+
+  }
+
+}
+
+.contContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: stretch;
+  align-items: center;
+
+  &:not(:last-of-type) { margin-bottom: 10px; }
+
+  > *:nth-child(2) {
+    flex: 1;
+    margin-right: 15px;
+  }
+
+  .headerNameInput {
+    color: #1F2E4D;
+    height: 60px;
+    position: relative;
+    font-weight: 500;
+  }
+}
+
+.addBox {
+  background-color: #7E8EAF;
+  width: 28px;
+  height: 28px;
+  color: #ffffff;
+  border-radius: 2px;
+  margin-right: 15px;
+  cursor: pointer;
+  transition: transform 200ms ease-out;
+
+  &:active {
+    transform: scale(.95, .95);
+  }
+
+}
+
+.addGroup {
+  width: 114px;
+  height: 60px;
+  background-color: $periwinkle;
+  cursor: pointer;
+  color: white;
+  border-radius: 7px;
+  font-size: 1rem;
+  transition: transform 200ms ease-out;
+  margin-left: 42px;
+  margin-top: 20px;
+
+  &:active {
+    transform: scale(.97, .97);
+  }
+
+}
+
+.employeeSelector {
+  margin-bottom: $shop-top-spacing;
+
+  .coveredBy {
+    display: inline-flex;
+    width: 100%;
+    font-size: 2rem;
+
+    label {
+      color: $primary-color;
+      margin-right: 10px;
+      font-weight: $shop-h1-font-weight;
+      font-size: inherit;
+    }
+
+    input {
+      outline: none;
+      border: none;
+      color: $blue;
+      font-size: inherit;
+      font-weight: $shop-h1-font-weight;
+      border-bottom: 3px solid $primary-color;
+      position: relative;
+      padding-bottom: 5px;
+      text-overflow: ellipsis;
+      flex: 1;
+
+      &::placeholder {
+        color: #D0D0D0;
+      }
+
+    }
+
+  }
+
+  p {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 30px 0 40px;
+  }
+}

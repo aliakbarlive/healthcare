@@ -1,0 +1,30 @@
+@import 'Components/global.scss';
+
+.statContainer {
+  height: 90px;
+  background-color: $white;
+  border: 2px solid $gray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  span:first-child {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 600;
+  }
+
+  span:last-child {
+    text-align: center;
+    font-size: .75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: .06rem;
+  }
+
+}
+
+.orangeBorder {
+  border: 2px solid $orange;
+}

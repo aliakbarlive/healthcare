@@ -1,0 +1,113 @@
+.mainContainer {
+  position: relative;
+  width: 1280px;
+  height: 720px;
+
+  background: #FFFFFF;
+
+  .illustration {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+
+    position: absolute;
+    width: 768px;
+    height: 654px;
+    left: 512px;
+    top: -60px;
+  }
+
+  .leftHandSide {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+
+    position: absolute;
+    width: 580px;
+    height: 407px;
+    left: 70px;
+    top: 106px;
+
+  .purple {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+
+    position: absolute;
+    width: 110px;
+    height: 20px;
+    left: 96px;
+    top: 30px;
+
+    background: #D0CDF1;
+  }
+
+    .h1 {
+      font-family: 'proxima-nova';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 120%;
+      color: #16346F;
+      margin-bottom: 16px;
+      z-index: 1;
+    }
+
+    .paragraphs {
+      font-family: 'proxima-nova';
+      color: #16346F;
+      font-size: 18px;
+
+      .smsl {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 540px;
+        margin-bottom: 16px;
+      }
+
+      .myHealthilyParagraph {
+        margin-bottom: auto;
+      }
+    }
+
+    .buttons {
+      flex: none;
+      order: 1;
+      flex-grow: 0;
+      padding-top: 16px;
+
+      .scheduleCallBtn{
+        color: #FFFFFF;
+        width: 265px;
+        height: 62px;
+        background: #3564B9;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+        border-radius: 6px;
+        margin-right: 20px;
+        font-family: 'proxima-nova';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+      }
+
+      .getStartedBtn{
+        color: #3564B9;
+        width: 265px;
+        height: 62px;
+        background: #FFFFFF;
+        border: 2px solid #3564B9;
+        box-sizing: border-box;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+        border-radius: 6px;
+        font-family: 'proxima-nova';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import 'Components/global.scss';
+
+.eeSupplementalHeading{
+  max-width: 800px;
+  margin: 0 auto;
+  ul{
+    margin: 0;
+    padding: 4px 0;
+    padding-left: 13px;
+  }
+
+h1{
+  font-weight: 700;
+}
+  .eeSupplementalHeading{
+    font-size: 18px;
+  font-weight: 600;
+
+  }
+}
+
+article {
+  width: 953px;
+    margin: 0 auto;
+    .planTitle{
+     text-align: left;
+    //  margin: 40px 7.6rem 32px
+   }
+}

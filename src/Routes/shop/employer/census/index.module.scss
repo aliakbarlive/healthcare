@@ -1,0 +1,178 @@
+@import "Components/global.scss";
+
+.container {
+  width: 45rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  h1 {
+    position: relative;
+    text-align: center;
+    margin: $shop-top-spacing - $container-padding-top auto 0;
+    width: fit-content;
+
+    i {
+      position: absolute;
+      cursor: pointer;
+      right: -1.5rem;
+      top: -0.5rem;
+    }
+
+    svg {
+      width: 18px;
+      height: 18px;
+
+      // Circle
+      g:first-of-type path {
+        fill: none;
+        stroke: $periwinkle;
+      }
+
+      // The 'i' in the circle
+      g:nth-of-type(2) path {
+        fill: $periwinkle;
+        stroke: none;
+      }
+    }
+  }
+
+  h2 {
+    > span {
+      color: $periwinkle;
+      font-weight: 600;
+      font-family: inherit;
+    }
+  }
+
+  h3 {
+    font-family: $zilla;
+    font-style: italic;
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 0.5rem auto 4rem;
+    width: 80%;
+  }
+
+  h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $blue;
+    text-align: center;
+  }
+
+  // "Or"
+  > h4 {
+    margin: 1rem auto 0;
+  }
+}
+.benifitEnrolment {
+  padding-left: 40px;
+  max-width: 1150px;
+  margin: 0 auto;
+  p{
+    font-size: 16px;
+    color: #16346F;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 12px 0 30px 0;
+
+  }
+}
+.waivingEmployeesCopy {
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: 0;
+}
+
+.manually {
+  margin-top: 0.75rem;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin: 0 auto 5rem;
+}
+
+.addEmployee {
+  height: 3rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem;
+  background-color: $periwinkle;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1rem;
+  color: white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+  flex-basis: 45%;
+}
+
+.addEmployee > span {
+  margin-right: 0.5rem;
+  line-height: 1rem;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.exportCensus {
+  background: white;
+  border: 2px solid $periwinkle;
+  box-sizing: border-box;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+  border-radius: .5rem;
+  height: 3rem;
+  font-size: 1rem;
+  color: $periwinkle;
+  font-weight: 600;
+}
+
+.exportCensus:disabled {
+  background: #cacaca;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+  color: #ffffff;
+  border-color: transparent;
+  cursor: not-allowed;
+}
+
+.censusInformationList {
+  font-size: 1rem;
+  color: white;
+  padding-left: 1rem;
+  margin-bottom: 0;
+
+  li:not(:last-of-type) {
+    margin-bottom: 0.75rem;
+  }
+
+  span {
+    font-size: 0.75rem;
+    font-style: italic;
+  }
+}
+
+.paragraph,
+.detail {
+  color: white;
+}
+
+.paragraph {
+  margin-bottom: 0.25rem;
+}
+
+.detail {
+  font-size: 0.75rem;
+  font-weight: 300;
+  font-style: italic;
+  margin-top: 0;
+}

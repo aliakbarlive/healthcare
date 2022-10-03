@@ -1,0 +1,205 @@
+.container {
+  padding: 50px 0;
+  width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.container > h2{
+  font-weight: 600;
+}
+.benifitEnrolment{
+    max-width: 1150px;
+    margin: 0 auto;
+    padding-left: 40px;
+  }
+  .benifitEnrolment > p{
+    font-size: 16px;
+    color: #16346F;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 50px 0 0 0;
+}
+.familyContainer {
+  box-shadow: 0px 0px 1px 1px rgb(0 0 0 / 5%);
+  border-radius: 5px;
+  padding: 18px 18px 0;
+  margin-bottom: 28px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.familyContainer:first-of-type {
+  margin-top: 40px;
+}
+
+.title {
+  margin-bottom: 4px;
+}
+
+.numInputTotal {
+  background-color: #E7E7E7;
+  border-radius: 7px;
+  box-shadow: none;
+  border: none;
+  font-family: inherit;
+  font-size: 30px;
+  color: black;
+  padding: 17px 10px;
+  height: 55px;
+  width: 127px;
+  margin-top: 23px;
+  margin-bottom: 23px;
+  text-align: center;
+  outline: none;
+  display: block;
+}
+
+.textInput {
+  background-color: #F1F3F5;
+  border-radius: 7px;
+  box-shadow: none;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  color: #696969;
+  padding: 17px 23px;
+  height: 55px;
+  width: 100%;
+  outline: none;
+}
+
+.doneButton {
+  border: none;
+  outline: none;
+  background-color: #48A3DB;
+  color: white;
+  font-size: 15px;
+  box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.12);
+  border-radius: 3px;
+  padding: 18px 120px;
+  margin: 70px auto;
+}
+
+.numInputTotal::placeholder {
+  font-size: 29px;
+}
+
+.textInput::placeholder {
+  color: #B2B2B2;
+}
+
+.left, .right {
+  width: calc(50% - 10px);
+  vertical-align: top;
+  margin-bottom: 20px;
+}
+
+.height {
+  display: grid;
+  grid-template-columns : 1fr 1fr;
+  gap: 15px;
+}
+
+.familyTitle {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.inputLabel {
+  display: block;
+  padding-left: 23px;
+  margin-bottom: 9px;
+  margin-top: 13px;
+  color: #1F2E4D;
+  font-size: 15px;
+}
+
+.inputMicroCopy {
+  display: block;
+  padding-left: 23px;
+  padding-right: 23px;
+  margin-bottom: 9px;
+  margin-top: 8px;
+  color: #1F2E4D;
+  font-size: 11px;
+}
+
+.datePicker {
+  background-color: hsla(210, 16%, 95%, 1);
+  border-radius: 7px;
+  box-shadow: none;
+  border: none;
+  font-family: inherit;
+  font-size: 15px;
+  color: hsla(0, 0%, 50%, 1);
+  padding: 17px 23px;
+  outline: none;
+}
+
+.datePicker:focus {
+  border: 1px solid #2684ff;
+}
+
+.redBorder {
+  border: 1px solid red;
+}
+
+.addContainer {
+  margin: 25px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.addDependent:active, .deleteButton:active, .addChild:active, .doneButton:active{
+  box-shadow:none;
+  transform: translateY(1px)
+}
+
+.textInput:focus {
+  border: 1px solid #2684ff;
+}
+
+.addDependent, .addChild{
+  height: 60px;
+  border-radius: 8px;
+  background: #AFAFAF;
+  color: white;
+  font-size: 1rem;
+}
+
+.enter {
+  opacity: 0.01;
+}
+
+.enterActive {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
+
+.leave {
+  opacity: 1;
+}
+
+.leaveActive {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+.deleteButton {
+  float: right;
+  box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.12);
+  background-color: #FCA976;
+  border-radius: 3px;
+  color: #fff;
+  user-select: none;
+  cursor: pointer;
+}
+
+.delete {
+  position: relative;
+  top: 1px;
+}

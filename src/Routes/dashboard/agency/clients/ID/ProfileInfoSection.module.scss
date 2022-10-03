@@ -1,0 +1,111 @@
+@import "Components/global.scss";
+
+.mainContainer {
+  display: grid;
+  grid-template-columns: $profile-section-grid;
+  justify-items: center;
+  gap: 40px;
+}
+
+.todoEnrollment {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.todoEnrollment > :not(:first-child) {
+  margin-top: 8px;
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+
+  span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  div[role="button"] {
+    text-transform: none;
+    letter-spacing: 0.03rem;
+    border-bottom: 1px solid $primary-color;
+    margin-bottom: 0.125rem;
+  }
+
+  i[role="button"] {
+    margin-right: 0.5rem;
+  }
+}
+
+.addNewContact {
+  background: $blue-gradient;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  color: white;
+}
+
+.shoppingButtonNotApproved {
+  padding: 12px 20px;
+
+  width: 251px;
+  height: 36px;
+
+  background: linear-gradient(180deg, #4be0d4 0%, #29b473 100%);
+  border-radius: 4px;
+  color: white;
+
+  font-family: $proxima;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 12px;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-left: 16px;
+}
+
+.shoppingButtonApproved {
+  padding: 12px 20px;
+
+  width: 251px;
+  height: 36px;
+
+  background: linear-gradient(180deg, #fca976 0%, #c44c02 100%);
+  border-radius: 4px;
+  color: white;
+
+  font-family: $proxima;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 12px;
+  display: flex;
+  justify-content: center;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin-left: 16px;
+}
+
+.pipelineDisclaimer {
+  background: #f4f4f4;
+  border: 1px solid #ebebeb;
+  box-sizing: border-box;
+  margin-top: 8px;
+  font-family: $barlow;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  align-items: center;
+
+  color: #959595;
+
+  padding: 15px;
+}

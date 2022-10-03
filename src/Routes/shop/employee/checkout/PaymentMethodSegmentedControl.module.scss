@@ -1,0 +1,31 @@
+@import 'Components/global.scss';
+
+$payment-sc-height: 2rem;
+
+.paymentSC {
+  width: 100%;
+  height: $payment-sc-height;
+  border-radius: 4px;
+  border: 1px solid $periwinkle;
+  margin: 0 auto 1.5rem;
+  overflow: hidden;
+
+  div {
+    display: inline-block;
+    width: 50%;
+    background-color: white;
+    color: $periwinkle;
+    height: $payment-sc-height;
+    font-size: .875rem;
+    text-align: center;
+    line-height: $payment-sc-height;
+    transition: all 200ms ease-out;
+    cursor: pointer;
+  }
+
+  .selected {
+    background-color: $periwinkle;
+    color: white;
+  }
+
+}

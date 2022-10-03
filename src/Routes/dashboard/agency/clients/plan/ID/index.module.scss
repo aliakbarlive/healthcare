@@ -1,0 +1,141 @@
+@import 'Components/global.scss';
+
+.mainContainer{
+  max-width: 800px;
+  display: flex;
+  margin: 0 auto;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  padding: 0;
+  flex: 1;
+
+  h1 {
+    margin-top: $shop-top-spacing - $container-padding-top;
+    text-align: center;
+  }
+}
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.formSectionHeader {
+  color: $navy-blue;
+}
+
+.associations > * {
+  width: 100%;
+}
+
+.associations.halfWidth > * > * {
+  display: inline-block;
+  width: calc(50% - 5px);
+}
+
+
+.associations > * > *:not(h3) {
+  margin-top: 35px;
+}
+
+.associations.halfWidth > * > *:nth-child(odd) {
+  margin-right: 10px;
+}
+
+.termsContainer {
+  margin: 0 0 1.5rem auto;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+
+  button {
+    color: #3B91D2;
+  }
+}
+
+p.caveats {
+  font-size: 80%;
+  margin-top: 0px;
+  margin-bottom: .5em;
+  color: navy-blue();
+}
+
+.leftShifted {
+  margin-left: -30px;
+}
+
+.individualOptOut {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 140%;
+
+  /* identical to box height, or 14px */
+
+  /* Caution / Base */
+  color: #FF8159;
+
+
+  /* Inside Auto Layout */
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 0px 10px;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  *:first-child {
+    flex: 1;
+  }
+
+  a {
+    color: white;
+  }
+}
+
+.info {
+  font-family: $zilla;
+  font-size: 16px;
+  font-weight: 600;
+  font-style: italic;
+  background: navy-blue(70);
+  color: white;
+  border-radius: 50%;
+  line-height: 18px;
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  margin-left: 1rem;
+  transition: all 100ms ease-out;
+
+  &:hover, &:focus { transform: scale(.97) }
+  &:active {transform: scale(.95)}
+}
+
+.einModal {
+  max-width: 600px;
+}
+
+.loadingContainer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba($color: blue(50), $alpha: .5);
+}
+
+.saveButton {
+  height: 3.5rem;
+  color: $navy-blue;
+  font-size: 16px;
+}

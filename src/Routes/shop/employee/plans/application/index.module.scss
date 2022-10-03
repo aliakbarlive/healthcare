@@ -1,0 +1,12 @@
+@import 'Components/global.scss';
+
+.mainContainer {
+  margin: 0 auto;
+  max-width: 800px;
+
+  form { margin-top: 3rem }
+  h3 {
+    color: $periwinkle;
+    font-weight: 600;
+  }
+}

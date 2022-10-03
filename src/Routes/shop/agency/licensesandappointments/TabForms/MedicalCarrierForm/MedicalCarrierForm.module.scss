@@ -1,0 +1,93 @@
+@import 'Components/global.scss';
+.selectCarriersDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 19px 0px;
+  background: #DFDFDF;
+  cursor: pointer;
+
+  p {
+    margin: 0px 10px;
+    font-family: $proxima;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 100%;
+    text-align: center;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #3C3C3C;
+  }
+
+  svg {
+   margin: 0px 10px;
+  }
+}
+
+.ApplicationContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 32px 40px;
+
+  width: inherit;
+
+  .carrierText{
+    width: 64px;
+    height: 14px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin: 24px 0px;
+
+    font-family: $proxima;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 14px;
+    text-align: center;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+
+    color: #3564B9;
+  }
+
+  .carrierEntry {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+
+    button {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      width: 111px;
+      height: 32px;
+
+      color: white;
+      background: #3564B9;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+      border-radius: 6px;
+    }
+
+    p{
+      font-family: $proxima;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 100%;
+      color: #0F244E;
+    }
+  }
+}

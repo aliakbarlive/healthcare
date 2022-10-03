@@ -1,0 +1,72 @@
+@import 'Components/global.scss';
+
+.cart {
+  padding: 1.5rem;
+  margin-bottom: .75rem;
+  border-radius: 4px;
+  border: 1px solid $periwinkle;
+  background-color: white;
+
+  div {
+    font-size: .75rem;
+    font-weight: 500;
+    color: $secondary-color;
+
+    span {
+      color: $periwinkle
+    }
+
+  }
+
+  .amt {
+    color: $periwinkle;
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin: .25rem 0;
+  }
+
+}
+
+.promoCodeForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 2.5rem;
+
+  * {
+    display: inline-block !important;
+    font-size: .625rem !important;
+    font-weight: 600;
+
+    &:not(:last-child) { margin-right: .625rem; }
+  }
+
+  div {
+    color: $periwinkle;
+  }
+
+  input[type=text] {
+    text-transform: uppercase;
+    height: 1.375rem;
+    width: 12rem;
+    border: none;
+    border-radius: .25rem;
+    letter-spacing: .08rem;
+    padding: 0 .75rem;
+
+  }
+
+  input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px #fff inset;
+  }
+
+  input[type=submit] {
+    height: 1.375rem;
+    width: 3.75rem;
+    min-width: unset;
+    padding: unset;
+    margin: unset;
+  }
+
+}

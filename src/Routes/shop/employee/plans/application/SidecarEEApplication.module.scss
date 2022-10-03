@@ -1,0 +1,199 @@
+@import 'Components/global.scss';
+
+.paymentForm {
+  .authorization {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 1rem 0;
+  }
+
+  input[type=checkbox] {
+    position: relative;
+    opacity: 1;
+    cursor: pointer;
+    height: 0;
+    width: 1.5rem;
+    margin: 0 1rem 0 0;
+    appearance: none;
+    flex: 0 0 1.5rem;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: -.1rem;
+      right: 0;
+      height: 1.5rem;
+      width: 1.5rem;
+      background-color: $gray;
+      border-radius: .25rem;
+      transition: all 200ms ease-out;
+    }
+
+    &:checked::after  {
+      content: "√";
+      font-size: 1.25rem;
+      text-align: center;
+      color: white;
+      background-color: blue();
+    }
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &:hover::after, &:disabled::after { background-color: gray(40) }
+    &:hover:checked::after, &:disabled:checked::after { background-color: blue(120) }
+  }
+
+  ul { margin-left: 1rem }
+  li:not(:last-of-type) { margin-bottom: .5rem }
+  li:last-of-type { margin-bottom: 2rem }
+}
+
+.familyMemberContainer {
+  padding-bottom: 2rem;
+  border-bottom: 1px solid gray(40);
+
+  h4 {
+    margin: 0;
+    font-weight: 600;
+  }
+
+  &:first-child { border-top: 1px solid gray(40) }
+  &:not(:first-child) { margin-top: 2rem }
+}
+
+.familyMemberInputs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+
+  input:disabled {
+    background: gray(40);
+    cursor: not-allowed;
+  }
+}
+
+.familyMemberHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  label { margin: 0; }
+  input[type=checkbox] { margin: 0 0 0 1rem }
+}
+
+.ccDisabled div div {
+  background-color: gray(40);
+  cursor: not-allowed;
+}
+
+.documentModal {
+  width: 800px;
+  max-width: 100%;
+
+  object {
+    width: 100%;
+    height: 950px;
+    max-height: calc(100vh - 15rem);
+    background: gray(10);
+    padding: 2rem;
+  }
+}
+
+.applicationStep {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  background: navy-blue(5);
+  border-radius: .5rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  color: $periwinkle;
+
+  h3 {
+    color: $periwinkle;
+    margin: 0;
+  }
+
+  &.completed { background: $mint; color: $green }
+  &.completed h3 { color: $green; }
+
+  &.loading { background: $gray; color: gray(150) }
+  &.loading h3 { color: gray(150); }
+}
+
+$stepDimension: 4rem;
+
+.step {
+  border-radius: .25rem;
+  text-align: center;
+  flex: 0 0 $stepDimension;
+  width: $stepDimension;
+  height: $stepDimension;
+  line-height: $stepDimension;
+  color: $periwinkle;
+  border: 1px solid $periwinkle;
+  background: navy-blue(15);
+  margin-right: 2rem;
+  font-weight: 500;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.completed .step {
+  color: white;
+  border: 1px solid $green;
+  background: $green;
+}
+
+.loading .step {
+  border: 1px solid gray(120);
+  background: gray(30);
+}
+
+.copy {
+  min-height: $stepDimension;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  p { margin-bottom: 0 }
+  a { color: inherit }
+}
+
+.documentButtonsContainer  {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: .5rem;
+
+  button {
+    font-size: .875rem;
+    font-weight: 700;
+    color: white;
+    height: 3rem;
+    border-radius: 6px;
+    background: navy-blue(40);
+    letter-spacing: .008em;
+    box-shadow: 0 4px 12px rgba($color: navy-blue(), $alpha: .3);
+    transform: scale(1);
+    transition: all 100ms ease-out;
+
+    &:hover, :focus {
+      box-shadow: 0 2px 8px rgba($color: navy-blue(), $alpha: .4);
+      transform: scale(.99);
+    }
+
+    &:active { transform: scale(.98) }
+  }
+}

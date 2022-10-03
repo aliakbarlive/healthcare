@@ -1,0 +1,83 @@
+@import 'Components/global.scss';
+.eeContribution{
+  width: 953px;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+.eeContributionContainer{
+  display: flex;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 4px rgb(0 0 0 / 16%);
+  border-radius: 4px;
+  padding: 40px 40px;
+  justify-content: space-around;
+  padding-left: 4px;
+}
+.fixedContribution{
+  max-width: 455px;
+  // margin: 20px 5px;
+  // padding: 0px 34px;
+}
+.fixedContHeading>h2{
+font-weight: 700;
+font-size: 20px;
+font-family: 'Proxima Nova';
+color: #656565;
+text-align: left;
+margin-top: 0;
+}
+
+.fixedContribution>p{
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+color: #656565;
+font-family: $zilla;
+}
+p.contributionInfo{
+font-weight: 500;
+font-size: 12px;
+line-height: 140%;
+letter-spacing: 0.035em;
+color: #656565;
+font-family: $zilla;
+
+}
+.remainErContribution{
+  // margin: 40px 0;
+  // padding: 0 50px;
+  // margin-left: 40px;
+p{
+  font-weight: 600;
+  font-size: 16px;
+  margin: 5px 0;
+  color: #16346F;
+  font-family: $zilla;
+  }
+  .remainContHeading>h2{
+    font-weight: 700;
+    font-size: 20px;
+    font-family: 'Proxima Nova';
+    color: #3564B9;
+    margin: 0;
+
+    }
+}
+
+
+.eeContprice{
+margin-top: 30px;
+color: #29B473;
+}
+.dolar{
+vertical-align: top;
+
+}
+.mon, .dolar{
+font-size: 24px;
+font-weight: 500;
+}
+.amount{
+font-weight: 600;
+font-size: 48px;
+}

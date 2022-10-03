@@ -1,0 +1,121 @@
+@import 'Components/global.scss';
+
+.header {
+  width: 560px;
+  max-width: 100%;
+
+  p {
+    color: $primary-color;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: .25rem 0 0;
+    max-width: 100%;
+  }
+  span {
+    color: $orange;
+    font-family: inherit;
+    font-weight: 700;
+  }
+}
+
+.removePlansContainer {
+  width: 600px;
+  max-width: 100%;
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 0;
+}
+
+.planToRemove {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1.25rem 1.5rem;
+
+  img {
+    display: block;
+    height: 2rem;
+    width: auto;
+  }
+
+  &:nth-child(even) {
+    background: navy-blue(3)
+  }
+}
+
+.carrierName {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 2px 0;
+}
+
+.planName {
+  font-size: 14px;
+  color: $secondary-color;
+  margin: 8px 0 0;
+}
+
+img + .planName {
+  margin-top: 1rem;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: gray(15);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-left: 2rem;
+  height: 50px;
+  flex: 0 0 220px;
+
+  > button {
+    height: 100%;
+    width: 50%;
+    font-size: 14px;
+    font-weight: 500;
+    color: $secondary-color;
+
+    &:first-child { border-right: 1px solid gray(30) }
+  }
+
+  span { font-size: 12px }
+}
+
+.active {
+  background-color: $periwinkle;
+  color: #ffffff !important;
+}
+
+.removingAllActive:first-child {
+  background-color: $orange;
+  color: #ffffff !important;
+}
+
+.removingAllActive:last-child {
+  background-color: $green;
+  color: #ffffff !important;
+}
+
+.applicationButton {
+  display: block;
+  margin: 0 auto;
+  font-size: 14px !important;
+  color: #ffffff;
+  width: 200px;
+  height: 53px;
+  border-radius: 4px !important;
+  background-color: $blue;
+}
+
+.plansButton {
+  display: block;
+  margin: 0 auto;
+  font-size: 14px !important;
+  color: #ffffff;
+  height: 53px;
+  width: 200px;
+  border-radius: 4px !important;
+  background-color: $green;
+}

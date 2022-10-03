@@ -1,0 +1,46 @@
+@import 'Components/global.scss';
+
+.mainContainer {
+  max-width: 870px;
+  margin: 0 auto;
+
+  span { text-align: center }
+  h3 {
+    color: periwinkle();
+    font-weight: 700;
+    font-size: 1.25rem;
+  }
+
+  p {
+    font-family: $zilla;
+    color: navy-blue();
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.groupTypeContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding-top: 1rem;
+}
+
+.group, .individual {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  border-radius: .5rem;
+}
+
+.group { background: blue(10) }
+.individual { background: purple(10) }
+
+.illustration {
+  height: 180px;
+  width: auto;
+}

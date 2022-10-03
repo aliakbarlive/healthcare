@@ -1,0 +1,51 @@
+@import 'Components/global.scss';
+
+.accountForm {
+  width: fit-content;
+  display: grid;
+  row-gap: 10px;
+  margin: 0 auto;
+  justify-items: center;
+
+  h1 {
+    margin-right: 0;
+    text-align: center;
+  }
+
+  h2 {
+    margin-top: 0.5rem;
+    color: $blue;
+    text-align: center;
+  }
+
+  h3 {
+    color: $blue;
+    margin-bottom: 0;
+  }
+
+  fieldset {
+    display: contents;
+  }
+
+  input {
+    width: 400px;
+  }
+
+  input[type=submit] {
+    width: fit-content;
+  }
+
+  div + input[type=submit] {
+    margin-top: 10px;
+  }
+
+  span {
+    margin: 10px 0;
+  }
+
+  p {
+    text-align: justify;
+    margin: 0;
+    width: 400px;
+  }
+}

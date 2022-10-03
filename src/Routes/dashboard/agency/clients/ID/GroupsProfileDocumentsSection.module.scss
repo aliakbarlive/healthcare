@@ -1,0 +1,73 @@
+@import 'Components/global.scss';
+
+$button-margin: 15px;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.docNote {
+  width: 100%;
+  height: 214px;
+  background-color: #f9f9f9;
+  margin-bottom: 8px;
+  padding: 16px;
+  border: none;
+  color: #707070;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.reset, .delete, .submit, .download {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 700;
+  padding: 0 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.reset, .delete {
+  width: 100px;
+  height: 40px;
+  float: right;
+  font-size: .875rem;
+}
+
+.submit, .download {
+  width: 184px;
+  height: 55px;
+  float: left;
+  font-size: 1rem;
+}
+
+.reset {
+  color: $secondary-color;
+  background-image: $gray-gradient;
+}
+
+.delete {
+  background-image: linear-gradient(#ffb78b 0%, #e86f39 100%);
+  margin-left: $button-margin;
+}
+
+.download{
+  background-image: $purple-gradient;
+  text-align: center;
+  text-decoration: none;
+  margin-left: $button-margin;
+  line-height: 55px;
+
+  &:hover, &:active, &:visited {
+    color: white;
+  }
+
+}
+
+.buttonContainer {
+  margin-bottom: 24px;
+}

@@ -1,0 +1,56 @@
+@import 'Components/global.scss';
+
+.requestReviewContainer {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  background-color: $navy-blue;
+  padding: 40px 0;
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    @include default-content-sizing;
+    z-index: 1;
+
+    p {
+      position: relative;
+      font-family: $zilla;
+      font-size: 1.25rem;
+      font-style: italic;
+      color: white;
+      margin-left: 2rem;
+      z-index: 4;
+
+      &:before {
+        content: '?';
+        font-family: $zilla;
+        font-weight: 300;
+        font-size: 6rem;
+        position: absolute;
+        top: 50%;
+        left: -.875rem;
+        transform: translate(-50%, -50%);
+        color: #204589;
+        z-index: -1;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    }
+
+    button {
+      display: block;
+      font-size: 1rem;
+      width: 190px;
+      color: #ffffff;
+      height: 56px;
+      border-radius: 8px;
+      background-color: $periwinkle;
+      box-shadow: 0 2px 9px rgba(0, 0, 0, 0.16);
+      z-index: 2;
+    }
+  }
+
+}

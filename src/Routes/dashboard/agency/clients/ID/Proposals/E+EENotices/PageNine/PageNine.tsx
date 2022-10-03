@@ -1,0 +1,20 @@
+import React from 'react'
+import EPlusEENotices, { leftParagraph, rightParagraph } from '../EPlusEENotices'
+
+export const PageNineNotice: React.FC = () => {
+  return <EPlusEENotices leftParagraphs={leftParagraphs()} rightParagraphs={rightParagraphs()} />
+}
+
+function leftParagraphs() {
+  return <>
+    {leftParagraph(0, 'Uniformed Services Employment and Reemployment Rights Act (USERRA)', 'If you leave your job to perform military service, you have the right to elect to continue your existing employer based health plan coverage for you and your dependents (including spouse) for up to 24 months while in the military. Even if you do not elect to continue coverage during your military service, you have the right to be reinstated in your employer’s health plan when you are reemployed, generally without any waiting periods or exclusions for preexisting conditions except for service-connected injuries or illnesses.')}
+    {leftParagraph(1, 'Genetic Information Non-Discrimination Act (GINA)', 'GINA broadly prohibits covered employers from discriminating against an employee, individual, or member because of the employee’s “genetic information,” which is broadly defined in GINA to mean (1) genetic tests of the individual, (2) genetic tests of family members of the individual, and (3) the manifestation of a disease or disorder in family members of such individual. GINA also prohibits employers from requesting, requiring, or purchasing an employee’s genetic information. This prohibition does not extend to information that is requested or required to comply with the certification requirements of family and medical leave laws, or to information inadvertently obtained through lawful inquiries under, for example, the Americans with Disabilities Act, provided the employer does not use the information in any discriminatory manner. In the event a covered employer lawfully (or inadvertently) acquires genetic information, the information must be kept in a separate file and treated as a confidential medical record, and may be disclosed to third parties only in very limited circumstances.')}
+  </>
+}
+
+function rightParagraphs() {
+  return <>
+    {rightParagraph(0, 'Newborns Act', 'Group health plans and health insurance issuers generally may not, under federal law, restrict benefits for any hospital length of stay in connection with childbirth for the mother or newborn child to less than 48 hours following a vaginal delivery or less than 96 hours following a cesarean section. However, federal law generally does not prohibit the mother’s or newborns attending provider, after consulting with the mother, from discharging the mother or her newborn earlier than 48 hours (or 96 hours, as applicable). In any case, plans and issuers may not, under federal law, require that a provider obtain authorization from the plan or the issuer for prescribing a length of stay not in excess of 48 (or 96) hours.')}
+    {rightParagraph(1, 'Qualified Medical Child Support Order (QMCSO)', 'A QMCSO is a medical child support order issued under State law that creates or recognizes the existence of an “alternate recipient’s” right to receive benefits for which a participant or beneficiary is eligible under a group health plan. An “alternate recipient” is any child of a participant (including a child adopted by or placed for adoption with a participant in a group health plan) who is recognized under a medical child support order as having a right to enrollment under a group health plan with respect to such participant. Upon receipt, the administrator of a group health plan is required to determine, within a reasonable period of time, whether a medical child support order is qualified. In the event you are served with a notice to provide medical coverage for a dependent child as the result of a legal determination, you may obtain information from your employer on the rules for seeking to enact such coverage. These rules are provided at no cost to you and may be requested from your employer at any time.')}
+  </>
+}

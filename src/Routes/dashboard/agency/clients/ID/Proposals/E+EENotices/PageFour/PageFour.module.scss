@@ -1,0 +1,81 @@
+.frame2783 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  order: 4;
+  margin: 16px 0px;
+
+  .frame2393 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 24px;
+
+    width: 320px;
+    background: #16346f;
+    order: 2;
+
+    .stateTitle {
+      position: relative;
+      width: fit-content;
+
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 10px;
+      line-height: 115%;
+
+      display: flex;
+      align-items: center;
+      text-align: center;
+      letter-spacing: 0.035em;
+
+      color: #ffffff;
+
+      margin: 0px 10px;
+    }
+  }
+  .frame2781 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: relative;
+    order: 4;
+    margin: 8px 0px;
+
+    .optionalHeader {
+      position: relative;
+      height: 14px;
+
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 10px;
+      line-height: 140%;
+
+      color: #333333;
+
+      flex: none;
+      order: 0;
+      flex-grow: 0;
+      margin: 4px 0px;
+    }
+    .entry {
+      position: relative;
+      width: 252px;
+
+      font-family: Proxima Nova;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 10px;
+      line-height: 140%;
+
+      color: #3564b9;
+
+      margin: 4px 0px;
+    }
+  }
+}
