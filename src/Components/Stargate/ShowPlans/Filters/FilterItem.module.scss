@@ -1,0 +1,86 @@
+@import 'Components/global.scss';
+
+.filterName {
+  color: $primary-color;
+  font-size: .8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  margin-top: 6px;
+}
+
+.radioContainer {
+  display: inline-block;
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin: 9px 0px;
+  color: $gray-140;
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: 0.07px;
+}
+
+.radioContainer input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.radioContainer:hover input ~ .radio {
+  background-color: $gray-20;
+}
+
+.radioContainer:hover input:checked ~ .radio {
+  background-color: $periwinkle-110;
+}
+
+.radio {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  height: 21px;
+  width: 20px;
+  background-color: $white;
+  transition: background-color 100ms ease-in;
+  border-radius: 3px;
+  border: 1px solid $secondary-color;
+}
+
+.radioContainer input:checked ~ .radio {
+  background-color: $periwinkle;
+}
+
+.radioContainer input:checked ~ .radio:after {
+  display: block;
+}
+
+.radioContainer input:checked {
+  padding: 2px;
+}
+
+.radio:after {
+  content: "√";
+  font-family: Verdana, sans-serif;
+  font-size: 1rem;
+  position: absolute;
+  display: none;
+  top: -2px;
+  left: 2px;
+  color: white;
+}
+
+.hide {
+  display: none;
+}
+
+.filterSet {
+  display: flex;
+  flex-direction: column;
+}

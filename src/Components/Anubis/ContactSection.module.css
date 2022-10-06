@@ -1,0 +1,142 @@
+.container {
+  max-width: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  font-family: "Proxima Nova";
+  margin: 0 40px;
+}
+
+.container > div {
+  width: 100%;
+}
+
+.edit {
+  margin-right: 5px;
+  margin-top: 5px;
+  height: 22px;
+  width: 22px;
+  border: none;
+  opacity: 1;
+  transition: opacity .2s ease-out;
+  /* Pencil icon */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20.87 20.87'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d0d1d0;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3EEdit%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cg id='Group_2377' data-name='Group 2377'%3E%3Crect id='Rectangle_2099' data-name='Rectangle 2099' class='cls-1' x='2.3' y='7.72' width='16.3' height='5.4' transform='translate(-4.31 10.44) rotate(-45)'/%3E%3Cpath id='Rectangle_2100' data-name='Rectangle 2100' class='cls-1' d='M19.3.59l1,1a2,2,0,0,1,0,2.82l-1,1h0L15.5,1.56h0l1-1A2,2,0,0,1,19.3.59Z'/%3E%3Cpath id='Polygon_15' data-name='Polygon 15' class='cls-1' d='M0,20.87l2-5.8L5.8,18.89Z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat;
+}
+
+.editing .edit{
+  opacity: 0;
+  cursor: unset;
+}
+
+.flagged {
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  margin-left: 20px;
+  background-image: linear-gradient(180deg, #e86f39 0%, #ffb78b 100%);
+}
+
+.container input {
+  border: none;
+  color: #707070;
+  display: block;
+  width: 100%;
+  transition: all .2s ease-out;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: none;
+}
+
+.container input::placeholder {
+  text-transform: capitalize;
+  color: silver
+}
+
+/* Wierd CSS issue with the placeholder not matching the normal type styles */
+.container input::placeholder {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.name > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.name > div > input {
+  font-size: 24px;
+  font-weight: 700;
+  width: fit-content;
+}
+
+.name > input {
+  font-size: 30px;
+  font-weight: 300;
+  margin-top: 5px;
+}
+
+.contact {
+  margin-top: 10px;
+}
+
+.contact > div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 3px;
+}
+
+.contact input {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex: 0 0 80px;
+  height: 100%;
+  margin-right: 30px;
+  color: #d0d0d0;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+}
+
+.label button {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #D0D0D0;
+  border-radius: 50%;
+  color: #D0D0D0;
+  font-size: 17px;
+  font-weight: 600;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.label p {
+  text-transform: uppercase;
+  text-align: right;
+  flex-grow: 1;
+}
+
+.saveButton {
+  height: 40px;
+  margin-left: 120px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  background-image: linear-gradient(180deg, #4be0d4 0%, #29b473 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  width: 100px;
+  float: right;
+}
+
+.editing input:not(:disabled) {
+  background-color: #f9f9f9;
+}

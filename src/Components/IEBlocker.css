@@ -1,0 +1,40 @@
+#ie-blocker {
+  width: 100vw;
+  height: 100vh;
+  padding: 1rem 5rem 5rem;
+}
+
+#ie-blocker > img {
+  height: 3rem;
+  width: auto;
+  margin-bottom: 3rem;
+}
+
+#ie-blocker h1 {
+  font-weight: 600;
+}
+
+#ie-blocker div {
+  display: flex;
+  flex-direction: row;
+  margin-top: 2rem;
+}
+
+#ie-blocker div a:not(:last-child) {
+  margin-right: 3rem;
+  text-align: center;
+}
+
+#ie-blocker a img {
+  display: block;
+  width: 4rem;
+  height: auto;
+  margin: 0 auto 1rem;
+}
+
+#ie-blocker a img {
+  display: block;
+  width: 4rem;
+  height: auto;
+  margin: 0 auto 1rem;
+}

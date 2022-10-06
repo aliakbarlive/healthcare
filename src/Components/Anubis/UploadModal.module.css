@@ -1,0 +1,92 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container h2 {
+  margin: 0;
+  margin-bottom: 27px;
+  color: #707070;
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.2px;
+  text-align: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.content > :not(:first-child) {
+  margin-top: 20px;
+}
+
+.uploadBox {
+  width: 522px;
+  height: 85px;
+  border-radius: 6px;
+  border: 1px solid #d7d7d7;
+  background-color: #fbfbfb;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px 35px;
+}
+
+.fileLabel {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 199px;
+  height: 55px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  background-image: linear-gradient(180deg, #b7bcc3 0%, #707070 100%);
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.16px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.fileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  margin-right: 35px;
+  width: 260px;
+}
+
+.selectedFile {
+  color: #dadada;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+}
+
+.fileName {
+  border-bottom: 2px solid #cccccb;
+}
+
+.tag, .note {
+  height: 51px;
+  border-radius: 6px;
+  border: 1px solid #d7d7d7;
+  background-color: #ffffff;
+  color: #aaaaaa;
+  font-size: 16px;
+  font-weight: 400;
+  outline: none;
+  padding: 16px;
+}
+
+.note {
+  height: 151px;
+}
+
+.submit {
+  align-self: center;
+}

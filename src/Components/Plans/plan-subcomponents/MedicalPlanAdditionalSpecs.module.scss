@@ -1,0 +1,389 @@
+/* Chuck this file out and rewrite this monstrosity */
+
+.collapsedSpecs :global(.link-button), .expandedSpecs :global(.link-button) {
+  color: inherit
+}
+
+.collapsedSpecs:first-of-type {
+  order: 1;
+  width: 100%;
+}
+
+.collapsedSpecs:nth-of-type(2) {
+  order: 2;
+  width: 100%;
+}
+
+.expandedSpecs {
+  min-height: 290px;
+}
+
+.expandedSpecs:first-of-type {
+  order: 2;
+  width: 50%;
+}
+
+.expandedSpecs:nth-of-type(2) {
+  order: 1;
+  width: 50%;
+  height: 100%;
+}
+
+.expandedSpecs > div {
+  flex-wrap: wrap;
+}
+
+.expandedSpecs:nth-of-type(2) .medicalSpecsPlanBox:first-of-type {
+  flex: 0 0 calc(100% - 10px);
+  order: 1;
+  height: calc(50% - 10px);
+}
+
+.expandedSpecs:nth-of-type(2) .medicalSpecsAsteriskPlanBox {
+  order: 2;
+  height: calc(50% - 10px);
+  flex: 0 0 calc(33.33% - 10px);
+}
+
+.oonSpecsPlanBox {
+  flex-basis: calc(50% - 15px) !important;
+}
+
+.expandedSpecs:last-of-type .medicalSpecsPlanBox {
+  flex: 0 0 calc(33.33% - 10px);
+  order: 3;
+  height: calc(50% - 10px);
+}
+
+.expandedSpecs:first-of-type .medicalProsperContainer,
+.expandedSpecs:first-of-type .medicalSpecsContainer{
+  height: 100%;
+}
+
+.expandedSpecs:first-of-type > div {
+  height: 50%;
+}
+
+.expandedSpecs:nth-of-type(2) .medicalSpecsPlanBox:first-of-type {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.expandedSpecs:nth-of-type(2) .medicalSpecsPlanBox:first-of-type .medicalPlanSpecsCopy{
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.expandedSpecs:nth-of-type(2)
+.medicalSpecsPlanBox:first-of-type
+.medicalPlanSpecsCopy {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  flex-grow: 0;
+}
+
+.expandedSpecs:nth-of-type(2)
+.medicalSpecsPlanBox:first-of-type
+p {
+  transform: scale(1.2);
+}
+
+.expandedSpecs:nth-of-type(2)
+.medicalSpecsPlanBox:first-of-type
+.dollarFigure {
+  margin: 0 40px;
+}
+
+.medicalSpecsContainer {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  color: #656565;
+  flex-grow: 1;
+  text-align: center;
+  align-self: center;
+}
+
+.expandedSpecs > .medicalSpecsContainer {
+  height: 100%;
+}
+
+.medicalProsperContainer {
+  display: flex;
+  flex-direction: row;
+  color: #656565;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  text-align: left;
+  height: 100%;
+}
+
+.medicalProsperContainer > div {
+  display: flex;
+  flex-direction: row;
+}
+
+.medicalProsperContainer .medicalProsperPlanBox {
+  width: calc(50% - 10px);
+  padding: 10px
+}
+
+.prosper100 {
+  font-size: 14px;
+  color: #29B473;
+  margin: 0;
+  text-align: center;
+}
+
+.prosperCovered {
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #29B473;
+  text-transform: uppercase;
+  margin: 0;
+  text-align: center;
+}
+
+.medicalSpecsLeftAlign {
+  text-align: left;
+}
+
+.medicalSpecsPlanBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 calc(25% - 10px);
+  flex-grow: 1;
+  margin: 0 10px 10px 0;
+}
+
+.medicalProsperPlanBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  margin: 0 10px 10px 0;
+}
+
+.medicalProsperPlanBox > div {
+  height: 30px;
+}
+
+.medicalProsperPlanBox > .medicalLabel {
+  text-align: left;
+  flex: 1;
+  margin-left: .5rem;
+}
+
+.medicalLabel {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.medicalLabel > span {
+  font-weight: 300;
+  line-height: 18px;
+}
+
+.visitAndPrescContainer {
+  justify-content: flex-start;
+}
+
+.visitAndPrescContainer:first-child > .medicalVisitAndPrescLabel > p:first-of-type {
+  flex: 0 0 70px;
+}
+
+.visitAndPrescContainer:nth-child(2) > .medicalVisitAndPrescLabel > p:first-of-type {
+  flex: 0 0 60px;
+}
+
+.medicalVisitAndPrescLabel {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 5px;
+}
+
+.medicalVisitAndPrescLabel > p:first-of-type {
+  font-size: 12px;
+  margin: 0 .5rem 0 0;
+}
+
+.medicalVisitAndPrescLabel > p:nth-of-type(2) {
+  color: #29B473;
+  font-size: .75rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.medicalSpecsAsteriskPlanBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 10px;
+  width: 100%;
+  margin: 0 10px 10px 0;
+  padding: 0 20px;
+  background-color: #FCFCFC;
+  border: 1px #FBF1EA solid;
+  color: #959595;
+  text-align: left;
+  flex: 0 0 calc(25% - 10px);
+}
+
+.medicalSpecsAsteriskPlanBox p {
+  margin: 0 10px 0;
+}
+
+.asterisk {
+  line-height: 10px;
+  display: inline-block;
+  color: #FCA976;
+  font-size: 24px !important;
+}
+
+.dollarFigure {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 10px 0 0;
+}
+
+.dollarFigure span {
+  font-size: 12px;
+}
+
+.medicalPlanSpecsCopy {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.inNetwork {
+  font-size: 12px;
+  font-weight: 600;
+  margin: 3px 0 0;
+}
+
+.coveredFigure {
+  font-size: 18px;
+  font-weight: 600;
+  color: #29B473;
+  margin: 10px 0 0;
+}
+
+.coveredText {
+  font-size: 12px;
+  font-weight: 600;
+  color: #29B473;
+  margin: 2px 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.youPayText {
+  font-size: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: #27436E;
+  margin: 10px 0 0;
+}
+
+.youPayFigure {
+  font-size: 14px;
+  font-weight: 600;
+  color: #27436E;
+  margin: 2px 0 0;
+}
+
+.isProsperOnlyBox {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  border-radius: 4px;
+  background-color: rgba(235, 235, 235, .9);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.medicalSpecsLimitedPlan {
+  background-color: #EAEAEA !important;
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 12px;
+  border-color: #DFDFDF !important;
+  text-align: left;
+  color: #686868;
+}
+
+.medicalLimitedPlanBox {
+  font-family: Proxima Nova;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 110%;
+}
+
+.whatIsSidecar {
+  flex-direction: column !important;
+  background-color: #E0DEF6 !important;
+  border-color: #918ADF !important;
+  box-shadow: 0px 0px 6px rgba(31, 26, 93, 0.25);
+  padding: 16px 24px !important;
+  justify-content: space-evenly;
+
+  & > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    h3 {
+      padding: 0;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 22px;
+      color: #6258D1;
+    }
+  }
+
+  p {
+    margin: 0;
+    margin-top: 13px;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+}
+
+.whatIsSidecarModal {
+  position: relative;
+  width: 800px;
+  max-width: 100%;
+  padding-bottom: 129% !important;
+  max-height: calc(100vh - 12rem);
+
+  object {
+    position: absolute;
+    top: 1.25rem; bottom: 1.25rem; left: 1.25rem; right: 1.25rem;
+    width: calc(100% - 2.5rem);
+    height: calc(100% - 2.5rem);
+  }
+}

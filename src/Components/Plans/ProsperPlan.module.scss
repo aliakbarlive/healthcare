@@ -1,0 +1,60 @@
+@import './plan-subcomponents/Plan.module.scss';
+
+.prosperBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+  margin: 0 10px 10px 0px;
+  color: $green;
+}
+
+.prosperBox:last-of-type { padding-left: 25px }
+
+.benefits p {
+  text-align: left;
+  color: #656565;
+  margin: 7px 0;
+  padding-left: 1em;
+  font-size: 14px;
+
+  &::before {
+    content: "▶";
+    font-size: 10px;
+    margin-right: 1em;
+    margin-left: -2em;
+  }
+}
+
+.prosperIncluded {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 2rem;
+  margin: 2rem 0 .25rem 0;
+  text-align: center;
+}
+
+.employerCovering {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+
+.prosperEmployerPaysLabel {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.prosperCostSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 34%;
+  padding: 0 !important;
+}
+
+.prosperDetailsSection {
+  display: flex;
+  flex: 1 1
+}

@@ -1,0 +1,65 @@
+@import 'Components/global.scss';
+
+.container {
+  width: 170px;
+  height: 60px;
+  border-radius: 8px;
+  background-color: #ffffff;
+  opacity: 0.77;
+  display: inline-block;
+  padding: 7px 13px 10px;
+  border: 1px solid $mint;
+  box-shadow: 0 3px 6px rgba(41, 181, 115, 0.1);
+  text-align: left;
+  margin-right: 15px;
+  overflow-y: hidden;
+}
+
+.removeButton {
+  font-size: 15px;
+  float: right;
+  top: 0px;
+  position: relative;
+  right: -8px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.planName {
+  white-space: nowrap;
+  overflow: hidden;
+  width: 100%;
+  min-height: 15px;
+  line-height: 15px;
+  text-overflow: ellipsis;
+  color: #707070;
+  font-size: .625rem;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.infoContainer {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  img {
+    max-height: 20px;
+    align-self: flex-start;
+    pointer-events: none;
+  }
+
+}
+
+.planCarrierLogo {
+  flex: 1;
+  background-size: contain;
+  background-position: left;
+  background-repeat: no-repeat;
+}
+
+.planCarrier {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

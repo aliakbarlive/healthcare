@@ -1,0 +1,115 @@
+@import "Components/global.scss";
+@import "Components/Anubis/AddButton.module.scss";
+
+$summary-width: 220px;
+
+.container {
+  position: relative;
+}
+
+.summaryContainer {
+  display: flex;
+  align-items: center;
+  outline: none;
+  justify-content: space-between;
+  width: 1157px;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.summary {
+  display: flex;
+  align-items: center;
+  width: $summary-width;
+  color: $secondary-color;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 3.2rem;
+  position: relative;
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 7px solid #707070;
+    overflow: visible;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+  }
+
+  &.expanded::after {
+    top: 52%; /* +2% to line things up visually */
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 7px solid #707070;
+  }
+}
+
+.addButton {
+  width: $add-button-width;
+  margin-left: auto;
+}
+
+.showAllLabel {
+  position: absolute;
+  top: 15px;
+  left: $summary-width + 50;
+  width: fit-content;
+  padding: 0.2rem 1rem 0.4rem 1rem;
+  margin: 0.5rem 0;
+  text-align: right;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    margin: 0;
+    padding: 0;
+
+    &:checked ~ span {
+      background-color: $green;
+      border: 0px;
+      cursor: not-allowed;
+
+      &:after {
+        display: block;
+      }
+    }
+
+    + span {
+      position: absolute;
+      top: 47%; // Not 50% to account for the line height of the label
+      left: -20px;
+      height: 20px;
+      width: 20px;
+      background-color: $white;
+      border-radius: 4px;
+      border: 1px solid #d0d0d0;
+      transform: translateY(-50%);
+      transition: right 200ms ease-out, background-color 100ms ease-out;
+
+      &:after {
+        content: "√";
+        font-family: Verdana, sans-serif;
+        font-size: 1.125rem;
+        font-weight: 400 !important;
+        color: #ffffff;
+        position: absolute;
+        display: none;
+        left: 2px;
+        top: -2px;
+      }
+    }
+  }
+}

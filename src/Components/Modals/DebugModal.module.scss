@@ -1,0 +1,26 @@
+@import 'Components/global.scss';
+
+.container {
+  max-width: 100%;
+  width: 600px;
+  h4 {
+    color: navy-blue(80);
+    font-weight: 700;
+  }
+
+  *:first-child { margin-top: 0 }
+
+  details {
+    margin-top: .75rem;
+  }
+
+  table {
+    width: 100%;
+    border: 1px solid gray(80);
+
+    td:first-child {
+      width: 140px;
+      font-weight: 600;
+    }
+  }
+}

@@ -1,0 +1,166 @@
+@import 'Components/global.scss';
+
+$box-margin: .625rem;
+$corner-radius: .25rem;
+
+.container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  &, > * {
+    transition: all 200ms ease-out;
+  }
+
+  &.selected {
+    width: calc(100% + 1.25rem);
+    > div:nth-child(2) {
+      border-bottom-left-radius: 4px;
+    }
+
+    .planBodyContainer {
+      width: calc(100% - 1.25rem) !important;
+    }
+  }
+}
+
+.planBodyContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  background-color: $gray;
+  padding-left: 1.25rem;
+  padding-bottom: $box-margin;
+  border-bottom-left-radius: $corner-radius;
+  border-bottom-right-radius: $corner-radius;
+  position: relative;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.section { margin: $box-margin $box-margin 0 0 }
+
+.box {
+  border-radius: $corner-radius;
+  background-color: #ffffff;
+  border: 1px solid #EBEBEB;
+  padding: 15px;
+  overflow: hidden;
+  margin-right: $box-margin;;
+  margin-bottom: $box-margin;
+}
+
+.label {
+  text-align: center;
+  font-size: .875rem;
+  font-weight: 600;
+}
+
+span[data-carrier-label] {
+  position: relative;
+  img { padding-bottom: 5px }
+  display: inline-block;
+
+  &::after {
+    position: absolute;
+    bottom: 0em;
+    left: 0;
+    right: 0;
+    text-align: right;
+    content: attr(data-carrier-label);
+    font-size: .5em;
+    height: 1.25em;
+  }
+}
+
+.placeholderContainer {
+  border-top-left-radius: $corner-radius;
+  border-bottom-left-radius: $corner-radius;
+  border-bottom-right-radius: $corner-radius;
+  background-color: $gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  margin-bottom: 1.25rem;
+
+  //Loader
+  div > div {
+    background-color: $dodo;
+  }
+}
+
+.specBox {
+  border: 1px solid gray(20);
+  border-radius: $corner-radius;
+  overflow: hidden;
+  background: white;
+  color: var(--planPrimary);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.specBoxLabel {
+  padding: .5rem $box-margin;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .03em;
+}
+
+:global(.employer) .specBoxLabel {
+  flex: 0 0;
+  background: var(--planPrimary);
+  color: white;
+}
+
+:global(.employee) .specBoxLabel {
+  color: gray(110);
+  padding-bottom: 0;
+}
+
+.specChildWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: $box-margin;
+}
+
+:global(.employer) .specChildWrapper { flex: 1 1 }
+:global(.employee) .specChildWrapper { color: navy-blue() }
+
+.specsError {
+  flex: 1 1;
+  margin-right: $box-margin;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: caution(20);
+  color: caution();
+  text-align: center;
+}
+
+.amount {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: inherit;
+  margin-bottom: .25rem;
+
+  span {
+    font-size: .75rem;
+
+    &:first-child {
+      font-weight: 700;
+      display: inline-block;
+      vertical-align: top;
+      line-height: 1.25rem;
+    }
+  }
+}

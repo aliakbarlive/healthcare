@@ -1,0 +1,76 @@
+@import 'Components/global.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 0 0 34%;
+  padding: 0 !important;
+}
+
+.tier {
+  flex: 0 0 1.75rem;
+  background-color: $green;
+  text-align: center;
+  font-size: .75rem;
+  text-transform: uppercase;
+  line-height: 2rem;
+  color: white;
+  letter-spacing: .13rem;
+  font-weight: 700;
+}
+
+.premiums {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem 2rem;
+}
+
+.ee {
+  color: $green;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+
+  // $
+  span:first-child {
+    display: inline-block;
+    vertical-align: top;
+    font-size: .5em;
+    line-height: 1.8em;
+    margin: 0;
+    padding-top: 0px;
+  }
+
+  // /mo
+  span:nth-child(2) {
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+}
+
+.afterContribution {
+  letter-spacing: .13rem;
+  font-weight: 700;
+  text-align: center;
+  font-size: .75rem;
+  text-transform: uppercase;
+  color: $green;
+}
+
+.er {
+  font-size: .875rem;
+  font-family: $zilla;
+  font-weight: 300;
+  text-align: center;
+  margin-top: 1.5rem;
+
+  em {
+    font-family: inherit;
+    font-weight: 600;
+  }
+
+}

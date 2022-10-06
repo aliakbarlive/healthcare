@@ -1,0 +1,81 @@
+@import '../plan-subcomponents/Plan.module.scss';
+
+.specs {
+  flex: 1 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.spec {
+  flex: 0 0 calc(33.33% - #{$box-margin});
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: .875rem;
+  font-weight: 600;
+
+  > div:nth-child(2) {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    color: $navy-blue;
+    margin: .5rem 0 0;
+  }
+
+  span {
+    font-size: .875rem;
+    display: block;
+    color: $navy-blue;
+    line-height: .875rem;
+    margin-top: .5rem;
+  }
+
+}
+
+.bsSpec {
+  > div:nth-child(2) {
+    font-size: 1rem !important;
+  }
+}
+
+.separateSpecs {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+}
+
+.er, .ee {
+  display: grid;
+  gap: $box-margin;
+  flex: 1 1;
+  margin: $box-margin $box-margin * 2 $box-margin 0
+}
+
+.er {
+  grid-template:
+    "a b"
+    "a c";
+  > *:first-child { grid-area: a }
+  > *:nth-child(2) { grid-area: b }
+  > *:last-child { grid-area: c }
+}
+
+.ee {
+  grid-template:
+    "a a b b c c"
+    "d d d e e e";
+  > *:first-child { grid-area: a }
+  > *:nth-child(2) { grid-area: b }
+  > *:nth-child(3) { grid-area: c }
+  > *:nth-child(4) { grid-area: d }
+  > *:last-child { grid-area: e }
+}
+
+.network {
+  font-size: .75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .06em;
+}

@@ -1,0 +1,123 @@
+@import 'Components/global.scss';
+
+.contributionContainer {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.amount {
+  height: 58px;
+  border-radius: 8px;
+  font-weight: 600;
+  background-color: white;
+  border: 1px solid #AAAAAA;
+  color: navy-blue();
+}
+
+input[type=number].amount::-webkit-inner-spin-button,
+input[type=number].amount::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  min-width: 0;
+}
+
+.amount::placeholder {
+  color: gray();
+}
+
+input.amount {
+  font-size: 34px;
+  font-weight: 600;
+  padding: 8px;
+  text-align: center;
+  -moz-appearance:textfield; /* Firefox */
+  font-family: inherit;
+}
+
+.contType {
+  height: 56px;
+  border-radius: 5px;
+}
+
+.contType > div > div > div {
+  border: solid 1px gray(80);
+}
+
+.contType > div > div:first-of-type > div > div {
+  color: navy-blue();
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.contType > div > div:nth-of-type(2) > div > div {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.description {
+  font-size: .75rem;
+  text-transform: initial;
+  margin-top: .25rem;
+  color: navy-blue();
+}
+
+.ancillaryAllTiersWrapper {
+  width: 300px;
+  height: 50px;
+}
+.ancillaryAllTiersText {
+  margin-top: 8px;
+  position: static;
+  width: 175px;
+  height: 22px;
+  left: 0px;
+  top: 0px;
+  text-transform: uppercase;
+
+  font-family: Proxima Nova, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+
+  display: flex;
+  align-items: center;
+
+  /* Navy Blue / Base */
+
+  color: #16346F;
+}
+
+.ancillaryAllTiersDescription {
+  position: static;
+  width: 244px;
+  height: 12px;
+  left: 0px;
+  top: 26px;
+
+  font-family: Proxima Nova, sans-serif;
+  font-style: italic;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 12px;
+  /* identical to box height */
+
+
+  /* Navy Blue / Base */
+
+  color: #16346F;
+
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+  margin: 4px 0px;
+}

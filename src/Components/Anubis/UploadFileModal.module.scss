@@ -1,0 +1,114 @@
+@import 'Components/global.scss';
+
+.modal {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+  position: relative;
+}
+
+.deets {
+  color: #959595;
+  font-weight: 400;
+  margin: 0;
+  margin-top: 5px;
+}
+
+.download {
+  align-self: center;
+  display: block;
+  color: #707070;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 22px 0;
+}
+
+.download > a {
+  color: #707070;
+  font-weight: 700;
+}
+
+.uploadContainer {
+  align-self: center;
+  width: 522px;
+  height: 169px;
+  border-radius: 6px;
+  border: 1px solid #d7d7d7;
+  background-color: #fbfbfb;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 35px;
+  margin-bottom: 12px;
+
+  fieldset {
+    display: contents;
+  }
+
+}
+
+.uploadRow {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.uploadComplete {
+  display: block;
+  color: #707070;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20px;
+  width: 160px;
+  text-align: center;
+}
+
+.uploadFile {
+  display: block;
+}
+
+.uploadButtons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.browse, .submit {
+  width: 199px;
+  height: 55px;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.16px;
+  text-transform: uppercase;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  text-align: center;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.browse {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(180deg, #b7bcc3 0%, #707070 100%);
+}
+
+.browse > input[type=file] {
+  display: none;
+}
+
+.submit {
+  background-image: linear-gradient(180deg, #4be0d4 0%, #29b473 100%);
+}
+
+.submit:disabled {
+  background-image: linear-gradient(180deg, #b7bcc3 0%, #707070 100%);
+  cursor: not-allowed;
+}
+
+.uploadedFile {
+  border-bottom: 2px solid #cccccb;
+}

@@ -1,0 +1,149 @@
+@import 'Components/global.scss';
+@import 'Components/atoms.scss';
+
+.LandingBody {
+  position: absolute;
+  top: 0;
+
+  .backgroundContainer {
+    position: absolute;
+    left: 470px;
+    z-index: -1;
+    bottom: 200px;
+
+    .background {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      top: 0px;
+      right: 0px;
+      width: 749px;
+      height: 654px;
+      z-index: auto;
+
+      background: linear-gradient(
+                      180deg,
+                      rgba(248, 252, 255, 0.6) 0%,
+                      #e8f5ff 100%
+      );
+      border-radius: 0px 0px 50px 50px;
+      // transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+  }
+
+  .contentContainer {
+    // margin-left: 64px;
+    margin-top: 150px;
+
+    font-family: $proxima;
+
+    .title {
+      color: $navy-blue;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 48px;
+      line-height: 120%;
+      text-align: left;
+      margin-bottom: px(20);
+    }
+
+    .paragraph, .paragraphAdditional {
+      width: px(600);
+      margin-bottom: px(16);
+
+      color: $navy-blue;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 140%;
+    }
+
+    .paragraphAdditional {
+      height: px(190);
+    }
+  }
+
+  .buttonGroup {
+    margin-top: 40px;
+
+    .primaryBtn {
+      @include atomButtonPrimary;
+      width: px(240);
+      margin-right: px(16);
+      display: inline-block;
+    }
+
+    .outlinedBtn {
+      @include atomButtonSecondary;
+      width: px(240);
+      display: inline-block;
+    }
+  }
+
+  .contactInfoContainer {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+    width: 888px;
+    height: 158px;
+    background: #ffffff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.04), 0px 2px 6px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+
+    .companyName {
+      margin-top: 24px;
+      margin-left: auto;
+      margin-right: auto;
+
+      font-family: $proxima;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 115%;
+      /* or 18px */
+
+      text-align: center;
+      text-transform: uppercase;
+
+      /* Navy Blue / Base */
+
+      color: $navy-blue;
+    }
+
+    .contactInfo {
+      display: flex;
+      flex-direction: row;
+      text-align: center;
+      justify-content: space-around;
+
+      article {
+        display: flex;
+        flex-direction: column;
+
+        img {
+          width: 24px;
+          height: 24px;
+          margin: 0 auto;
+        }
+
+        p.text {
+          margin-top: 4px;
+          margin-bottom: 0;
+
+          font-family: $proxima;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 140%;
+          /* or 22px */
+
+          text-align: center;
+          color: #686868;
+        }
+      }
+    }
+  }
+}

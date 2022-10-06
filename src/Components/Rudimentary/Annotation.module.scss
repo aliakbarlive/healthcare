@@ -1,0 +1,11 @@
+@import "Components/global.scss";
+
+.abbr {
+  text-decoration-line: underline;
+  text-decoration-color: $green;
+  text-decoration-style: wavy;
+}
+
+.tooltip {
+  max-width: 14em;
+}

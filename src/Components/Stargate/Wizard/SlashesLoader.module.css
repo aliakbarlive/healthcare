@@ -1,0 +1,56 @@
+.loader {
+  margin: 0 auto;
+  min-height: 120px; /* No clue why it wasn't respecting height, but this works */
+  max-height: 120px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.loader > div {
+  width: 20px;
+  height: 110px;
+  margin-right: 35px;
+  border-radius: 10px;
+  background-color: #D4F8EF;
+  transform: rotate(45deg);
+  opacity: .25;
+  animation:
+    pulse
+    .8s
+    ease-out
+    0s
+    infinite
+    normal
+    none
+    running;
+}
+
+.loader > div:first-of-type {
+  animation-delay: .0s;
+}
+
+.loader > div:nth-of-type(2) {
+  animation-delay: .2s;
+}
+
+.loader > div:last-of-type {
+  animation-delay: .4s;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: .25;
+    height: 110px;
+  }
+
+  50% {
+    opacity: .75;
+    height: 118px;
+  }
+
+  100% {
+    opacity: .25;
+    height: 110px;
+  }
+}

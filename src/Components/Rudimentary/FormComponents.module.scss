@@ -1,0 +1,41 @@
+@import 'Components/global.scss';
+
+.formSection {
+  display: grid;
+  align-items: start;
+  gap: 1rem 2.5rem;
+  grid-auto-flow: row;
+  margin-bottom: 2rem;
+  grid-template-rows: auto;
+}
+
+.formRow {
+  display: grid;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.formSectionHeader {
+  color: $navy-blue;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+
+  &:not(:first-child) {
+    margin: 0.5rem 0 0;
+  }
+  margin: 0;
+}
+
+.formError {
+  color: #E88D55;
+  font-size: .75rem;
+
+  a {
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: 600;
+  }
+}

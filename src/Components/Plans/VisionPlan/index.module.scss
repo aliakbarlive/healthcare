@@ -1,0 +1,65 @@
+@import '../plan-subcomponents/Plan.module.scss';
+
+.specs {
+  flex: 1;
+  padding-right: $box-margin;
+  padding-bottom: $box-margin;
+
+  table {
+    width: 100%;
+    height: 100%;
+    font-size: .875rem;
+    text-align: left;
+    border: 1px solid #EBEBEB;
+    padding: 0;
+    color: $secondary-color;
+    border-collapse: collapse;
+
+    thead {
+      background: var(--bg-variant);
+    }
+
+    th {
+      color: white;
+      height: 2rem;
+      vertical-align: middle;
+    }
+
+    th, td {
+      margin: 0;
+      font-size: .875rem;
+
+    }
+
+    td {
+      color: navy-blue();
+      font-weight: 500;
+      vertical-align: text-top;
+      padding-top: 1.25rem;
+      padding-bottom: 1.25rem;
+    }
+
+    :is(td, th):first-child {
+      font-weight: 700;
+      width: 30%;
+      padding-left: 2rem;
+      padding-right: 1rem;
+    }
+
+    :is(td, th):nth-child(2) {
+      width: 55%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    :is(td, th):last-child {
+      width: 15%;
+      padding-left: 1rem;
+      padding-right: 2rem;
+    }
+
+    tbody tr:nth-child(even) {
+      background-color: var(--bg-tint);
+    }
+  }
+}

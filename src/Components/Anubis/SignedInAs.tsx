@@ -1,0 +1,20 @@
+export const signedInAsName = [
+  { powerLevel: 0, route: '/shop/employee', shopDashName: 'Employee Shop', label: 'Employee' },
+  { powerLevel: 0, route: '/dashboard/employee', shopDashName: 'Employee Dashboard', label: 'Employee' },
+  { powerLevel: 1, route: '/dashboard/employee', shopDashName: 'Employee Dashboard', label: 'Group Manager' },
+  { powerLevel: 1, route: '/dashboard/employer', shopDashName: 'Employer Dashboard', label: 'Group Manager' },
+  { powerLevel: 1, route: '/shop/employee', shopDashName: 'Employee Shop', label: 'Group Manager' },
+  { powerLevel: 1, route: '/shop/employer', shopDashName: 'Employer Shop', label: 'Group Manager' },
+  { powerLevel: 3, route: '/shop/employer', shopDashName: 'Employer Shop', label: 'Producer' },
+  { powerLevel: 3, route: '/dashboard/employer', shopDashName: 'Employer Dashboard', label: 'Producer' },
+  { powerLevel: 3, route: '/dashboard/agency', shopDashName: 'Agency Dashboard', label: 'Producer' },
+  { powerLevel: 4, route: '/shop/employer', shopDashName: 'Employer Shop', label: 'Principal' },
+  { powerLevel: 4, route: '/dashboard/employer', shopDashName: 'Employer Dashboard', label: 'Principal' },
+  { powerLevel: 4, route: '/shop/agency', shopDashName: 'Agency Shop', label: 'Principal' },
+  { powerLevel: 4, route: '/dashboard/agency', shopDashName: 'Agency Dashboard', label: 'Principal' },
+  { powerLevel: 5, route: '/shop/agency', shopDashName: 'Agency Shop', label: 'MyHealthily Employee' },
+  { powerLevel: 5, route: '/shop/employee', shopDashName: 'Employee Shop', label: 'MyHealthily Employee' },
+  { powerLevel: 5, route: '/dashboard/agency', shopDashName: 'Agency Dashboard', label: 'MyHealthily Employee' },
+  { powerLevel: 5, route: '/dashboard/employee', shopDashName: 'Employee Dashboard', label: 'MyHealthily Employee' },
+  { powerLevel: 5, route: '/dashboard/employer', shopDashName: 'Employer Dashboard', label: 'MyHealthily Employee' }
+]

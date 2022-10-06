@@ -1,0 +1,103 @@
+@import 'Components/global.scss';
+
+.bg {
+  position: fixed;
+  z-index: 9999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.infoAndAffirmationsBG {
+  background-color: #F5FEFB;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.infoAndAffirmationsContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: $periwinkle;
+  width: 500px;
+  min-height: 220px;
+  position: relative;
+  padding: 40px 70px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px #00000038;
+  opacity: 0;
+  top: -20px;
+  animation:
+    fadeIn
+    .5s
+    1
+    normal
+    ease-out
+    forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    font-size: 36px;
+    top: 0px
+  }
+}
+
+.infoAndAffirmationsContainer {
+  h1 {
+    color: white;
+    font-size: 1.6rem;
+    margin: 0;
+  }
+
+  p {
+    color: white;
+    font-family: $zilla;
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 0;
+
+    > b {
+      font-weight: 600;
+      font-family: inherit;
+    }
+  }
+
+  span {
+    font-size: .75rem;
+    color: white;
+    font-family: $zilla;
+    font-style: italic;
+    margin-top: 1.25rem;
+  }
+}
+
+.close {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='106' height='106' viewBox='0 0 106 106'%3E%3Cdefs%3E%3Cfilter id='a' x='0' y='0' width='106' height='106' filterUnits='userSpaceOnUse'%3E%3CfeOffset input='SourceAlpha'/%3E%3CfeGaussianBlur stdDeviation='0' result='b'/%3E%3CfeFlood flood-color='%2397b1d9' flood-opacity='0'/%3E%3CfeComposite operator='in' in2='b'/%3E%3CfeComposite in='SourceGraphic'/%3E%3C/filter%3E%3C/defs%3E%3Cg transform='translate(-369 -554)'%3E%3Cg transform='matrix(1, 0, 0, 1, 369, 554)' filter='url(%23a)'%3E%3Ccircle cx='29' cy='29' r='29' transform='translate(24 24)' fill='%231E4FAF'/%3E%3C/g%3E%3Cg transform='translate(1.5 -0.5)'%3E%3Cline x2='27' y2='28' transform='translate(407.5 593.5)' fill='none' stroke='%2397B1D9' stroke-width='6'/%3E%3Cline x1='27' y2='28' transform='translate(407.5 593.5)' fill='none' stroke='%2397B1D9' stroke-width='6'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat;
+  background-size: 80px;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 50;
+  transition: transform 200ms ease-in-out;
+  cursor: pointer;
+}
+
+.close:hover {
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}

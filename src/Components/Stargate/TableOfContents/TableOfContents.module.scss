@@ -1,0 +1,89 @@
+@import 'Components/global.scss';
+
+$toc-height: 62px;
+
+.bgContainer {
+  position: -webkit-sticky;
+  position: sticky;
+  height: $toc-height;
+  width: 100%;
+  background-color: #FBFBFB;
+  z-index: 999;
+  box-shadow: 0px 6px 12px -8px rgba(0,0,0,0.06);
+  border-bottom: 0.5px solid rgba(0,0,0,0.15);
+}
+
+.container {
+  position: relative;
+  min-width: $container-min-width;
+  width: 100%;
+  height: $toc-height;
+  max-width: $container-max-width;
+  padding: 0 #{$container-padding-horizontal/100%*100}vw;
+  margin: 0 auto;
+}
+
+.logo {
+  position: absolute;
+  height: 100%;
+  width: 20%;
+  left: 0;
+  top: 0;
+  padding-left: inherit;
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    display: block;
+    height: 100%;
+    max-width: 100%;
+    padding: .75rem 0;
+  }
+}
+
+.sections {
+  display: flex;
+  flex-direction: row;
+  width: 64%;
+  margin: 0 auto;
+}
+
+.backTo {
+  position: absolute;
+  width: 250px;
+  height: 26px;
+  left: 0;
+  bottom: -26px;
+  margin: 0;
+  background-color: rgba(166, 166, 166, 0.6);
+  border-bottom-right-radius: 6px;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: left;
+  padding-left: 20px;
+  letter-spacing: 0.09em;
+}
+
+.signout {
+  position: absolute;
+  width: 200px;
+  height: 26px;
+  right: 0;
+  bottom: -26px;
+  margin: 0;
+  background-color: rgba(166, 166, 166, 0.6);
+  border-bottom-left-radius: 6px;
+
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: left;
+  padding-left: 20px;
+  letter-spacing: 0.09em;
+}

@@ -1,0 +1,188 @@
+@import "Components/global.scss";
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;1,100;1,200;1,300&display=swap");
+$border-width: 0.125rem;
+$font-weight: 400;
+
+table.candor {
+  table-layout: fixed;
+  border: $border-width solid #f0f8fc;
+  background-color: $off-white;
+  height: 100%;
+  width: 100%;
+  border-collapse: collapse;
+
+  th {
+    border-bottom: $border-width solid #f0f8fc;
+    font-size: 0.75rem;
+    font-weight: $font-weight;
+    letter-spacing: 0.075rem;
+    text-transform: uppercase;
+    user-select: none;
+  }
+
+  &.hoverable tbody tr:hover:not(.unselectable) {
+    background: $mint;
+    cursor: pointer;
+
+    td:not(:last-child) {
+      border-right: $border-width solid transparent;
+    }
+  }
+
+  thead div {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    line-height: 120%;
+    text-align: inherit;
+  }
+
+  td {
+    font-family: $barlow;
+    font-weight: $font-weight;
+    padding: $border-width + 0.0625rem 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    &:not(:last-child) {
+      border-right: $border-width solid #f0f8fc;
+    }
+
+    a {
+      font-family: $barlow;
+      font-size: 1rem;
+      color: $secondary-color;
+
+      &:visited,
+      &:active {
+        color: $secondary-color;
+      }
+
+      &:hover {
+        color: black;
+      }
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      list-style-type: none;
+      display: inline;
+    }
+
+    li:not(:last-child):after {
+      content: ", ";
+    }
+  }
+
+  th,
+  td {
+    padding: 0.5rem;
+    text-align: left;
+  }
+
+  tr:nth-child(odd) {
+    background-color: $off-white;
+  }
+}
+
+.unselectable {
+  //NOTE used above
+}
+
+.isSorted {
+  font-weight: $font-weight + 200;
+  color: black;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.right {
+  text-align: right;
+}
+
+.left {
+  text-align: left;
+}
+
+.center {
+  text-align: center;
+}
+
+.wrap {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scrollable {
+  overflow-y: scroll;
+  display: block;
+  width: 100%;
+
+  thead,
+  tbody,
+  tr {
+    display: block;
+  }
+
+  th,
+  td {
+    display: inline-block;
+  }
+}
+
+.arrow {
+  position: relative;
+}
+
+.needAttention {
+  height: 17px;
+  width: 17px;
+  background-image: $flagged-gradient;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+.itsFine {
+  height: 17px;
+  width: 17px;
+  background-color: $disabled-gray;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+.tableDiscalimer {
+  display: flex;
+  margin-top: 8px;
+  font-size: 14px;
+  line-height: 17px;
+  color: #959595;
+  font-style: italic;
+  div > label {
+  font-family: "Barlow Semi Condensed", sans-serif !important;
+  }
+  .discLabel{}
+}
+.downloadReport {
+  height: 2.5rem;
+  align-items: center;
+  background: $blue-gradient;
+  padding: 0 20px;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  margin: 0 0 0 auto;
+
+  i {
+    margin-right: 0.5rem;
+  }
+}

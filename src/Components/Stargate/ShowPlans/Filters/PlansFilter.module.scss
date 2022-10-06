@@ -1,0 +1,23 @@
+@import 'Components/global.scss';
+
+.container {
+  width: 100%;
+
+  > p:first-child {
+    font-size: 1rem;
+    color: $gray-120;
+
+    span { font-weight: 700; }
+  }
+
+  .filterItemContainer {
+    border-top: 2px solid $dodo;
+    padding: 15px 0;
+
+    p {
+      width: fit-content;
+      color:  $gray-130;
+      font-weight: bold;
+    }
+  }
+}

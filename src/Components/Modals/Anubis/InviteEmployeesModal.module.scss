@@ -1,0 +1,15 @@
+@import "Components/global.scss";
+
+.button {
+  padding: 1rem;
+  width: 100%;
+  background: $purple-gradient;
+  border-radius: .25rem;
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+  transition: transform 200ms ease-out;
+
+  &:hover { transform: scale(1.01) }
+  &:active { transform: scale(1) }
+}

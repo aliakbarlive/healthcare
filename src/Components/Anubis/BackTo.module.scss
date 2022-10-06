@@ -1,0 +1,61 @@
+
+@import 'Components/global.scss';
+
+.goBack {
+  position: relative;
+  color: $dodo;
+  font-size: 1rem;
+  font-weight: 600;
+  background: none;
+  margin-bottom: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  width: fit-content;
+  border-bottom: 2px solid $dodo;
+
+  &:before{
+    content: '';
+    position: absolute;
+    //To line up visually
+    top: 55%;
+    transform: translateY(-50%);
+    left: -20px;
+    margin-right: 5px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 10px solid $dodo;
+  }
+}
+
+.goBack2021 {
+  position: relative;
+  color: #595959;
+  font-size: 1rem;
+  font-weight: 600;
+  background: none;
+  margin-bottom: 40px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0;
+  width: fit-content;
+
+  &:before{
+    content: '';
+    position: absolute;
+    //To line up visually
+    top: 55%;
+    transform: translateY(-50%);
+    left: -20px;
+    margin-right: 5px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 10px solid #595959;
+  }
+}

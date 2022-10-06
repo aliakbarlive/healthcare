@@ -1,0 +1,9 @@
+@import 'Components/global.scss';
+
+.column {
+  @include flex-column
+}
+
+.row {
+  @include flex-row
+}

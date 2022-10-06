@@ -1,0 +1,82 @@
+@import 'Components/global.scss';
+
+$buttonWidth: 200px;
+$buttonHeight: 53px;
+$savings-calc-radius: 100px;
+
+.header {
+  width: 100%;
+  padding: $shop-top-spacing - 1.25rem;
+  background-color: $periwinkle;
+  overflow: auto;
+
+  > div {
+    max-width: $container-max-width;
+    min-width: $container-min-width;
+    padding: 0 $container-padding-horizontal;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: $buttonWidth 1fr $buttonWidth;
+    grid-template-areas: 'left title right';
+    justify-items: center;
+    align-items: center;
+
+    p {
+      color: white;
+      padding-right: 3.25rem;
+      text-align: center;
+    }
+  }
+
+  h1 {
+    font-size: $shop-h1-font-size;
+    font-weight: $shop-h1-font-weight;
+    color: white;
+    text-align: center;
+    margin: 0;
+    line-height: $buttonHeight;
+  }
+
+  button {
+    width: $buttonWidth;
+    height: $buttonHeight;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    font-size: .875rem;
+    border-radius: 4px;
+    color: white;
+
+    &:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    &.waiveButton {
+      background-color: $disabled-gray; // Not really disabled, but just the color in the design
+      color: secondary-gray;
+    }
+
+    &.backButton { background-color: #5C90D5 }
+    &.nextButton { background-color: $blue }
+    &:nth-child(2) { margin-top: 1rem }
+  }
+}
+
+.eeHeading {
+  > div {
+    display: grid;
+    grid-template-columns: $buttonWidth 1fr $buttonWidth;
+    grid-template-areas: 'left title right';
+    align-items: center;
+  }
+
+  h1 {
+    margin: 0 auto;
+    grid-area: title;
+  }
+
+  button { grid-area: right }
+}
+
+.backbutton { grid-area: left }
+:is(.waiveButton, .imqButton, .nextButton, .buttonsContainer) { grid-area: right }
+:is(.titleArea, .header h1) { grid-area: title }

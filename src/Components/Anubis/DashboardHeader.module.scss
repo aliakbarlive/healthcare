@@ -1,0 +1,86 @@
+@import 'Components/global.scss';
+.headerContainer{
+  display: flex;
+  align-items: center;
+}
+.container {
+  height: 100%;
+  padding: .5rem 0;
+  max-width: fit-content;
+  white-space: nowrap;
+}
+
+.container > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+.dashEmployer{
+  font-size: 12px;
+    font-weight: 400;
+    color: #686868;
+}
+.erSigned{
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100%;
+  color: #2D2D2D;
+}
+.erSigned> .signedAsEr{
+  color: #48A3DB;
+}
+.erSigned> .agencyDash{
+  color: #6258d1;
+}
+
+ .erSigned > .signedAsEe{
+    color: #29b473;
+  }
+  .erSigned > span{
+    color: #48a3db;
+  }
+.container > div {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.userProfileImg {
+  height: 46px;
+  width: 46px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  overflow: hidden;
+  padding: .25rem;
+  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+}
+
+.userName {
+  white-space: nowrap;
+  display: block;
+  font-size: .875rem;
+  font-weight: 600;
+  line-height: .875rem;
+  margin-bottom: .25rem;
+}
+
+.profileMenuItem {
+  cursor: pointer;
+  text-decoration: underline !important;
+  color: rgba(149, 149, 149, 1);
+  font-size: .75rem;
+  line-height: .75rem;
+  opacity: 0.6;
+}
+
+.container a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}

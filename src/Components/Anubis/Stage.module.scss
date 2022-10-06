@@ -1,0 +1,46 @@
+@import 'Components/global.scss';
+
+.stage {
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 0;
+  height: fit-content;
+  overflow: visible;
+
+  // 106% because we want the arrow to overlap with the next stage
+  svg {
+    width: 106%;
+
+    path {
+      transition: fill 200ms ease-out;
+    }
+
+    path:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.quantity {
+  fill: $secondary-color;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: 2.4px;
+  margin-bottom: 14px;
+  margin-top: 30%;
+}
+
+.label {
+  display: block;
+  fill: $secondary-color;
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .1rem;
+  font-weight: 500;
+  white-space: pre-wrap;
+  text-align: center;
+}
+
+.stage:last-of-type:after, .stage:last-of-type:before {
+  border: none;
+}

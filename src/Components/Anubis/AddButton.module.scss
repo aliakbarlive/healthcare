@@ -1,0 +1,29 @@
+@import 'Components/global.scss';
+
+$add-button-width: 240px;
+
+.addBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.addBtn span {
+  vertical-align: middle;
+  font-size: 1rem;
+  color: $secondary-color;
+}
+
+.addBtn i {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 2rem;
+  color: #E4E4E4;
+  font-weight: 600;
+  border: 1px solid #CCCCCB;
+  margin-right: 15px;
+}

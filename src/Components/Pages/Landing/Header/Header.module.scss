@@ -1,0 +1,55 @@
+@import 'Components/global.scss';
+
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  position: sticky;
+  top: 0px;
+  height: 80px;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+    width: 214px;
+    height: 68px;
+  }
+
+  .notice {
+    margin-left: 50px;
+    font-family: $proxima;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 115%;
+    text-align: center;
+    text-transform: uppercase;
+    color: #959595;
+  }
+
+  .button {
+    width: 98px;
+    height: 32px;
+    margin-left: auto;
+    background: $periwinkle;
+    border-radius: 6px;
+
+    font-family: $proxima;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 12px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #ffffff;
+  }
+
+  // .modal {
+  //   width: 589px;
+  //   height: 326px;
+  // }
+}

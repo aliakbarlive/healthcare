@@ -1,0 +1,84 @@
+@import 'Components/global.scss';
+
+.selectionVisual {
+  width: 80%;
+  height: 61px;
+  background-color: #EBEBEB;
+  transition: width 500ms, padding-left 500ms, background-color 500ms;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+}
+.selectorContainer > * {
+  user-select: none;
+}
+
+.selectorContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 61px;
+  cursor: pointer;
+  position: relative;
+}
+
+.nameContainer {
+  user-select: none;
+}
+
+.active, .check {
+  width: 100%;
+}
+
+.active {
+  background-color: #16346F;
+}
+
+.check {
+  background-color: blue(20);
+}
+
+.check:hover {
+  background-color: blue(30);
+}
+
+.activeName {
+  color: #48A3DB;
+}
+
+.checkName {
+  color: black;
+}
+
+.addContainer {
+  float: left;
+  position: absolute;
+  margin-left: 5%;
+  z-index: 1;
+}
+
+.addBox {
+  background-color: #EBEBEB;
+  width: 28px;
+  height: 28px;
+  transition: background-color 500ms;
+  color: #ffffff;
+  border-radius: 2px;
+  display: inline-flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.activeBox {
+  background-color: #ffffff;
+  color: #48A3DB;
+}
+
+.checkBox {
+  background-color: $periwinkle;
+  color: #ffffff;
+}

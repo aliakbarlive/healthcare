@@ -1,0 +1,84 @@
+@import 'Components/global.scss';
+
+.container h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #707070;
+  text-align: center;
+  margin: 40px 0 0 0;
+  width: 100%;
+  letter-spacing: 1.2px;
+}
+
+.container hr {
+  width: 100%;
+  border-top: 2px solid #D0D0D0;
+}
+
+.profilePic {
+  width: 170px;
+  height: 170px;
+  background-color: #F4F4F4;
+  border-radius: 50%;
+}
+
+.profilePic h1 {
+  line-height: 170px;
+  text-align: center;
+  color: #D0D0D0;
+  margin: 0;
+}
+
+.items {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.items > * {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.items span {
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+
+  button {
+    font-size: inherit;
+    letter-spacing: inherit;
+    text-transform: inherit;
+    color: $blue;
+    text-decoration: underline;
+
+    &:hover {
+      color: #73b8e3;
+    }
+
+    &:first-of-type {
+      margin-bottom: 20px;
+    }
+
+  }
+
+}
+
+.items > *:last-of-type > span:only-child {
+  width: 100%;
+  text-align: center;
+}
+
+.items > *:last-of-type > div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.spacer {
+  margin-top: 15px;
+}

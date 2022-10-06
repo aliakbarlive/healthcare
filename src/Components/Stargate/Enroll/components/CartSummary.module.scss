@@ -1,0 +1,121 @@
+@import 'Components/global.scss';
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  background: green(5);
+  border-radius: 4px;
+  gap: 1rem 2rem;
+  padding: 1.5rem;
+
+  button { grid-column: 1 / -1 }
+  p { margin-bottom: 0 }
+
+  h2 {
+    font-family: $zilla;
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: .02em;
+    color:#656565;
+    margin-top: 0 !important;
+    text-align: inherit;
+  }
+
+  h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #000000;
+  }
+
+  hr {
+    border-top: 1px solid gray(40);
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  hr + p {
+    color: green();
+    font-size: 1.5rem;
+    margin: 0 !important;
+    text-align: right !important;
+    font-weight: 700;
+
+    span { font-weight: 700 }
+  }
+}
+h2.estimatedCost{
+    color: $periwinkle;
+    font-weight: 700;
+    font-size: 30px;
+    font-family: 'proxima-nova';
+}
+.estimatedTCost{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  h3{
+    color: black;
+    width: 121px;
+    font-weight: 700;
+  }
+  p{
+    color: #29b573;
+    margin-right: 0;
+    font-size: 24px;
+    font-weight: 600;
+  span{
+    font-size: 14px;
+    margin: 0;
+    font-weight: 600;
+  }
+  }
+}
+.line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.summary {
+  height: 100%;
+  text-align: left;
+
+  p {
+    font-family: $zilla;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 600;
+    color:#656565;
+    margin-bottom: 0;
+    text-align: inherit;
+    margin-bottom: 1rem;
+  }
+}
+
+.summaryPlanCost {
+  font-size: 24px;
+  margin: 0 !important;
+  text-align: right;
+  font-weight: 600;
+  color: #707070;
+}
+
+:is(.summaryPlanCost, hr + p) span {
+  font-size:14px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.nextButton {
+  height: 48px;
+  background-color: blue();
+  color: white;
+  font-size: 1rem;
+  border-radius: 6px;
+  font-weight: 600;
+}

@@ -1,0 +1,132 @@
+// colors
+$BASE_FONT_SIZE: 16;
+$mint: #d4f8ef;
+$green: #29b573;
+
+$blue: #48a3db;
+$periwinkle: #3564b9;
+$periwinkle-110: #305AA6;
+$periwinkle-130: #254682;
+$light-periwinkle: #97B1D9;
+$navy-blue: #16346f;
+$light-blue: #71c6fc;
+$sky-blue: #E3EEFF;
+
+$primary-color: #959595;
+$secondary-color: #707070;
+$gray: #f4f4f4;
+$gray-base: #959595;
+$gray-20: #EAEAEA;
+$gray-120: #777777;
+$gray-130: #686868;
+$gray-140: #595959;
+$disabled-gray: #e4e4e4;
+$placeholder-gray: #A2A2A2;
+$dodo: #d0d0d0;
+$border-gray: #9cb2db;
+$off-white: #fcfcfc;
+$white: #ffffff;
+$orange: #FCA976;
+$purple: #372DA3;
+$purple-light: #EFEEFA;
+$purple-dark: #6258D1;
+
+$flagged-gradient: linear-gradient(#e86f39 0%, #ffb78b 100%);
+$submit-gradient: linear-gradient(#4be0d4 0%, $green 100%);
+$gray-gradient: linear-gradient(#f8f8f8 0%, $disabled-gray 100%);
+$blue-gradient: linear-gradient($light-blue 0%, #3f8fc1 100%);
+$purple-gradient: linear-gradient(#b8baf7 0%, #7292ea 100%);
+
+@function concern($amount: 100) { @return colorShade(#FFF859, $amount) }
+@function caution($amount: 100) { @return colorShade(#FF8159, $amount) }
+@function purple($amount: 100) { @return colorShade(#6258D1, $amount) }
+@function green($amount: 100) { @return colorShade($green, $amount) }
+@function mint($amount: 100) { @return colorShade(#88FFE1, $amount) }
+@function gray($amount: 100) { @return colorShade($primary-color, $amount) }
+@function navy-blue($amount: 100) { @return colorShade($navy-blue, $amount) }
+@function periwinkle($amount: 100) { @return colorShade($periwinkle, $amount) }
+@function blue($amount: 100) { @return colorShade($blue, $amount) }
+
+@function colorShade($color, $amount) {
+  @if $amount >= 100 {
+    @return scale-color($color, $lightness: percentage(($amount - 100) / 100 * -1));
+  }
+  @return scale-color($color, $lightness: percentage((100 - $amount) / 100));
+}
+
+@function derive-rgb-values-from-hex($hex) {
+  @debug $hex;
+  @return red($hex), green($hex), blue($hex);
+}
+
+// fonts
+$barlow: "Barlow Semi Condensed", sans-serif;
+$proxima: proxima-nova, sans-serif;
+$zilla: "Zilla Slab", serif;
+
+// etc.
+$header-weight: 400;
+$container-max-width: 1366px;
+$container-min-width: 1100px;
+$container-padding-horizontal: 5%;
+$container-padding-top: 2.5rem;
+
+//ProfileSection - Base Stats + Profile Pic | Candor Form | To do
+$profile-section-grid: 170px 1fr 345px;
+
+//Close buttons
+$close-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24.03 24.03'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d0d0d0;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Eanubis-close%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='24.03 19.56 16.49 12.02 24.03 4.47 19.56 0 12.02 7.54 4.47 0 0 4.47 7.55 12.02 0 19.56 4.47 24.03 12.02 16.49 19.56 24.03 24.03 19.56'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat;
+$close-icon-blue: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24.03 24.03'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23E3EEFF;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Eanubis-close%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpolygon class='cls-1' points='24.03 19.56 16.49 12.02 24.03 4.47 19.56 0 12.02 7.54 4.47 0 0 4.47 7.55 12.02 0 19.56 4.47 24.03 12.02 16.49 19.56 24.03 24.03 19.56'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat;
+
+//Prosper icon (blue-gray)
+$prosper-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='82.603' height='69' viewBox='0 0 82.603 69'%3E%3Cpath d='M80.32,15A24.7,24.7,0,0,0,71.53,4.145C59.449-3.962,44.207,1.693,41.3,5.644c-2.9-3.952-18.146-9.606-30.226-1.5A24.684,24.684,0,0,0,2.287,15.007,26.226,26.226,0,0,0,.06,27.291,23.628,23.628,0,0,0,7.01,42.317L27.878,63.185a19.864,19.864,0,0,0,11.511,5.689,13.131,13.131,0,0,0,3.83,0A19.864,19.864,0,0,0,54.73,63.182L75.6,42.314a23.628,23.628,0,0,0,6.95-15.023A26.241,26.241,0,0,0,80.32,15ZM51.233,59.5a14.784,14.784,0,0,1-6.251,3.787A15.177,15.177,0,0,1,41.3,63.9h0a15.177,15.177,0,0,1-3.679-.612A14.784,14.784,0,0,1,31.374,59.5L19.135,47.2A34.974,34.974,0,0,1,41.3,38.6h0a34.974,34.974,0,0,1,22.169,8.6ZM67.085,43.384a33.665,33.665,0,0,0-4.336-3.316l6.836-11.842a2.6,2.6,0,0,0-4.5-2.593L58.244,37.478a41.983,41.983,0,0,0-4.375-1.891l5.2-19.962a2.6,2.6,0,1,0-5.032-1.306L48.873,34.133a35.992,35.992,0,0,0-5.04-.75V20.951a2.593,2.593,0,0,0-2.593-2.593h0a2.593,2.593,0,0,0-2.593,2.593V33.444a40.9,40.9,0,0,0-4.945.734l-5.17-19.864A2.6,2.6,0,0,0,23.5,15.619l5.2,19.952a41.281,41.281,0,0,0-4.41,1.841L17.5,25.631a2.6,2.6,0,0,0-4.5,2.593l6.788,11.76a28.769,28.769,0,0,0-4.389,3.443s-8.444-6.42-9.773-14.138.7-17.044,11.956-22.643c11.8-5.472,22.579,4.238,23.718,6.2,0,0,4.6-6.712,14.729-7.636s17.409,6.166,19.9,12.642,2.524,16.093-8.838,25.532Z' transform='translate(-0.002 -0.015)' fill='%238FB7F5' opacity='1'/%3E%3C/svg%3E") no-repeat;
+
+//Shopping Experience Specific
+$shop-h1-font-size: 1.875rem;
+$shop-h1-font-weight: 700;
+$shop-h1-font-weight-800: 800;
+//For Long pages
+$shop-top-spacing: 3.125rem;
+
+@mixin default-content-sizing {
+  max-width: $container-max-width;
+  min-width: $container-min-width;
+  padding: 0 $container-padding-horizontal;
+  margin: 0 auto;
+}
+
+@mixin uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+@mixin flex-column {
+  display: grid;
+  grid-gap: px(16);
+  width: 100%;
+  grid-auto-rows: max-content;
+}
+
+@mixin flex-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: repeat( auto-fit, minmax(px(10), 1fr) );
+  column-gap: px(16);
+}
+
+@function px($values...) {
+  $max: length($values);
+  $remValues: '';
+
+  @for $i from 1 through $max {
+    $value: nth($values, $i);
+    $value: $value / $BASE_FONT_SIZE;
+    $remValues: #{$remValues + $value}rem;
+
+    @if $i < $max {
+      $remValues: #{$remValues + " "};
+    }
+  }
+
+  @return $remValues
+}
