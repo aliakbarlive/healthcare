@@ -1,0 +1,15 @@
+@import 'Components/global.scss';
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: px(12);
+  width: px(214);
+  height: px(68);
+
+  img {
+    width: 100%; /* or any custom size */
+    height: 100%;
+    object-fit: contain;
+  }
+}

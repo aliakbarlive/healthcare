@@ -37,16 +37,17 @@ async function go(url: RequestInfo, obj: any) {
 
 const makeHeaders = (label: config.Label | null = null, overrideHeaders?: Headers) => {
   const headers = new Headers()
+  const basename = process.env.REACT_APP_BASENAME || ''
   headers.set('Accept', 'application/json')
   headers.set('Content-Type', 'application/json')
   headers.set('X-Ra-Referrer', window.location.href) // https://developers.google.com/web/updates/2020/07/referrer-policy-new-chrome-default
   if (process.env.REACT_APP_BASENAME) {
-    headers.set('X-Ra-Basename', process.env.REACT_APP_BASENAME)
+    headers.set('X-Ra-Basename', basename)
   }
-  if (window.location.pathname.startsWith('/shop')) {
+  if (window.location.pathname.startsWith(`${basename}/shop`)) {
     // ^^ strictly check is not sufficient due to REACT_APP_BASENAME
     // but this is a quick hack for COMAHC launch, prod sites never have BASENAME
-    headers.set('X-Ra-Slug', localStorage.slug || window.location.pathname.split('/')[2])
+    headers.set('X-Ra-Slug', localStorage.slug || window.location.pathname.replace(basename, '').split('/')[2])
   }
   const token = getToken()
   if (token) {

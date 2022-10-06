@@ -1,6 +1,7 @@
 import { flatten } from 'lodash'
 import { Gender } from './pharaoh.types'
 import effectiveDateFilter from './Plans/effectiveDateFilter()'
+import numeral from 'numeral'
 
 // NOTE prefer to `firstName`
 export function firstNames(input: string | undefined): string | undefined {
@@ -56,9 +57,9 @@ export const zipNormalizer = (value: string) => {
   }
 }
 
-const effectiveDateLeadTime = 30
+const effectiveDateLeadTime = 10
 
-export function minEffectiveDate() {
+function minEffectiveDate() {
   const date = new Date()
   date.setDate(date.getDate() + effectiveDateLeadTime)
   return date
@@ -93,4 +94,13 @@ export function genderNormalizer(gender: string | undefined): Gender | undefined
 
 export function stringsToSentence(...inputs: string[]) {
   return inputs.length === 1 ? inputs[0] : `${inputs.slice(0, inputs.length - 1).join(', ')} and ${inputs[inputs.length - 1]}`
+}
+
+export function maskMoneyInput(input: React.FormEvent<HTMLInputElement>) {
+  input.currentTarget.value = markupValue(input.currentTarget.value).replace('-', '')
+}
+
+export function markupValue(value: string | undefined): string {
+  if (!value) return '-'
+  return numeral(value).format('$0')
 }

@@ -1,0 +1,128 @@
+@import "Components/global.scss";
+
+.container {
+  height: 90px;
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  background-color: #ecfaf6;
+  bottom: 0;
+  padding: 0 120px;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  max-width: $container-max-width;
+  min-width: $container-min-width;
+  padding: $container-padding-top 2vw 4.5rem;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .compareBtn {
+    position: relative;
+    height: 60px;
+    background-color: $green;
+    color: white;
+    font-size: 0.875rem;
+    border-radius: 4px;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.25);
+    align-items: top;
+    flex: 0 0 110px;
+  }
+
+  .proposalBtn{
+    position: relative;
+    height: 60px;
+    background: #5C90D5;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.16);
+    border-radius: 6px;
+    color: white;
+    margin-left: 10px;
+    font-size: 0.875rem;
+    flex: 0 0 110px;
+  }
+
+  .nBtn{
+    margin: 0 3rem;
+    padding: 0 1.2rem;
+  }
+  .nextBtn {
+    background: #48a3db;
+    width: 200px;
+    height: 56px;
+    box-shadow: 0px 2px 4px rgb(0 0 0 / 16%);
+    border-radius: 6px;
+    color: white;
+    font-weight: normal;
+    font-size: 16px;
+  }
+
+  // To visually show you can drag/scroll
+  > * {
+    &:first-child {
+      height: 60px;
+      position: relative;
+    }
+
+    &:first-child::after,
+    &:last-child::before {
+      content: "";
+      position: absolute;
+      top: -2px;
+      bottom: 0;
+      z-index: 3;
+    }
+
+    // `transparent` has some cross browser rendering issues. Using RGBA values instead fixes it.
+    // https://stackoverflow.com/questions/11829410/css3-gradient-rendering-issues-from-transparent-to-white
+    &:first-child::after {
+      right: -30px;
+      width: 30px;
+      height: 100%;
+      background: linear-gradient(to left, rgba(255, 255, 255, 0), #ecfaf6 70%);
+    }
+
+    &:last-child::before {
+      left: -30px;
+      width: 30px;
+      height: 100%;
+      background: linear-gradient(to right, rgba(255, 255, 255, 0), #ecfaf6 70%);
+    }
+  }
+}
+
+.planContainer {
+  position: relative;
+  flex: 1;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  height: 65px;
+  text-align: end;
+  white-space: nowrap;
+  margin: 0 10px 0 0;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  &:nth-child(2) > div > div:first-child {
+    margin-left: 15px;
+  }
+}
+
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba($color: #ecfaf6, $alpha: 0.7);
+  z-index: 4;
+  padding-top: 10px;
+}

@@ -1,6 +1,6 @@
 import * as api from 'Utilities/fetch++'
 import { useAsync, useLocation } from 'react-use'
-import { Tier, Relationship, EnrollmentStatus, MaritalStatus, Contact, MedicalPlan, StandaloneProsper } from 'Utilities/pharaoh.types'
+import { Tier, Relationship, EnrollmentStatus, MaritalStatus, Contact, MedicalPlan, StandaloneProsper, PipelineStatus } from 'Utilities/pharaoh.types'
 import { Route as RaRoute } from 'Utilities/Route'
 import { utcMidnightToLocalMidnight, getToken } from 'Utilities/pharaoh'
 import { PowerLevel } from './useUser'
@@ -45,7 +45,8 @@ interface RawStargateResponse {
   showUnderwritingPage: boolean
   showRedflagsPage: boolean
   hasActiveQLE: boolean
-  hasNatGen: boolean // TODO Remove
+  hasAllstate: boolean // TODO Remove
+  mqType: MQType
   selectedCarriers: string[]
   planSelectionsState: PlanSelectionsState
 
@@ -56,12 +57,54 @@ interface RawStargateResponse {
 
   label: Label
   obelisk: Obelisk
+  agency?: Agency
+}
+
+export enum MQType {
+  allstate = 'allstate',
+  hba = 'hba',
+  none = 'none',
 }
 
 interface Obelisk {
   logo: string
   slug: string
   name: string
+}
+
+export interface Agency {
+  name: string
+  legalName?: string
+  phone?: string
+  address1?: string
+  address2?: string
+  city?: string
+  state?: string
+  zip?: string
+  slug: string
+  nipr?: string
+  contactFirstName?: string
+  contactLastName?: string
+  contactEmail?: string
+  contactPhone?: string
+  deltaPSID?: string
+  id: string
+  landing: Landing
+}
+
+export interface Landing {
+  name: string
+  address1: string
+  address2?: string
+  city: string
+  state: string
+  zip: string
+  phone: string
+  email: string
+  calendly: string
+  website?: string
+  additionalText?: string
+  agencyId?: string
 }
 
 interface CarrierSpecificData {
@@ -135,6 +178,7 @@ export interface GroupMember {
   enrolled_life_plan_id?: string
   enrolled_individual_plan_id?: string
   enrolled_disability_plan_id?: string
+  supplemental_enrollments?: string[]
   last_tobacco_use_date?: Date
   email: string
   cell_phone?: string
@@ -190,7 +234,10 @@ export interface Group {
   state?: string
   ratesLocked: boolean
   approved: boolean
+  ehqSubmitted: boolean
+  hbaApproved: boolean
   individualExperience: boolean
+  pipelineStatus: PipelineStatus
 }
 
 export interface User {
@@ -244,7 +291,7 @@ export interface Dependent {
   weight?: number
 }
 
-interface MemberDependent {
+export interface MemberDependent {
   id: string
   firstName: string
   lastName: string
@@ -254,6 +301,7 @@ interface MemberDependent {
   lastTobaccoDate?: Date
   dateOfBirth: Date
   relationship: Relationship
+  terminationDate?: Date
 }
 
 export enum Mode {
@@ -289,7 +337,7 @@ export enum PlanSelectionsState {
   valid = 'valid',
   noPlans = 'noPlans',
   differentFundingTypes = 'differentFundingTypes',
-  differentNatGenNetworks = 'differentNatGenNetworks',
+  differentAllstateNetworks = 'differentAllstateNetworks',
   differentCarriers = 'differentCarriers',
   differentUHCPackages = 'differentUHCPackages',
   tooManyPlans = 'tooManyPlans'
@@ -303,7 +351,7 @@ export default function useStargate(): AsyncState<StargateResponse> {
   const history = useHistory()
   const appMode = useAppMode()
   return useAsync(async() => {
-    if (store[groupID]) return await store[groupID]
+    if (groupID in store) return await store[groupID]
     store[groupID] = (async() => {
       const rsp = await api.get(`/stargate/${groupID}`) as StargateResponse
       if (rsp.group) {
@@ -338,6 +386,17 @@ export default function useStargate(): AsyncState<StargateResponse> {
           rsp.user.enrolled_individual_plan_id ||
           rsp.groupMember?.enrolled_life_plan_id ||
           rsp.groupMember?.enrolled_vision_plan_id)
+      }
+      switch (rsp.user.power_level) {
+      case PowerLevel.individual:
+        if (appMode !== AppMode.employee && !location?.endsWith('/group-type') && !location?.endsWith('/checklist') && !location?.endsWith('/get-started')) history.push(RaRoute.landing)
+
+        break
+      case PowerLevel.groupManager:
+        if (appMode === AppMode.agency) history.push(RaRoute.landing)
+        break
+      default:
+        break
       }
       if (rsp.groupIsStale && appMode === AppMode.employer && !location?.match(/\/refresh/)) {
         history.push(RaRoute.erStargateRefresh)

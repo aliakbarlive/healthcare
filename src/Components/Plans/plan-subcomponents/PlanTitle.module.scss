@@ -1,0 +1,262 @@
+@import './Plan.module.scss';
+
+.fundingTypeContainer {
+  height: 1.5rem;
+  text-transform: uppercase;
+  font-size: .625rem;
+  font-weight: 700;
+  letter-spacing: .09rem;
+  width: calc(100% - 200px);
+  border-top-left-radius: $corner-radius;
+  border-top-right-radius: $corner-radius;
+  line-height: 1.6rem; // Greater than the height to visually center
+  padding: 0 1.25rem;
+  color: $navy-blue;
+}
+
+.planTitleContainer {
+  width: 100%;
+  height: 3.75rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: $gray;
+  padding-right: 1.25rem;
+  min-width: 0;
+  border-top-left-radius: $corner-radius;
+  position: relative;
+  overflow: hidden;
+
+  &:first-child {
+    border-top-right-radius: $corner-radius;
+  }
+
+  > span:first-child { margin-left: 1.25rem; }
+}
+
+.levelFundedSelected {
+  background: linear-gradient(to right, #C8DAFD, #EDF2FC) !important;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    bottom: 0;
+    left: -2px;
+    border-bottom: 2px solid $periwinkle;
+    border-bottom-left-radius: 4px;
+    animation: lfWidth 200ms ease-out 1 normal forwards;
+  }
+}
+
+@keyframes lfWidth {
+  from {width: 0}
+  to {width: 22px}
+}
+
+.title {
+  flex: 1;
+  flex-shrink: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0 1.5rem;
+  min-width: 0;
+  margin-top: .25rem; // To Visually center
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &, & > div:first-child {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.prosper {
+  font-size: .75rem;
+  color: $light-periwinkle;
+  vertical-align: top;
+  display: inline-block;
+
+  .prosperIcon {
+    display: inline-block;
+    vertical-align: bottom;
+    width: 18px;
+    height: 15px;
+  }
+
+}
+
+.remove {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $secondary-color;
+  opacity: .4;
+}
+
+.planDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  & > button {
+    margin-top: .3125rem; // To Visually center
+    &:hover {
+      transform: scale(1.04);
+    }
+
+    &:active {
+      transform: scale(.97);
+      box-shadow: 0px 1px 3px rgba($color: $secondary-color, $alpha: .05);
+    }
+  }
+}
+
+// View SBC/Details Button
+.viewDetails, .downloadSBC {
+  height: 1.875rem;
+  padding: 0 1rem;
+  background-color: #C8DAFD;
+  border-radius: $corner-radius;
+  font-size: .75rem;
+  color: #2A5BBC;
+  font-weight: 700;
+  box-shadow: 0px 2px 6px rgba($color: $secondary-color, $alpha: .1);
+  transition: all 200ms ease-out;
+}
+
+.planDetailsInfo {
+  display: flex;
+  padding: 9px;
+}
+
+.sbcPlan {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+  color: $secondary-color;
+  text-align: left;
+
+  > span:last-of-type {
+    flex: 1;
+    font-size: .875rem;
+    font-weight: 500;
+  }
+
+  > :first-child {
+    margin-right: 1rem;
+    font-weight: 700;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.planName {
+  display: inline-block;
+  margin-left: 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.sbcWrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  width: 900px;
+}
+
+.downloadSBC {
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+  align-items: center;
+
+  span { margin-right: .5rem }
+
+  &:link, &:visited, &:active, &:hover {
+    color: #2A5BBC;
+  }
+}
+
+.sbcViewer {
+  flex: 1;
+  height: calc(100vh - 300px); // Rough estimation so it doesn't grow past the page size
+}
+
+.whatAreThose {
+  border-bottom: solid 1px;
+  border-bottom-color: $navy-blue;
+  margin-left: 1.25rem;
+  font-family: $zilla;
+  font-weight: 400;
+  font-style: italic;
+  color: $navy-blue
+}
+
+.explanationContainer {
+  width: 600px;
+  max-width: 100%;
+  height: 100%;
+
+  h1, h2 {
+    color: $navy-blue;
+    text-align: left;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-style: italic;
+    font-family: $zilla;
+    font-weight: 600;
+  }
+
+  p, ul, small { color: $secondary-color }
+
+  ul { padding-left: 1.75rem }
+  *:first-child { margin-top: 0 }
+  *:last-child { margin-bottom: 0 }
+}
+
+.noSBC {
+  width: 100%;
+  text-align: center;
+  padding: 4rem 0;
+  color: darken($color: $orange, $amount: 12%);
+  background-color: lighten($color: $orange, $amount: 20%);
+}
+
+.customContributionLabel {
+  @include uppercase;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: .5rem;
+  padding: 0 1rem;
+  height: 1.5rem;
+  border-radius: 1.5rem;
+  color: white;
+  background-color: periwinkle(90);
+  margin-right: 1rem;
+
+  &:first-child { margin-left: 1.25rem; }
+
+  span {
+    display: inline-block;
+    font-size: .75rem;
+    margin-left: .25rem;
+  }
+}

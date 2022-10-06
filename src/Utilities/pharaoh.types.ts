@@ -42,6 +42,11 @@ export interface Group {
   }
   waitingPeriod: number
   hasPaymentInfo: boolean
+  enrollmentDocsURL?: string
+  broker?: {
+    id: string
+    name: string
+  }
 }
 
 export interface PartialGroup extends Partial<Omit<Group, 'contributions'>> {
@@ -64,8 +69,9 @@ export enum PipelineStatus {
   suspect = 'suspect',
   prospect = 'prospect',
   proposed = 'proposed',
+  mqsent = 'mqsent',
+  sent = 'sent',
   lead = 'lead',
-  processing = 'processing',
   enrolled = 'enrolled',
   archived = 'archived'
 }
@@ -149,7 +155,7 @@ export enum QualifyingEventType {
   coverageThroughSpouseParent = 'Other group coverage through a spouse or parent',
   individualCoverage = 'Individual coverage',
   coverageThroughEmployerDependent = 'Enrolling as a dependent in your employer\'s group health plan',
-  coverageMedicare = 'Coverage through Medicare, Medicade, Tricare or other Gov.',
+  coverageMedicare = 'Coverage through Medicare, Medicaid, Tricare or other Gov.',
   divorce = 'Divorce',
   marriage = 'Marriage',
   birthAdoption = 'Birth or Adoption',
@@ -187,6 +193,7 @@ export interface Ticket {
   name?: string
   email: string
   venue: Venue
+  groupID?: string
   resetToken?: string
 }
 
@@ -278,6 +285,9 @@ export interface MedicalPlan extends BasePlan {
   isRenewalPlan: boolean
   priorYearsPlan?: boolean
   available?: boolean
+  policyId?: string
+  memberIds?: [{memberID: string, externalID: string}]
+  hsaEligible: boolean
 }
 
 export enum PlanType {
@@ -286,7 +296,8 @@ export enum PlanType {
   EPO = 'EPO',
 // Indemnity = 'Indemnity',  // unloved
   POS = 'POS',
-  FixedBenefitNoNetwork = 'FixedBenefitNoNetwork'
+  FixedBenefitNoNetwork = 'FixedBenefitNoNetwork',
+  RBP = 'Reference-Based Pricing',
 }
 
 interface Premium {
@@ -360,4 +371,36 @@ export interface StandaloneProsper {
   signedUp: boolean
   signedUpRate?: string
   currentRate: string
+}
+
+export interface Broker {
+  id?: string
+  name?: string
+  email?: string
+  nipr?: string
+  phone?: string
+  cellPhone?: string
+  acceptedTermsAndConditions: boolean
+  agency?: Agency
+  licenses: BrokerLicense[]
+  appointments: BrokerAppointments[]
+}
+
+interface Agency {
+  id?: string
+  name: string
+  slug?: string
+  address1?: string
+  address2?: string
+  city?: string
+  state?: string
+  zip?: string
+}
+
+interface BrokerLicense {
+  id?: string
+}
+
+interface BrokerAppointments {
+  id?: string
 }

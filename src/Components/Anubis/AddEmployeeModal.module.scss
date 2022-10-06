@@ -1,0 +1,22 @@
+@import 'Components/global.scss';
+
+.container {
+  max-width: 700px;
+  width: 100%;
+}
+
+.addEmpForm {
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  row-gap: 10px;
+  grid-template-columns: 1fr 1fr;
+
+  fieldset > * { margin-bottom: 10px }
+
+  .subgrid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr;
+  }
+}

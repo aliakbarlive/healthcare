@@ -1,0 +1,58 @@
+@import 'Components/global.scss';
+
+.flagGroup {
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  width: 100%;
+  text-align: left;
+
+  span:not(.checkmark) {
+    width: 100%;
+    float: left;
+    text-align: left;
+    color: $primary-color;
+  }
+
+}
+
+.flagGroup input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background: #F4F4F4;
+  border: 2px solid #D0D0D0;
+}
+
+.flagGroup:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.flagGroup input:checked ~ .checkmark {
+  background: $flagged-gradient;
+  border: none;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.flagGroup input:checked ~ .checkmark:after {
+  display: block;
+}

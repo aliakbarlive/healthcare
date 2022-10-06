@@ -1,0 +1,23 @@
+@import 'Components/global.scss';
+
+.Panel {
+  padding: 24px 20px;
+
+  .content {
+    padding-left: 20px;
+    border-left: 4px solid #fff;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 120%;
+
+    color: $navy-blue;
+  }
+
+  &.note {
+    background: $purple-light;
+
+    .content {
+      border-left-color: $purple-dark;
+    }
+  }
+}

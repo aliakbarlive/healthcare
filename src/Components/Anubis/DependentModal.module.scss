@@ -1,0 +1,37 @@
+.form {
+  display: grid;
+  grid-template-columns: 400px;
+  row-gap: 10px;
+
+  fieldset {
+    display: contents;
+  }
+
+  input, .white {
+    background-color: white;
+  }
+
+  input[type = submit] {
+    margin-top: 20px;
+  }
+
+  .resetDelete {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 15px;
+    margin-top: 5px;
+
+    input[type = button] {
+      height: 40px;
+      margin-top: 0;
+      box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.16);
+      float: left;
+      font-weight: 500;
+      text-transform: uppercase;
+      border-radius: 4px;
+      letter-spacing: 0.1rem;
+      font-size: .75rem;
+    }
+  }
+
+}

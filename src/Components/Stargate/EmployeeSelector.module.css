@@ -1,0 +1,9 @@
+.listContainer {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 15px;
+  column-gap: 40px;
+  width: 100%;
+}
+

@@ -1,0 +1,277 @@
+@import 'Components/global.scss';
+
+$name-font-size: 1.5rem;
+$label-offset: 132px;
+$input-width: calc(100% - #{$label-offset});
+$label-padding-left: 5px;
+$input-margin-left: 20px;
+
+.container {
+  width: 100%;
+  max-width: 500px;
+  padding: 0 0 0 $name-font-size;
+  position: relative;
+  display: table;
+
+  label {
+    position: relative;
+    height: 100%;
+    color: $dodo;
+    font-size: 0.75rem;
+    font-weight: 400;
+    letter-spacing: 1.2px;
+    width: 100%;
+    white-space: nowrap;
+    text-align: right;
+    text-transform: uppercase;
+    display: block;
+
+    input {
+      margin-bottom: .25rem;
+    }
+
+    input:disabled:not([type='checkbox']):not(.enabledEmailInput) {
+      color: $secondary-color;
+      -webkit-text-fill-color: $secondary-color;
+      opacity: 1;
+
+      &::-webkit-input-placeholder {
+        -webkit-text-fill-color: $placeholder-gray;
+      }
+    }
+
+    input:not(.name) {
+      margin-left: $input-margin-left;
+      width: $input-width;
+    }
+
+    > [role=button] {
+      display: inline-block;
+      height: 2.25rem;
+      width: 10rem;
+      margin-left: calc(#{$input-margin-left} + 1rem);
+      margin-right: calc(#{$input-width} - 11rem);
+      margin-bottom: .25rem;
+      background: $blue-gradient;
+      line-height: 2.25rem;
+      text-align: center;
+      border-radius: .25rem;
+      color: white;
+      font-weight: 700;
+      transition: all 200ms ease-out;
+    }
+
+  }
+
+  p {
+    text-transform: uppercase;
+    color: $primary-color;
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: .08rem;
+    margin-left: 1rem;
+  }
+
+  &.editing label > [role=button] {
+    margin-left: $input-margin-left;
+    margin-right: calc(#{$input-width} - 10rem);
+  }
+
+  &.editing .checkLabel {
+    span {
+      right: -25px;
+    }
+
+    &:hover input ~ span {
+      background-color: #F4F4F4;
+    }
+
+    &:hover input:checked ~ span {
+      background-color: #3785B5;
+    }
+
+  }
+
+  .checkLabel {
+
+    width: $label-offset;
+    padding: .2rem 1rem .4rem 1rem;
+    margin: .5rem 0;
+    text-align: right;
+
+
+    input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+      height: 0;
+      width: 0;
+      margin: 0;
+      padding: 0;
+
+      &:checked ~ span {
+        background-color: $blue;
+        border: 0px;
+
+        &:after { display: block; }
+
+      }
+
+      + span {
+        position: absolute;
+        top: 50%;
+        right: -40px;
+        height: 20px;
+        width: 20px;
+        background-color: $white;
+        border-radius: 4px;
+        border: 1px solid #d0d0d0;
+        transform: translateY(-50%);
+        transition: right 200ms ease-out, background-color 100ms ease-out;
+
+          &:after {
+          content: "√";
+          font-family: Verdana, sans-serif;
+          font-size: 18px;
+          color: #ffffff;
+          position: absolute;
+          display: none;
+          left: 2px;
+          top: -2px;
+        }
+      }
+    }
+  }
+
+  label:not(.nameRow) {
+    padding-left: $label-padding-left;
+  }
+
+  .nameRow {
+    color: $secondary-color;
+    width: 90%;
+
+    input.name {
+      font-family: $proxima;
+      font-size: $name-font-size;
+      font-weight: 700;
+    }
+
+    label input {
+      font-size: $name-font-size * 1.25;
+      font-weight: 400;
+    }
+
+    .flagged {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      margin-left: 20px;
+      display: inline-block;
+      background-image: $flagged-gradient;
+    }
+  }
+
+  input {
+    width: 100%;
+    font-size: 1rem;
+    border: none;
+    &:not(.enabledEmailInput) {
+     color: $secondary-color;
+     background: none;
+    }
+    display: inline-block;
+    height: 100%;
+    transition: all .2s ease-out;
+    padding: .5rem 1rem;
+    border-radius: 6px;
+
+    &::placeholder {
+      text-transform: capitalize;
+      color: silver;
+
+      /* Wierd CSS issue with the placeholder not matching the normal type styles */
+      font-size: inherit;
+      font-weight: inherit;
+    }
+  }
+
+}
+
+
+button.edit {
+  position: absolute;
+  left: .5rem;
+  height: $name-font-size - .2rem;
+  width: $name-font-size - .2rem;
+  border: none;
+  opacity: 1;
+  top: $name-font-size / 2;
+  transition: opacity .2s ease-out;
+  // Pencil icon
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20.87 20.87'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d0d1d0;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3EEdit%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cg id='Group_2377' data-name='Group 2377'%3E%3Crect id='Rectangle_2099' data-name='Rectangle 2099' class='cls-1' x='2.3' y='7.72' width='16.3' height='5.4' transform='translate(-4.31 10.44) rotate(-45)'/%3E%3Cpath id='Rectangle_2100' data-name='Rectangle 2100' class='cls-1' d='M19.3.59l1,1a2,2,0,0,1,0,2.82l-1,1h0L15.5,1.56h0l1-1A2,2,0,0,1,19.3.59Z'/%3E%3Cpath id='Polygon_15' data-name='Polygon 15' class='cls-1' d='M0,20.87l2-5.8L5.8,18.89Z'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat;
+  cursor: pointer;
+}
+
+.editing button.edit {
+  opacity: 0;
+}
+
+.editing {
+
+  input[type=submit], input[type=button] {
+    height: 40px;
+    width: calc(50% - 5px);
+    max-width: 160px;
+    margin-top: 0;
+    box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.16);
+    float: left;
+    font-size: .9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 4px;
+    letter-spacing: 0.1rem;
+    margin-top: 20px;
+  }
+
+  input[type=submit] {
+    background-image: $submit-gradient ;
+    color: $white;
+    margin-left: $label-offset + $label-padding-left;
+  }
+
+  input[type=button] {
+    background-image: $gray-gradient;
+    margin-left: 10px;
+  }
+}
+
+.container.editing input:not(:disabled) {
+  background-color: #f8f8f8;
+}
+
+label > .formPicker {
+  width: $input-width;
+  display: inline-block;
+  margin-left: 20px;
+  margin-bottom: .25rem;
+
+  span {
+    display: none;
+  }
+
+}
+
+label > .formPicker div {
+  padding: 0;
+}
+
+.enabledEmailInput {
+  color: silver;
+  background-color: #f8f8f8;
+  -webkit-text-fill-color: silver;
+}
+
+.disabledEmailInput {
+  background: none;
+}

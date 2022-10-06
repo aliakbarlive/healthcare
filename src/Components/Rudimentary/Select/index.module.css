@@ -1,0 +1,20 @@
+.selectContainer {
+  position: relative;
+}
+
+.label {
+  position: absolute;
+  font-size: 12px;
+  transform: translate(10px, 7px);
+  opacity: 0;
+  transition: opacity 0.1s ease-in;
+  white-space: nowrap;
+  top: 0px;
+  left: 0;
+  z-index: 1;
+  color: #A2A2A2;
+}
+
+.labelVisible {
+  opacity: 1.0;
+}

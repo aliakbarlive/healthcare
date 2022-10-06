@@ -1,19 +1,25 @@
 import { Label, Host, host, longTitle } from 'Utilities/config'
 import { useSearchParam } from 'react-use'
 import useStargate from './useStargate'
+import { useLocation } from 'react-router'
+import { PowerLevel } from './useUser'
+import { Route } from 'Utilities/Route'
 
 // NOTE try not to use as causes a /stargate call, though we do that everywhere ANYWAY
 // but we should attempt not to
 // FIXME this also means that there will be a period where this is still loading and will report MyHealthily as the label perhaps incorrectly
 export function useWhiteLabel(): { label: Label, title: string } {
   const rawLabel = useWhiteLabelFromSearchParams()
-  const stargateLabel = useStargate().value?.label
+  const stargate = useStargate().value
+  const location = useLocation()
 
   let label: Label
-  if (rawLabel && stargateLabel === 'app.myhealthily.com' && rawLabel.url !== Label.myhealthily) {
+  if (stargate && stargate.user.power_level >= PowerLevel.broker && location.pathname.startsWith(Route.agencyDashboard)) {
+    label = Label.myhealthily
+  } else if (rawLabel && stargate?.label === 'app.myhealthily.com' && rawLabel.url !== Label.myhealthily) {
     label = rawLabel.url
   } else {
-    label = stargateLabel || rawLabel?.url || Label.myhealthily
+    label = stargate?.label || rawLabel?.url || Label.myhealthily
   }
 
   return { label, title: titleForWhiteLabel(label) }
@@ -76,7 +82,9 @@ export function labelShortCode(input: string): keyof typeof Label {
   if (input.match(/\.myhealthily\.com$/)) {
     return labelShortCode(input.replace(/\.myhealthily\.com$/, '.candor.insurance'))
   }
-  throw new Error(`Cannot determine white-label from input: ${input}`)
+  // Ideally, we'd never see this error, but this is a better default
+  // throw new Error(`Cannot determine white-label from input: ${input}`)
+  return 'myhealthily'
 }
 
 export function logo(input: Label) {

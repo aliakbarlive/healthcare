@@ -1,0 +1,176 @@
+@import 'Components/global.scss';
+$modal-padding: 3rem;
+$content-passing: 1.5rem;
+$color: var(--color);
+$color10: var(--color10);
+
+.base {
+  position: fixed;
+  box-sizing: border-box;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  overflow: auto;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+  background-color: rgba(112,112,112,0.5);
+  z-index: 999;
+}
+
+.afterOpen { opacity: 1 }
+.beforeClose { opacity: 0 }
+
+.containerWrapper {
+  min-height: 100vh;
+  width: 100%;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: $modal-padding;
+}
+
+.container {
+  max-width: 100%;
+  width: fit-content;
+  position: relative;
+  background: white;
+  height: fit-content;
+  border-radius: 6px;
+  outline: none;
+  box-shadow: 0 4px 12px rgba(112, 112, 112, 0.4);
+  display: block;
+}
+
+.header {
+  min-height: 3.625rem;
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid gray(20);
+  padding: $content-passing;
+  background-color: white;
+  backface-visibility: hidden;
+  border-radius: 6px 6px 0 0;
+  font-size: 1.25rem;
+  color: navy-blue(80);
+  font-weight: 700;
+  z-index: 1000;
+}
+
+.close {
+  z-index: 9999;
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: $content-passing + .25rem;
+  right: $content-passing;
+  backface-visibility: hidden;
+
+  path {
+    transition: all 100ms ease-out;
+    stroke: gray();
+  }
+
+  &:hover path { stroke: navy-blue() }
+}
+
+.content {
+  padding: $content-passing;
+  box-sizing: border-box;
+  height: fit-content;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+}
+
+.footer {
+  display: flex;
+  padding: $content-passing;
+  background: gray(5);
+  border-top: 1px solid gray(20);
+  border-radius: 0 0 6px 6px;
+  position: sticky;
+  bottom: 0;
+
+
+  .left {
+    margin-right: .5rem;
+  }
+
+  .right {
+    margin-left: auto;
+  }
+
+  .right ~ .right {
+    margin-left: .5rem;
+  }
+
+  button, input[type=submit], input[type=button], a {
+    display: block;
+    padding: 0 1rem;
+    text-align: center;
+    line-height: 2rem;
+    height: 2rem;
+    text-transform: unset;
+    text-decoration: unset;
+    font-size: .75rem;
+    letter-spacing: .008em;
+    min-width: unset;
+    box-shadow: 0 4px 12px rgba(112, 112, 112, 0.35);
+    transform: scale(1);
+    transition: all 100ms ease-out;
+    border-radius: 4px;
+    font-weight: 600;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: .5;
+    }
+
+    &:not(:disabled):not(.link) {
+      &:hover, :focus {
+        box-shadow: 0 2px 8px rgba(112, 112, 112, 0.4);
+        transform: scale(.99);
+      }
+
+      &:active {
+        transform: scale(.98);
+        box-shadow: 0 0px 2px rgba(112, 112, 112, 0.4);
+      }
+    }
+
+    &.primary {
+      background: $color;
+      color: $white;
+    }
+
+    &.secondary {
+      border: 1px solid $color;
+      background: $color10;
+      color: $color;
+    }
+
+    &.link{
+      color: $color;
+      background: none;
+      border: none;
+      text-decoration: underline;
+      box-shadow: none;
+      padding: 0;
+    }
+  }
+}
+
+.bodyOpen { overflow: hidden }
+
+.loadingContainer {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  background: rgba($color: blue(50), $alpha: .5);
+}
+
+

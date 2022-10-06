@@ -1,0 +1,117 @@
+@import 'Components/Anubis/CandorForm.module.scss';
+
+.candorFormDatePickerContainer {
+
+  width: 100%;
+  display: block;
+
+  > span { display: inline-block }
+
+  > div:last-child {
+    display: inline-block;
+    width: $input-width;
+    margin-left: $input-margin-left;
+
+    > { display: block }
+  }
+
+  .datePicker {
+    color: $secondary-color;
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+  .datePicker:disabled {
+    background-color: $white;
+    color: $secondary-color;
+    opacity: 1;
+    cursor: default;
+  }
+
+  .datePicker::placeholder {
+    color: $placeholder-gray;
+    opacity: 1; /* Firefox */
+  }
+
+  .datePicker:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $placeholder-gray;
+  }
+
+  .datePicker::-ms-input-placeholder { /* Microsoft Edge */
+    color: $placeholder-gray;
+  }
+
+  .datePicker:placeholder-shown {
+    padding: .5rem 1rem;
+  }
+
+}
+
+.datePickerContainer {
+
+  position: relative;
+
+  label {
+    position: absolute;
+    height: 0;
+    top: 2px;
+    left: 1px;
+    transform: translate(8px, 5px);
+    font-size: .75rem;
+    opacity: 0;
+    transition: opacity 0.1s ease-in;
+    z-index: 1;
+  }
+
+  .labelVisible {
+    opacity: 1;
+  }
+
+  // Date picker in the EmployeeForm won't take up all available space without doing this
+  > div:first-of-type {
+    display: block;
+    width: 100%;
+  }
+
+  .datePicker {
+    // Default background is $gray, override to $white for modals
+    background-color: $gray;
+    border-radius: 6px;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    font-family: inherit;
+    font-size: 16px;
+    color: $blue;
+    padding: 0px 30px 0 20px;
+    height: 55px;
+    z-index: 3;
+    width: 100%;
+  }
+
+  .hasPlaceholder {
+    padding: 10px 30px 0 20px;
+  }
+
+  .datePicker:disabled {
+    background-color: $disabled-gray;
+    cursor: not-allowed;
+  }
+
+  .datePicker::placeholder {
+    color: $placeholder-gray;
+    opacity: 1; /* Firefox */
+  }
+
+  .datePicker:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $placeholder-gray;
+  }
+
+  .datePicker::-ms-input-placeholder { /* Microsoft Edge */
+    color: $placeholder-gray;
+  }
+
+  .datePicker:placeholder-shown {
+    padding: 0 30px 0 20px !important;
+  }
+}

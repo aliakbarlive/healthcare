@@ -1,0 +1,80 @@
+@import 'Components/global.scss';
+
+.tooltip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  max-width: 250px;
+  /* opacity: 1 !important; */
+  /* transition: 300ms ease-in-out !important; */
+  border-radius: 6px;
+}
+
+:global(.employer) {
+  .tooltip { background-image: linear-gradient(to right, periwinkle() 0%, #1D6592 100%) !important }
+
+  :global(.place-left)::after { border-left-color: periwinkle() !important }
+  :global(.place-right)::after { border-right-color: periwinkle() !important }
+  :global(.place-top)::after { border-top-color: periwinkle() !important }
+  :global(.place-bottom)::after { border-bottom-color: periwinkle() !important }
+}
+:global(.employee) {
+  .tooltip { background-image: linear-gradient(to right, #45be62 0%, #29b480 100%) !important }
+
+  :global(.place-left)::after { border-left-color: #45be62 !important }
+  :global(.place-right)::after { border-right-color: #45be62 !important }
+  :global(.place-top)::after { border-top-color: #45be62 !important }
+  :global(.place-bottom)::after { border-bottom-color: #45be62 !important }
+}
+
+
+.tooltip > * {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  line-height: 14px;
+}
+
+.tooltip a {
+  color: #ffffff important;
+  font-weight: 600;
+}
+
+.tooltip button {
+  color: white;
+}
+
+.tooltipImg {
+  display: block;
+  margin-right: 12px;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.tooltip > i {
+  font-size: 32px;
+  margin-right: 12px;
+  background: linear-gradient(90deg, transparent 20%, #008dd0 20% 80%, transparent 80%);
+  max-height: 24px;
+  max-width: 24px;
+}
+
+.close {
+  position: absolute;
+  top: -32px;
+  right: -32px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0 0 16px rgba(151, 177, 217, 0.5);
+  margin: 10px;
+  padding: 0;
+  height: 52px;
+  width: 52px;
+}
+
+.close > i {
+  color: #e3eeff;
+  font-size: 52px;
+}

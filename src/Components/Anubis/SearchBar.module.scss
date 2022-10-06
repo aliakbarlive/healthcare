@@ -1,0 +1,45 @@
+@import 'Components/global.scss';
+
+.search {
+  display: block;
+  position: relative;
+  height: 50px;
+  width: 350px;
+  border: none;
+  border-radius: 4px;
+
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24.11 24.31'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:none;stroke:%23d0d1d0;stroke-width:4px;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3EAsset 1%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cg id='Group_35' data-name='Group 35'%3E%3Cg id='Ellipse_3' data-name='Ellipse 3'%3E%3Ccircle class='cls-1' cx='10' cy='10' r='8'/%3E%3C/g%3E%3Cline id='Line_17' data-name='Line 17' class='cls-1' x1='22.69' y1='22.9' x2='15.1' y2='15.31'/%3E%3C/g%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat;
+  background-size: 20px;
+  background-position: calc(100% - 8px) center;
+  background-color: $gray;
+
+  input {
+    padding-left: 15px;
+    width: 100%;
+    height: 100%;
+    font-family: $barlow;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    background-color: transparent;
+    border: none;
+  }
+
+  &::placeholder {
+    opacity: 0.39;
+    color: $secondary-color;
+  }
+
+}
+
+.screenReaderText {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  width: 1px;
+  overflow: hidden;
+  position: absolute !important;
+  word-wrap: normal !important;
+}

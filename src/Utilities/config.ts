@@ -25,6 +25,15 @@ export enum Label {
   facp = 'app.chambersofflhealthcare.com',
   veccs = 'app.veccshealthcare.com',
   biank = 'app.buildersnkyhealthcare.com',
+  vacce = 'app.chambersofvahealthcare.com',
+  mrf = 'app.majesticresidenceshealthcare.com',
+  gahba = 'app.atlbuildershealthcare.com',
+  necsema = 'app.necsemahealthcare.com',
+  dennys = 'app.dennyshealthcare.com',
+  pnh = 'app.pn-healthcare.com',
+  agih = 'app.agi-healthcare.com',
+  craft = 'app.craftindustryhealthcare.com',
+  nbda = 'app.nbdahealthcare.com',
 }
 
 export enum Host {
@@ -141,6 +150,8 @@ export function pageSenseID(label: Label | undefined) {
     case Label.facp: return '7416fabb79d14158a11a51f0f977bef5'
     case Label.veccs: return 'f83da8e6d8964131856e5ae959dd269c'
     case Label.giggity: return 'c7331220a9bd49ecb695fda8bf353b70'
+    case Label.vacce: return '036270c33a24487ea7d04ea1cf559f0a'
+    case Label.mrf: return 'b866e671e0a347bdb6209a6bd63003b1'
     }
     break
   default:
@@ -168,6 +179,14 @@ export function obeliskMode(label: Label): boolean {
   case Label.naps:
   case Label.ohrhc:
   case Label.facp:
+  case Label.vacce:
+  case Label.mrf:
+  case Label.necsema:
+  case Label.dennys:
+  case Label.pnh:
+  case Label.agih:
+  case Label.craft:
+  case Label.nbda:
     return true
   case Label.giggity:
   case Label.dhc:
@@ -189,6 +208,7 @@ export function obeliskMode(label: Label): boolean {
   case Label.pda:
   case Label.veccs:
   case Label.biank:
+  case Label.gahba:
     return false
   }
 }
@@ -246,5 +266,23 @@ export function longTitle(key: Label): string {
     return 'VECCSHealthcare.com'
   case Label.biank:
     return 'BuildersNKYHealthcare.com'
+  case Label.vacce:
+    return 'ChambersofVaHealthcare.com'
+  case Label.mrf:
+    return 'MajesticResidencesHealthcare.com'
+  case Label.gahba:
+    return 'ATLBuildersHealthcare.com'
+  case Label.necsema:
+    return 'NECSEMAHealthcare.com'
+  case Label.dennys:
+    return 'DennysHealthcare.com'
+  case Label.pnh:
+    return 'PNHealthcare.com'
+  case Label.agih:
+    return 'AGIHealthcare.com'
+  case Label.craft:
+    return 'CraftIndustryHealthcare.com'
+  case Label.nbda:
+    return 'NBDAHealthcare.com'
   }
 }

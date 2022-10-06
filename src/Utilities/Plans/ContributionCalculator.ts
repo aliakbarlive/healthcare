@@ -1,5 +1,5 @@
-import { MedicalPlan, Tier, TieredRates, Relationship } from 'Utilities/pharaoh.types'
-import { Member, ContributionSplit } from 'Utilities/Hooks/useStargate'
+import { MedicalPlan, Tier, TieredRates, Relationship, EnrollmentStatus } from 'Utilities/pharaoh.types'
+import { Member, ContributionSplit, MemberDependent, Gender } from 'Utilities/Hooks/useStargate'
 import DentalPlan, { isDental } from 'Components/Plans/DentalPlan/index.helpers'
 import VisionPlan, { isVision } from 'Components/Plans/VisionPlan/index.helpers'
 import LifePlan, { isLife } from 'Components/Plans/LifePlan/index.helpers'
@@ -9,6 +9,8 @@ import { reduce, flatten, zip, meanBy } from 'lodash'
 import numeral from 'numeral'
 import { getPlanIDFrom, typeOfPlan } from 'Components/Plans/plan-subcomponents/Plan.helpers'
 import { $enum } from 'ts-enum-util'
+import moment from 'moment'
+import SupplementalPlan from 'Components/Plans/SupplementalPlan/index.helpers'
 
 export enum EnrolleeType {
   employee = 'employee',
@@ -22,7 +24,12 @@ export enum GroupPlanType {
   vision = 'vision',
   life = 'life',
   disability = 'disability',
-  prosper = 'prosper'
+  prosper = 'prosper',
+  accident = 'accident',
+  cancer = 'cancer',
+  criticalIllness = 'criticalIllness',
+  hospital = 'hospital',
+  std = 'std',
 }
 
 export type Contributions = {
@@ -95,10 +102,27 @@ export type MemberPlus = Member & {
   vision?: PlanUnion
   life?: PlanUnion
   disability?: PlanUnion
+  accident?: PlanUnion
+  cancer?: PlanUnion
+  criticalIllness?: PlanUnion
+  hospital?: PlanUnion
+  std?: PlanUnion
   prosper?: string
+  policyIDs: {
+    medical?: { policyID?: string, memberID?: string }
+    dental?: { policyID?: string, memberID?: string }
+    vision?: { policyID?: string, memberID?: string }
+    life?: { policyID?: string, memberID?: string }
+    disability?: { policyID?: string, memberID?: string }
+    cancer?: { policyID?: string, memberID?: string }
+    criticalIllness?: { policyID?: string, memberID?: string }
+    hospital?: { policyID?: string, memberID?: string }
+    accident?: { policyID?: string, memberID?: string }
+    std?: { policyID?: string, memberID?: string }
+  }
 }
 
-export type AncillaryPlanUnion = { rate: TieredRates, plan: DentalPlan | VisionPlan | LifePlan | LTDPlan }
+export type AncillaryPlanUnion = {isRenewal: boolean, rate: TieredRates, policyId?: string, memberIds?: [{memberID: string, externalID: string}], plan: DentalPlan | VisionPlan | LifePlan | LTDPlan | SupplementalPlan }
 export type PlanUnion = AncillaryPlanUnion | MedicalPlan
 type NumberMemberPremium = { [key in EnrolleeType]?: number }
 
@@ -119,7 +143,7 @@ export default class ContributionsCalculator {
     this.contributions = contributions
     this.splits = splits
     this.members = members
-    this.nonWaivedMembers = members.filter(m => !m.is_waived)
+    this.nonWaivedMembers = members?.filter(m => !m.is_waived)
     this.precision = precision
     this.applyCustomPlanContributions = applyCustomPlanContributions
 
@@ -172,7 +196,7 @@ export default class ContributionsCalculator {
 
   premiums = (plans: PlanUnion[], onlyNonSplitMembers = true, members = this.nonWaivedMembers, split?: ContributionSplit): Premium => {
     members = this.filterSplits(members, split, onlyNonSplitMembers)
-    if (!members.length) return this.premium(0, 0)
+    if (!members?.length) return this.premium(0, 0)
 
     const total = this.sum(flatten(members.map(m => plans.map(p => this.premiumForMemberForPlan(m, p)))))
     const er = this.sum(flatten(members.map(m => plans.map(p => this.applyContributionForMemberForPlan(m, p)))))
@@ -180,7 +204,7 @@ export default class ContributionsCalculator {
   }
 
   avgPremiums = (plans: PlanUnion[], onlyNonSplitMembers = true, members = this.nonWaivedMembers, split?: ContributionSplit): Premium => {
-    if (!members.length) { return this.premium(0, 0) }
+    if (!members?.length) { return this.premium(0, 0) }
     const premium = this.premiums(plans, onlyNonSplitMembers, members, split)
     const total = premium.total / members.length
     const er = premium.er / members.length
@@ -200,7 +224,7 @@ export default class ContributionsCalculator {
     const { allAncillary } = this.contributions.baseContributions
 
     if (allAncillary) {
-      const premiums = this.nonWaivedMembers.map(m => {
+      const premiums = this.members.map(m => {
         const dental = this.dentalPlans.map(p => this.premiums([p], false, [m]))
         const vision = this.visionPlans.map(p => this.premiums([p], false, [m]))
         const life = this.lifePlans.map(p => this.premiums([p], false, [m]))
@@ -223,10 +247,10 @@ export default class ContributionsCalculator {
       return this.premium(this.sum(premiums.map(p => p.total)), this.sum(premiums.map(p => p.er)))
     }
 
-    const dental = this.dentalPlans.map(p => this.premiums([p], false))
-    const vision = this.visionPlans.map(p => this.premiums([p], false))
-    const life = this.lifePlans.map(p => this.premiums([p], false))
-    const disability = this.disabilityPlans.map(p => this.premiums([p], false))
+    const dental = this.dentalPlans.map(p => this.premiums([p], false, this.members))
+    const vision = this.visionPlans.map(p => this.premiums([p], false, this.members))
+    const life = this.lifePlans.map(p => this.premiums([p], false, this.members))
+    const disability = this.disabilityPlans.map(p => this.premiums([p], false, this.members))
 
     let total = meanBy(dental, p => p.total) || 0
     total += meanBy(vision, p => p.total) || 0
@@ -241,14 +265,18 @@ export default class ContributionsCalculator {
     return this.premium(total, er)
   }
 
-  premiumsForPlanForTier = (plan: PlanUnion, tier: Tier, split?: ContributionSplit, onlyNonSplitMembers = true): Premium =>
-    this.premiums([plan], onlyNonSplitMembers, this.nonWaivedMembers.filter(m => m.tier === tier), split)
+  premiumsForPlanForTier = (plan: PlanUnion, tier: Tier, split?: ContributionSplit, onlyNonSplitMembers = true): Premium => {
+    const members = this.nonWaivedMembers?.filter(m => m.tier === tier)
+    // This is fairly awful, but otherwise it returns $0 for empty ancillary tiers for which we have values.
+    if (!members?.length) members?.push(this.fakeMemberForTier(tier))
+    return this.premiums([plan], onlyNonSplitMembers, members, split)
+  }
 
   avgPremiumsForPlanForTier = (plan: PlanUnion, tier: Tier, split?: ContributionSplit, onlyNonSplitMembers = true): Premium => {
-    const members = this.filterSplits(this.nonWaivedMembers.filter(m => m.tier === tier), split, onlyNonSplitMembers)
-    if (!members.length) { return this.premium(0, 0) }
+    const members = this.filterSplits(this.nonWaivedMembers?.filter(m => m.tier === tier), split, onlyNonSplitMembers)
     const premiums = this.premiumsForPlanForTier(plan, tier, split, onlyNonSplitMembers)
-    return this.premium(premiums.total / members.length, premiums.er / members.length)
+    const quotient = Math.max(1, members?.length)
+    return this.premium(premiums.total / quotient, premiums.er / quotient)
   }
 
   premiumsForPlanForEnrolleeType = (plan: PlanUnion, enrolleeType: EnrolleeType, split?: ContributionSplit, onlyNonSplitMembers = true): Premium => {
@@ -283,23 +311,13 @@ export default class ContributionsCalculator {
 
       if (allAncillaryContributionEligibleLines().has(planType) && allAncillary) {
         const contribution = moneyNumber(allAncillary)
-        let dentalCost = 0
-        if (member.dental) {
-          const dentalPlan = member.dental
-          dentalCost = dentalPlan ? this.premiums([dentalPlan], false, [member]).total : 0
-        }
+        const dentalCost = member.dental ? this.premiums([member.dental], false, [member]).total : 0
 
         if (planType === GroupPlanType.dental) {
-          return dentalCost > contribution
-            ? this.premium(dentalCost, contribution)
-            : this.premium(dentalCost, contribution - dentalCost)
+          return this.premium(dentalCost, Math.min(contribution, dentalCost))
         } else {
           const visionCost = this.premiums([plan], false, [member]).total
-          return dentalCost > contribution
-            ? this.premium(visionCost, 0)
-            : dentalCost + visionCost > contribution
-              ? this.premium(visionCost, dentalCost + visionCost - contribution)
-              : this.premium(visionCost, visionCost)
+          return this.premium(visionCost, Math.max(0, Math.min(visionCost, contribution - dentalCost)))
         }
       }
 
@@ -312,6 +330,11 @@ export default class ContributionsCalculator {
       vision: premiumForType(member, member.vision),
       life: premiumForType(member, member.life),
       disability: premiumForType(member, member.disability),
+      accident: premiumForType(member, member.accident),
+      cancer: premiumForType(member, member.cancer),
+      std: premiumForType(member, member.std),
+      criticalIllness: premiumForType(member, member.criticalIllness),
+      hospital: premiumForType(member, member.hospital),
       prosper: member.medical ? this.premium(0, 0) : member.prosper ? this.premium(moneyNumber(member.prosper), 0) : undefined
     }
   }
@@ -334,8 +357,8 @@ export default class ContributionsCalculator {
   }
 
   filterSplits = (members: Member[], split?: ContributionSplit, onlyNonSplitMembers = true) => {
-    if (split) return members.filter(m => split.members.some(sm => sm === m.id))
-    if (onlyNonSplitMembers) return members.filter(m => !this.splits.some(s => s.members.some(sm => sm === m.id)))
+    if (split) return members?.filter(m => split.members.some(sm => sm === m.id))
+    if (onlyNonSplitMembers) return members?.filter(m => !this.splits.some(s => s.members.some(sm => sm === m.id)))
     return members
   }
 
@@ -356,8 +379,8 @@ export default class ContributionsCalculator {
     return memberPremiumFromTieredRates(plan.rate, this.precision)
 
     function memberPremiumFromTieredRates(rates: TieredRates, precision = 0): NumberMemberPremium {
-      const hasSpouse = member.dependents.some(d => d.relationship !== Relationship.child)
-      const hasChildren = member.dependents.some(d => d.relationship === Relationship.child)
+      const hasSpouse = member.dependents.some(d => d.relationship !== Relationship.child && !d.terminationDate)
+      const hasChildren = member.dependents.some(d => d.relationship === Relationship.child && !d.terminationDate)
 
       const individual = moneyNumber(rates.individual, precision)
       const couple = moneyNumber(rates.couple, precision)
@@ -425,7 +448,7 @@ export default class ContributionsCalculator {
     // That math is done in `premiumsForAncillary`
     if (bc.allAncillary && allAncillaryContributionEligibleLines().has(planType)) return { fixed: '$0' }
 
-    let contribution: Contribution
+    let contribution: Contribution = {}
 
     switch (planType) {
     case GroupPlanType.medical:
@@ -442,6 +465,9 @@ export default class ContributionsCalculator {
       break
     case GroupPlanType.disability:
       contribution = this.mangleContribution(member, bc?.disability, !!bc?.disabilityEquitable, custom)
+      break
+    default:
+      contribution = { fixed: '$0' }
       break
     }
 
@@ -498,8 +524,6 @@ export default class ContributionsCalculator {
   }
 
   applyContributionForMemberForPlan = (member: Member, plan: PlanUnion) => {
-    if (member.is_waived) return 0
-
     const contribution = this.contributionForMemberForPlan(member, plan)
     const memberPremium = this.memberPremiumForPlan(member, plan)
 
@@ -539,7 +563,50 @@ export default class ContributionsCalculator {
       const spc = sc?.planContributions.find(spc => spc.groupPlanID === id)
       return spc
     }
-    return this.contributions.planContributions.find(pc => pc.groupPlanID === id)
+    return this.contributions?.planContributions?.find(pc => pc.groupPlanID === id)
+  }
+
+  fakeMemberForTier = (tier: Tier): Member => {
+    const fakeMember: Member = {
+      id: 'a',
+      name: 'Fake Name',
+      email: 'fake.email@yopmail.com',
+      dependents: [],
+      medical_underwriting_complete: true,
+      enrollmentStatus: EnrollmentStatus.complete,
+      tier,
+      is_waived: false
+    }
+    const fakeSpouse: MemberDependent = {
+      id: 'a',
+      firstName: '',
+      lastName: '',
+      gender: Gender.female,
+      dateOfBirth: moment('1/1/1980').toDate(),
+      relationship: Relationship.spouse
+    }
+    const fakeChild = {
+      id: 'a',
+      firstName: '',
+      lastName: '',
+      gender: Gender.female,
+      dateOfBirth: moment('1/1/2020').toDate(),
+      relationship: Relationship.child
+    }
+    switch (tier) {
+    case Tier.individual: break
+    case Tier.couple:
+      fakeMember.dependents.push(fakeSpouse)
+      break
+    case Tier.singleParent:
+      fakeMember.dependents.push(fakeChild)
+      break
+    case Tier.family:
+      fakeMember.dependents.push(fakeSpouse)
+      fakeMember.dependents.push(fakeChild)
+      break
+    }
+    return fakeMember
   }
 }
 
@@ -585,17 +652,19 @@ export function contributionFor(type: GroupPlanType, base?: BaseContributions) {
 export function allAncillaryContributionEligibleLines() {
   return new Set([GroupPlanType.dental, GroupPlanType.vision])
 }
-
+// export function allSupplymentalPlans() {
+//   return new Set([GroupPlanType.accident, GroupPlanType.cancer, GroupPlanType.criticalIllness, GroupPlanType.hospital, GroupPlanType.std])
+// }
 export function hasCustomPlanContributionFor(plan: PlanUnion, contributions: Contributions) {
   const id = getPlanIDFrom(plan)
   if (isAncillaryPlanUnion(plan) && contributions.baseContributions.allAncillary) return false
-  const basePC = contributions.planContributions.find(pc => pc.groupPlanID === id)
+  const basePC = contributions?.planContributions?.find(pc => pc.groupPlanID === id)
   if (basePC) {
     const base = contributionFor(typeOfPlan(plan), contributions.baseContributions)
     return shouldApplyCustom(basePC, base.contribution, base.equitable)
   }
 
-  const pcs = (contributions.splitContributions || []).map(sc => {
+  const pcs = (contributions?.splitContributions || []).map(sc => {
     const base = contributionFor(typeOfPlan(plan), sc.baseContributions)
     const scp = sc.planContributions.find(scp => scp.groupPlanID === id)
     return shouldApplyCustom(scp, base.contribution, base.equitable)

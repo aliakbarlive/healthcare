@@ -1,0 +1,256 @@
+.container {
+  position: relative;
+  width: 33%;
+  height: fit-content;
+}
+.signInER{
+  color: #2D2D2D !important;
+}
+.section {
+  height: 62px;
+  background-color: #FBFBFB;
+  color: #969696;
+  cursor: pointer;
+  border-bottom: 0.5px solid rgba(0,0,0,0.15);
+}
+
+.active {
+  background-color: #F1FAF8;
+  color: #48A3DB;
+}
+.activeER {
+  background-color: #D5DFF3;
+  color: #16346F;
+}
+
+.inaccessible {
+  cursor: not-allowed;
+}
+
+.chevron {
+  position: absolute;
+  height: 100%;
+  width: 15px;
+  left: -7px;
+  /* Gray Chevron */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15.3 71.32'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23ebebeb;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Einaccessable%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath id='Path_1419' data-name='Path 1419' class='cls-1' d='M0,0H8L15.3,35.36,8,71.32H0l7-36Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat;
+  background-size: 13px;
+}
+.activeER .chevron {
+  position: absolute;
+  height: 100%;
+  width: 15px;
+  left: -7px;
+  /* active EE Chevron */
+  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAA+CAYAAADwBZF/AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHMSURBVHgBlZaxboMwEIbPhnROVKlr6ROUPEGSJ48zdA5dutZZK1Wwtmnj2oRQwPcf4CVSzOfffOLOVqb4LIloSfGotvn9ivmfNJEyxI/ly1v5yELOXU4Aou+v3zVIIkN4bAGUFAKUsdBuvbL+t+ImlVIbkFRPozRWRg15Ga8AYmU0SSS91xZAiUGEUvqZhSQZfvM5CzVrTpbRQrKM846FSJShcwBdIDSU0UK79UOAJsnQg1nLQ30ZPcg5N0nGIMlNkjGEDEK6MgbQwhIcjk/yn1Owh8BWho7Wc+4AoFaGZrYxKoOBaPTLYKBUSLrKUNyU77rvBDrR4k5nml1vRIYG2xBlAEhZhAQZAMKNJsgA0DnDEFkA6QwRXtIJQPxp0WCGhbgG2RkFUp5jJo2h/fEjAEtAFKF8mCRZQv0EzdratR1EkFLJBkPXspmZlMbQ/lgGAaKECCL6gSk3CQxEkoSChUYkGBbyq2WY+e8dbY8IEpS6lICw/kb2xCSJEnqnSXd7kyT0oJFyMCwkJ6XFXMjevoQe1NQQO7gjtUnSkyV0IOl94utqDcnmUpQEa6gaSqghuZHwB4EeaSQHAEnlzd8BtVxDSTE3qWquqdH4A8ZCvgdK51tzAAAAAElFTkSuQmCC') no-repeat;
+  background-size: 13px;
+}
+
+.chevron:last-of-type {
+  left: unset;
+  right: -7px;
+  top: 0;
+}
+
+.accessible {
+  /* Mint Chevron */
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15.3 71.32'%3E%3Cdefs%3E%3Cstyle%3E.cls-1%7Bfill:%23d4f8ef;%7D%3C/style%3E%3C/defs%3E%3Ctitle%3Eaccessable%3C/title%3E%3Cg id='Layer_2' data-name='Layer 2'%3E%3Cg id='Layer_1-2' data-name='Layer 1'%3E%3Cpath id='Path_1417' data-name='Path 1417' class='cls-1' d='M0,0H8L15.3,35.36,8,71.32H0l7-36Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E") no-repeat;
+  background-size: 13px;
+}
+
+.copy {
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  /*padding left to visually center the copy*/
+  padding-right: 10px;
+}
+
+.copy h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 12px 0;
+  text-align: center;
+  color: inherit
+}
+
+.copy h2 {
+  position: relative;
+  font-size: .875rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  color: inherit
+}
+
+.section:hover h2::after, .currentSection::after {
+  position: absolute;
+  height: 2px;
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: -4px;
+}
+
+.active:hover h2::after, .currentSection::after {
+  background-color: #D4F8EF;
+}
+
+.activeER:hover h2::after, .erCurrentSec::after {
+  position: absolute;
+  height: 2px;
+  content: '';
+  left: 0;
+  right: 0;
+  bottom: -4px;
+}
+
+.activeER:hover h2::after, .erCurrentSec::after {
+  background-color: #0F244E;
+}
+
+.inaccessible:hover h2::after {
+  background-color: #E2E2E2;
+}
+
+.check {
+  display: inherit;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background-color: #A6A6A6;
+  border-radius: 4px;
+  margin-right: 12px;
+}
+
+.active .check {
+  background-color: #29B473;
+}
+
+.check i {
+  font-weight: 900;
+  color: #ffffff
+}
+
+/* CHAPTER STYLES */
+.ERSignInContainer > .linkTitle {
+  font-size: 12px;
+  color: #000000;
+  font-weight: 400;
+  font-family: proxima-nova, sans-serif;
+  padding: 6px 0;
+}
+.ERSignInContainer > .linkTitleFont{
+  font-weight: 700;
+}
+
+.chapters {
+  display: none;
+  position: relative;
+  background-color: transparent;
+  width: 100%;
+  box-shadow: 0px 0px 30px 2px rgba(0,0,0,0.1);
+}
+
+/* .chapters > div:last-of-type {
+  margin-top: 20px;
+} */
+
+/* .signedInAs{
+  left: 20px;
+} */
+.container:hover .chapters {
+  display: block;
+}
+
+.arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-bottom: 15px solid #ffffff;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%)
+}
+
+.chapterContainer {
+  width: 100%;
+  text-align: left;
+  position: relative;
+  background-color: white;
+  margin: 0;
+}
+
+.chapterContainer:first-of-type {
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+.chapterContainer:last-of-type {
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.chapterContainer > div {
+  padding: 15px 30px;
+  background-color: inherit;
+}
+
+.chapterContainer:hover {
+  background-color: #F1FAF8;
+}
+
+.erChapterContainer:hover {
+  background-color: #EAEFF9;
+}
+
+.chapterContainer:disabled {
+  background-color: #E2E2E2;
+  cursor: not-allowed;
+}
+
+.chapterContainer .check {
+  position: absolute;
+  background-color: transparent;
+  left: 10px;
+}
+
+.chapterContainer i {
+  color: #29B473;
+  font-size: 18px;
+}
+
+.chapterContainer h3 {
+  font-family: proxima-nova, sans-serif;
+  font-size: 14px;
+  color: #707070;
+  margin: 0 0 3px;
+  font-weight: 700;
+}
+
+.chapterContainer p {
+  font-family: 'Zilla Slab';
+  font-size: 14px;
+  color: #C7C7C7;
+  margin: 0;
+}
+
+.activeChapter {
+  /* important so it doesn't get overwritten by hover */
+  background-color: #D4F8EF !important;
+}
+.erActiveChapter {
+  background-color: #C0D0ED !important;
+}
+
+.activeChapter p, .chapterContainer:disabled p {
+  color: #A2A2A2;
+}
+
+
+

@@ -2,13 +2,15 @@
 /// HEY YOU! LISTEN! These must be in an order so iterating them with a `startsWith` type pattern will return longer paths first!
 /// NOTE handle `:id` params etc. in App.tsx, DO NOT ADD HERE
 enum Route {
+  agencyDashboardHome = '/dashboard/agency/home',
   agencyDashboardReports = '/dashboard/agency/reports',
-  agencyDashboardPipeline = '/dashboard/agency/pipeline',
+  agencyDashboardClient = '/dashboard/agency/client',
   agencyDashboardClients = '/dashboard/agency/clients',
-  agencyDashboardAssociations = '/dashboard/agency/associations',
+  agencyDashboardClientsPlan = '/dashboard/agency/clients/plan',
   agencyDashboardProducers = '/dashboard/agency/producers',
   agencyDashboardEmployees = '/dashboard/agency/employees',
   agencyDashboardAgencies = '/dashboard/agency/agencies',
+  agencyDashboardAccount = '/dashboard/agency/account',
 
   dashboardEmployerEmployees = '/dashboard/employer/employees',
   dashboardEmployerProfile = '/dashboard/employer/profile',
@@ -22,6 +24,16 @@ enum Route {
 
   dashboard = '/dashboard',
 
+  agencyShop_GetStarted = '/shop/agency/getstarted',
+  agencyShop_SignUp = '/shop/agency/signup',
+  // agencyShop_TutorialVideo = '/shop/agency/tutorial',
+  agencyShop_Pricing = '/shop/agency/pricing',
+  agencyShop_Payment = '/shop/agency/payment',
+  // agencyShop_Walkthrough = '/shop/agency/walkthrough',
+  agencyShop_LicensesandAppointments = '/shop/agency/licenses',
+  agencyShop_AgencyShop = '/shop/agency/shop-setup',
+  agencyShop_Producers = '/shop/agency/producers',
+  agencyShop = '/shop/agency',
   stargate = '/shop',
 
   erStargate_GroupType = '/shop/employer/group-type',
@@ -33,13 +45,14 @@ enum Route {
   erStargate_Plans = '/shop/employer/plans',
   erStargate_SidecarInfo = '/shop/employer/plans/sidecar-health',
   erStargate_AncillaryPlans = '/shop/employer/plans/ancillary',
+  erStargate_Supplemental = '/shop/employer/plans/supplemental',
   erStargate_IMQs = '/shop/employer/imqs',
+  erStargate_EHQ = '/shop/employer/ehq',
   erStargate_CarvedContributions = '/shop/employer/plans/contribution/carved',
   erStargate_Contribution = '/shop/employer/plans/contribution',
   erStargate_Application = '/shop/employer/plans/application',
   erStargate_Review = '/shop/employer/plans/review',
   erStargate_Finalize = '/shop/employer/confirm',
-
   erStargateRefresh = '/shop/employer/refresh',
 
   eeStargate_info = '/shop/employee/census',
@@ -49,6 +62,7 @@ enum Route {
   eeStargate_have_plan = '/shop/employee/plans/already-covered',
   eeStargate_select = '/shop/employee/plans/health',
   eeStargate_ancillary = '/shop/employee/plans/ancillary',
+  eeStargate_supplemental = '/shop/employee/plans/supplemental',
   eeStargate_enroll = '/shop/employee/plans/enroll',
   eeStargate_underwriting = '/shop/employee/plans/underwriting',
   eeStargate_application = '/shop/employee/plans/application',
@@ -61,103 +75,83 @@ enum Route {
   forgotPassword = '/account/recover',
   resetPassword = '/account/reset-password',
 
+  brokerLanding = '/landing',
+
   landing = '/' // MUST BE LAST!
 }
 /// HEY YOU! I HOPE YOU LISTENED!
-
 function getTitle(route: Route): string {
-  switch (route) {
-  case Route.agencyDashboardProducers:
-    return 'Producers'
-  case Route.agencyDashboardClients:
-    return 'Clients'
-  case Route.agencyDashboardAssociations:
-    return 'Associations'
-  case Route.agencyDashboardPipeline:
-    return 'Pipeline'
-  case Route.agencyDashboardReports:
-    return 'Reports'
-  case Route.agencyDashboardAgencies:
-    return 'Agencies'
-  case Route.dashboardEmployerEmployees:
-  case Route.agencyDashboardEmployees:
-    return 'Employees'
-  case Route.dashboardEmployerProfile:
-    return 'Company Profile'
-  case Route.dashboardEmployerBilling:
-    return 'Billing'
-  case Route.dashboardEmployer:
-    return 'Home'
-  case Route.dashboardEmployeeProfile:
-    return 'Your Profile'
-  case Route.dashboard:
-  case Route.agencyDashboard:
-  case Route.dashboardEmployee:
-    return 'Dashboard'
-  case Route.stargate:
-    return 'Shop'
-  case Route.erStargate_GroupType:
-    return 'Group Type'
-  case Route.erStargate_Checklist:
-    return 'Checklist'
-  case Route.erStargate_GetStarted:
-    return 'Get Started'
-  case Route.erStargate_Census:
-    return 'Census'
-  case Route.erStargate_CensusWaive:
-    return 'Census·Waive'
-  case Route.erStargate_ScheduleACall:
-    return 'Schedule A Call'
-  case Route.erStargate_Contribution:
-    return 'Plans·Contributions'
-  case Route.erStargate_CarvedContributions:
-    return 'Plans·Contributions·Carved'
-  case Route.erStargate_Plans:
-    return 'Plans'
-  case Route.erStargate_Application:
-    return 'Sidecar Health Info'
-  case Route.erStargate_AncillaryPlans:
-    return 'Plans·Ancillary'
-  case Route.erStargate_IMQs:
-    return 'IMQs'
-  case Route.erStargate_SidecarInfo:
-    return 'Carrier Application'
-  case Route.erStargate_Review:
-    return 'Review'
-  case Route.erStargate_Finalize:
-    return 'Finalize'
+  const titles = {
+    [Route.agencyDashboardProducers]: 'Agency',
+    [Route.agencyShop_Producers]: 'Agency',
+    [Route.agencyDashboardClient]: 'Clients',
+    [Route.agencyDashboardClients]: '',
+    [Route.agencyDashboardClientsPlan]: '',
+    [Route.agencyDashboardReports]: 'Reports',
+    [Route.agencyDashboardAgencies]: '',
+    [Route.dashboardEmployerEmployees]: 'Employees',
+    [Route.agencyDashboardEmployees]: 'Employees',
+    [Route.dashboardEmployerProfile]: 'Company Profile',
+    [Route.dashboardEmployerBilling]: 'Billing',
+    [Route.agencyShop_Payment]: 'Billing',
+    [Route.agencyDashboardAccount]: 'Your Account',
+    [Route.dashboardEmployer]: 'Home',
+    [Route.dashboardEmployeeProfile]: 'Your Profile',
+    [Route.dashboard]: 'Home',
+    [Route.agencyDashboard]: 'Home',
+    [Route.agencyDashboardHome]: 'Home',
+    [Route.dashboardEmployee]: 'Dashboard',
+    [Route.stargate]: 'Shop',
+    [Route.agencyShop]: 'Shop',
 
-  case Route.erStargateRefresh:
-    return 'Refresh'
+    // [Route.agencyShop_TutorialVideo]: 'Tutorial',
+    [Route.agencyShop_Pricing]: 'Pricing',
+    // [Route.agencyShop_Walkthrough]: 'Walkthrough',
+    [Route.agencyShop_LicensesandAppointments]: 'Licenses and Appointments',
+    [Route.agencyShop_AgencyShop]: 'Landing Page Setup',
+    [Route.erStargate_GroupType]: 'Group Type',
+    [Route.erStargate_Checklist]: 'Checklist',
+    [Route.agencyShop_GetStarted]: 'Get Started',
+    [Route.erStargate_GetStarted]: 'Get Started',
+    [Route.erStargate_Census]: 'Census',
+    [Route.erStargate_CensusWaive]: 'Census·Waive',
+    [Route.erStargate_ScheduleACall]: 'Schedule A Call',
+    [Route.erStargate_Contribution]: 'Plans·Contributions',
+    [Route.erStargate_CarvedContributions]: 'Plans·Contributions·Carved',
+    [Route.erStargate_Plans]: 'Plans',
+    [Route.erStargate_Application]: 'Sidecar Health Info',
+    [Route.erStargate_AncillaryPlans]: 'Plans·Ancillary',
+    [Route.erStargate_Supplemental]: 'Supplemental Plans',
+    [Route.erStargate_IMQs]: 'Medical Questionnaires',
+    [Route.erStargate_EHQ]: 'Forms',
+    [Route.erStargate_SidecarInfo]: 'Carrier Application',
+    [Route.erStargate_Review]: 'Review',
+    [Route.erStargate_Finalize]: 'Finalize',
+    [Route.erStargateRefresh]: 'Refresh',
 
-  case Route.eeStargate_info:
-  case Route.eeStargate_work:
-  case Route.eeStargate_family:
-  case Route.eeStargate_redflags:
-  case Route.eeStargate_have_plan:
-  case Route.eeStargate_select:
-  case Route.eeStargate_ancillary:
-  case Route.eeStargate_underwriting:
-  case Route.eeStargate_enroll:
-  case Route.eeStargate_pay:
-  case Route.eeStargate_confirm:
-    return 'TODO'
-  case Route.eeStargate_application:
-    return 'Application'
-
-  case Route.signIn:
-    return 'Sign‑In'
-  case Route.signOut:
-    return 'Sign‑Out'
-  case Route.forgotPassword:
-    return 'Recover Account'
-  case Route.resetPassword:
-    return 'Reset Password'
-  case Route.landing:
-    return 'Landing Page'
-  case Route.signUp:
-    return 'Sign Up'
+    [Route.eeStargate_info]: 'TODO',
+    [Route.eeStargate_work]: 'TODO',
+    [Route.eeStargate_family]: 'TODO',
+    [Route.eeStargate_redflags]: 'TODO',
+    [Route.eeStargate_have_plan]: 'TODO',
+    [Route.eeStargate_select]: 'TODO',
+    [Route.eeStargate_ancillary]: 'TODO',
+    [Route.eeStargate_supplemental]: 'TODO',
+    [Route.eeStargate_underwriting]: 'TODO',
+    [Route.eeStargate_enroll]: 'TODO',
+    [Route.eeStargate_pay]: 'TODO',
+    [Route.eeStargate_confirm]: 'TODO',
+    [Route.eeStargate_application]: 'Application',
+    [Route.brokerLanding]: 'Broker Landing',
+    [Route.signIn]: 'Sign‑In',
+    [Route.signOut]: 'Sign‑Out',
+    [Route.forgotPassword]: 'Recover Account',
+    [Route.resetPassword]: 'Reset Password',
+    [Route.landing]: 'Landing Page',
+    [Route.signUp]: 'Sign Up',
+    [Route.agencyShop_SignUp]: 'Sign Up'
   }
+  return titles[route]
 }
 
 export { Route, getTitle }

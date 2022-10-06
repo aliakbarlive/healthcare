@@ -1,0 +1,38 @@
+@import 'Components/global.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+
+}
+
+.terms {
+
+  p:first-of-type {
+    margin-top: 0;
+  }
+
+  li:not(last-child) { margin-bottom: .5em }
+
+  h2 {
+    font-family: $proxima !important;
+    font-size: 1rem;
+    font-weight: 700;
+    text-align: left;
+    letter-spacing: .001em;
+    color: navy-blue(80)
+  }
+}
+
+.acceptButton {
+  border: 2px solid #27436e;
+  border-radius: 6px;
+  background-color: #27436e;
+  width: 150px;
+  height: 30px;
+  margin: 10px auto 40px;
+  color: white;
+  font-size: 16px;
+}

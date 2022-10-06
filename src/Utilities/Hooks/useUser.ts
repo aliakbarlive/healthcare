@@ -26,6 +26,7 @@ export interface Response {
   avatar?: string
   slug?: string
   whiteLabelAgencyID: string
+  nipr?: string
 }
 
 export enum PowerLevel {

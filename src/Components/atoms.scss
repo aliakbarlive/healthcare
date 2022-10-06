@@ -1,0 +1,99 @@
+@import 'global.scss';
+
+
+@mixin atomButtonPrimary {
+  background: #48a3db;
+  border-radius: 6px;
+  border: px(2) solid #48A3DB;
+  color: #fff;
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: px(16);
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: 0.035em;
+
+  padding: px(16);
+
+  box-shadow: 0 px(2) px(4) rgba(0, 0, 0, 0.16);
+  &:hover {
+    box-shadow: 0 0 0 0;
+  }
+
+  svg {
+    width: 16px;
+    path {
+      fill: #48A3DB;
+    }
+  }
+}
+
+@mixin atomButtonSecondary {
+  background: #fff;
+  border-radius: 6px;
+  border: px(2) solid #48A3DB;
+  color: #48A3DB;
+  text-decoration: none;
+
+  font-weight: 600;
+  font-size: px(16);
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: 0.035em;
+
+  padding: px(16);
+
+  box-shadow: 0 px(2) px(4) rgba(0, 0, 0, 0.16);
+  &:hover {
+    box-shadow: 0 0 0 0;
+  }
+
+  svg {
+    width: 16px;
+    path {
+      fill: #48A3DB;
+    }
+  }
+}
+
+
+@mixin atomButtonTertiary {
+  background: #fff;
+  border-radius: 6px;
+  border: px(2) solid #777777;
+  color: #777777;
+
+  font-weight: 600;
+  font-size: px(16);
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: 0.035em;
+  min-width: px(80);
+
+  padding: px(10);
+
+  &:hover {
+    background: #EEE;
+  }
+}
+
+
+@mixin atomButtonTertiaryInverse {
+  background: #F4F4F4;
+  border-radius: 6px;
+  border: px(2) solid #F4F4F4;
+  color: #777;
+
+  font-weight: 600;
+  font-size: px(16);
+  line-height: 140%;
+  text-align: center;
+  letter-spacing: 0.035em;
+
+  padding: px(10);
+
+  &:hover {
+    background: #DDD;
+  }
+}

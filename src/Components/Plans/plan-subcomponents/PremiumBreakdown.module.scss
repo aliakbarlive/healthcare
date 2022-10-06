@@ -1,0 +1,118 @@
+@import './Plan.module.scss';
+
+.pbContainer {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  flex: 0 0 475px;
+  margin-right: 0;
+
+  > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &.premiums { flex: 0 0 250px }
+
+  }
+}
+
+.sectionTitle {
+  font-size: .875rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: .05rem;
+}
+
+.erCost {
+  color: navy-blue();
+  font-size: 2.75rem;
+  line-height: 2rem;
+  margin-top: 1.5rem;
+  font-weight: 600;
+
+  span:first-of-type {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.5rem;
+    line-height: 1.25rem;
+  }
+
+  span:last-of-type { font-size: 1.5rem }
+}
+
+.perEmployee {
+  font-size: .75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.08rem;
+  color: navy-blue();
+}
+
+.premiums {
+  padding: unset;
+
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    height: 25%;
+    &:nth-child(even) { background-color: blue(30);
+    > div.Supplemental_tier{
+      color: #16346F;
+    }
+    }
+  }
+}
+
+.tier {
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .02rem;
+  text-align: left;
+  margin-left: $box-margin;
+  color: #3564B9;
+
+  > div:last-child {
+    font-size: .5rem;
+    margin-top: .125rem;
+    text-transform: uppercase;
+  }
+}
+.Supplemental_tier{
+  font-weight: 600;
+  font-size: 16px;
+  > div:last-child{
+    font-weight: 600;
+    font-size: 12px;
+  }
+}
+.tierAmounts{
+  >span:first-child{
+  font-weight: 600;
+    font-size: 14px;
+  }
+}
+.amount{
+  font-size: 1.5rem;
+  color: white;
+  background-color: transparentize($color: periwinkle(90), $amount: .5);
+  height: 100%;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem $box-margin;
+
+  span {
+    font-size: .75rem;
+
+    &:first-child {
+      display: inline-block;
+      vertical-align: top;
+      line-height: 1.25rem;
+      margin-right: .075rem;
+    }
+  }
+}

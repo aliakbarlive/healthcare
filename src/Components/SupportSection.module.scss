@@ -1,0 +1,48 @@
+@import 'Components/global.scss';
+
+.supportContainer {
+  z-index: 9999;
+  position: fixed;
+  bottom: 1rem;
+  margin: 0 2rem;
+  background-color: $periwinkle;
+  border-radius: .75rem;
+  padding: .75rem;
+  color: white;
+  transition: all 200ms ease-out;
+  font-size: .75rem;
+  font-weight: 600;
+
+  > *:not(:last-child) {
+    margin-bottom: .5rem;
+  }
+
+  button {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    display: inline-flex;
+    align-items: center;
+
+    i {
+      font-size: 1.25rem;
+      margin-left: .25rem;
+    }
+  }
+
+  input {
+    border-radius: 4px;
+    border: none;
+    padding: 0 .75rem;
+    width: 10rem;
+    height: 1.5rem;
+    margin-right: .5rem;
+
+    + button {
+      border-radius: 4px;
+      background-color: $navy-blue;
+      height: 1.5rem;
+      padding: 0 .5rem;
+    }
+  }
+}

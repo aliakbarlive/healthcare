@@ -1,0 +1,14 @@
+@import 'Components/global.scss';
+
+.container {
+  width: 500px;
+  max-width: 100%;
+}
+
+.text {
+  font-size: 1rem;
+  margin: .25rem 0 0;
+  font-weight: 400;
+  color: $primary-color;
+}
+

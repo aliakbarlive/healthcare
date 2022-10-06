@@ -4,6 +4,7 @@ import moment, { Moment } from 'moment'
 import { Label } from './config'
 import { AncillaryPlanUnion, Contributions } from 'Utilities/Plans/ContributionCalculator'
 import { ContributionSplit } from './Hooks/useStargate'
+import { DeltaResponse } from 'Routes/shop/agency/payment'
 
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
@@ -20,7 +21,8 @@ function tokenStorage() {
 }
 
 export function getToken() {
-  return tokenStorage().token
+  const token = tokenStorage().token
+  return token === 'undefined' ? undefined : token
 }
 
 const v1 = {
@@ -101,6 +103,7 @@ const v2 = {
       users: () => api.get(`/v2/brokers/groups/${id}/users`)
     }),
     pipeline: () => api.get('/v2/brokers/pipeline'),
+    pipeline_archived: () => api.get('/v2/brokers/pipeline/archived'),
     associations: (id: string | null = null) => ({
       GET: () => api.get('/v2/brokers/associations'),
       groups: () => api.get(`/v2/brokers/associations/${id}/groups`)
@@ -148,6 +151,9 @@ const v2 = {
     },
     invite: {
       manager: (email: string) => api.post(`/v2/groups/${id}/invite/manager`, { email })
+    },
+    associations: {
+      all: () => api.get('/v2/associations/all')
     }
   }),
   notes: {
@@ -167,6 +173,31 @@ const v2 = {
 }
 
 const v3 = {
+  producers: {
+    POST: (data: any) => api.post('/v3/producers', data),
+    GET: () => api.get('/v3/producers/')
+  },
+  agency: {
+    POST: (data: any) => api.post('/v3/agency', data),
+    paymentMethod: {
+      POST: (data: DeltaResponse) => api.post('/v3/agency/paymentMethod', data)
+    },
+    logo: {
+      POST: (data: any) => api.post('/v3/agency/logo', data)
+    },
+    licenses: {
+      GET: () => api.get('/v3/agency/licenses'),
+      POST: (data: any) => api.post('/v3/agency/licenses', data)
+    },
+    landing: {
+      GET: () => api.get('/v3/agency/landing'),
+      POST: (data: any) => api.post('/v3/agency/landing', data)
+    },
+    finalize: {
+      POST: (data: any) => api.post('/v3/agency/finalize', data)
+    }
+  },
+  landing: (slug: string) => api.get(`/v3/landing/${slug}`),
   tickets: (token: string | null = null) => ({
     GET: () => api.get(`/v3/tickets/${token}`) as Promise<types.Ticket>,
     POST: (data: types.TicketPayload) => api.post('/v3/tickets', data)
@@ -175,7 +206,11 @@ const v3 = {
     POST: (data: types.ToastCollectorPayload) => api.post('/v3/toastCollector', data)
   }),
   brokers: {
+    GET: () => api.get('/v3/brokers') as Promise<types.Broker>,
+    POST: (data: any) => api.post('/v3/brokers', data),
+    getAppointed: (carrierName: string) => api.post(`/v3/brokers/${carrierName}/getAppointed`, carrierName),
     producers: (producerId?: string) => ({
+      GET: () => api.get('/v3/brokers/producers'),
       appointments: (appointmentId?: string) => ({
         GET: () => api.get(`/v3/brokers/producers/${producerId}/appointments`),
         POST: (data: any) => api.post(`/v3/brokers/producers/${producerId}/appointments`, data),
@@ -238,6 +273,12 @@ const v3 = {
       data.waitingPeriod = numberify(data.waitingPeriod)
       await api.put('/v3/groups', { ...data, id: groupID })
     },
+    POST: async(data: any) => {
+      for (const key in data.dates) {
+        (data.dates as any)[key] = localMidnightToPharaohFormat((data.dates as any)[key])
+      }
+      await api.post('/v3/groups', data)
+    },
     application: {
       GET: () => api.get(`/v3/groups/${groupID}/application`),
       POST: (data: any) => api.post(`/v3/groups/${groupID}/application`, data)
@@ -268,11 +309,19 @@ const v3 = {
     }),
     plans: {
       GET: async() => await api.get(`/v3/groups/${groupID || ''}/plans`) as types.MedicalPlan[],
+      POST: (data: any) => api.post(`/v3/groups/${groupID}/plans`, data),
+      renewalPlans: {
+        renewals: async() => await api.get(`/v3/groups/${groupID}/plans/renewal`) as types.MedicalPlan[]
+      },
       options: {
-        ancillary: async() => await api.get(`/v3/groups/${groupID}/plans/options/ancillary`) as AncillaryPlanUnion[]
+        ancillary: {
+          selected: async() => await api.get(`/v3/groups/${groupID}/plans/options/ancillary/selected`) as AncillaryPlanUnion[],
+          GET: async() => await api.get(`/v3/groups/${groupID}/plans/options/ancillary`) as AncillaryPlanUnion[],
+          POST: async(id: string) => await api.post(`/v3/groups/${groupID}/plans/options/ancillary`, { id }),
+          DELETE: async(id: string) => await api.delete_(`/v3/groups/${groupID}/plans/options/ancillary/${id}`)
+        }
       },
       validate: () => api.post(`/v3/groups/${groupID || ''}/plans/validate`)
-
     },
     contacts: {
       GET: () => api.get(`/v3/groups/${groupID}/contacts`),
@@ -285,6 +334,9 @@ const v3 = {
     },
     carrierApplication: {
       POST: (data: any) => api.post(`/v3/groups/${groupID}/carrierApplication`, data)
+    },
+    ehq: {
+      POST: (data: any) => api.post(`/v3/groups/${groupID}/ehq`, data)
     },
     refresh: {
       POST: () => api.post(`/v3/groups/${groupID}/refresh`, {})

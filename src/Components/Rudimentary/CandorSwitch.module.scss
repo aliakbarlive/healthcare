@@ -1,0 +1,37 @@
+@import 'Components/global.scss';
+
+$switch-height: 2.25rem;
+$switch-width: 6.75rem;
+
+.switch {
+  width:  $switch-width;
+  height: $switch-height;
+  border-radius: 4px;
+  overflow: hidden;
+
+  button {
+    font-family: $zilla;
+    font-style: italic;
+    display: inline-block;
+    height: 100%;
+    line-height: $switch-height;
+    width: 50%;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+
+    &:first-of-type {
+      border-right: 1px solid gray(40);
+    }
+
+    &[data-state=selected] {
+      background-color: $periwinkle;
+      color: white;
+    }
+
+    &[data-state=unselected] {
+      background-color: $gray;
+      color: navy-blue();
+    }
+  }
+ }

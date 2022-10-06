@@ -1,0 +1,61 @@
+@import 'Components/global.scss';
+
+.candorInput {
+  position: relative;
+  color: #48A3DB;
+  height: 55px;
+  background-color: $gray;
+  outline: none;
+  border: none;
+  border-radius: 6px;
+  transition: all 0.1s ease-in;
+  width: 100%;
+  padding: 0 20px 0 20px;
+  font-size: 16px;
+
+  &:placeholder-shown {
+    padding: 0 20px 0 20px !important;
+
+    ~ .label { opacity: 0; }
+  }
+
+  ~ .label { opacity: 1; }
+
+  &.hasPlaceholder {
+    padding: 6px 20px 0 20px;
+  }
+
+}
+
+.candorInput:read-only {
+  color: #A2A2A2;
+  background-color: #E2E2E2;
+}
+
+.candorInput:focus {
+  box-shadow: 0px 0px 4px $blue;
+}
+
+.hasPlaceholder::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #A2A2A2;
+  opacity: 1; /* Firefox */
+  font-size: inherit;
+}
+
+.hasPlaceholder::-ms-input-placeholder { /* Microsoft Edge */
+  color: #A2A2A2;
+  font-size: inherit;
+}
+
+.label {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: 2px;
+  left: 3px;
+  transform: translate(8px, 5px);
+  font-size: 12px;
+  transition: opacity 0.1s ease-in;
+  white-space: nowrap;
+  z-index: 1;
+}

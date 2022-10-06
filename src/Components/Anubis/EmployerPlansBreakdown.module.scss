@@ -1,0 +1,13 @@
+@import 'Components/global.scss';
+
+.details {
+  background: $blue-gradient;
+  padding: .375rem .75rem;
+  color: white;
+  border-radius: 4px;
+  font-size: .75rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: .08rem;
+  margin: 0 auto;
+}

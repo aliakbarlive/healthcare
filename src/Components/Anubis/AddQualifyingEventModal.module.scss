@@ -1,0 +1,35 @@
+@import 'Components/global.scss';
+
+.select {
+  color: $primary-color;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 16px 0;
+}
+
+.form {
+  width: 500px;
+
+  fieldset {
+    display: flex;
+    flex-direction: column;
+  }
+
+  fieldset > * {
+    margin-bottom: 10px;
+  }
+
+  input {
+    background-color: $white;
+    margin: 0 auto;
+  }
+
+  .otherEmpty {
+    background-color: #f8f8f8;
+    color: $dodo;
+  }
+}
+
+.whiteBackground {
+  background-color: $white !important;
+}

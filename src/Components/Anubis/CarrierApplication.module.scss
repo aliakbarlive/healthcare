@@ -1,0 +1,105 @@
+@import 'Components/global.scss';
+
+.applicationComponent {
+  padding-top: $shop-top-spacing;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.applicationComponent textarea {
+  width: 100%;
+  height: 10em;
+}
+
+.applicationComponent h1 {
+  font-size: $shop-h1-font-size;
+  font-weight: $shop-h1-font-weight;
+  color: $periwinkle;
+  text-align: center;
+}
+
+.applicationComponent p, .applicationComponent h3 {
+  margin-top: 3em;
+  margin-bottom: 0.5em;
+}
+
+.applicationComponent h3:first-of-type {
+  margin-top: 2em;
+}
+
+.applicationComponent p.noTopMargin {
+  margin-top: 0.5em
+}
+
+.applicationComponent input[type="submit"] {
+  margin-top: 3em;
+}
+
+.threeCol > .colItem:nth-of-type(1), .twoCol > .colItem:nth-of-type(1) {
+  margin-left: 0 !important
+}
+
+.threeCol > .colItem {
+  width: 32%
+}
+
+.twoCol > .colItem {
+  width: 49%
+}
+
+.colItem {
+  display: inline-block;
+  margin-left: 2%
+}
+
+.candorInput {
+  background-color: #F8F8F8;
+  border-radius: 7px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  font-size: 16px;
+  color: #48A3DB;
+  padding: 17px 23px;
+  width: 100%;
+  min-height: 60px;
+}
+
+.candorInput:focus {
+  border: 1px solid #2684ff;
+}
+
+.spacing {
+  width: 33%;
+  margin-right:2px;
+}
+
+.doneButton {
+  border: none;
+  outline: none;
+  height: 42px;
+  background-color: #48A3DB;
+  color: white;
+  font-size: 15px;
+  box-shadow: 0px 0px 3px 2px rgba(0,0,0,0.12);
+  border-radius: 3px;
+  width: 100%;
+}
+
+.doneButton:disabled {
+  opacity: 0.5;
+}
+
+.nextButton {
+  display: block;
+  height: 53px;
+  width: 200px;
+  margin: 60px auto 0;
+  background-color: #48A3DB;
+  color: white;
+  font-size: 18px;
+  border-radius: 4px;
+  align-self: center;
+}

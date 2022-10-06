@@ -1,0 +1,54 @@
+@import 'Components/global.scss';
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+
+  h1 {
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: 0.1rem;
+    color: $secondary-color;
+    text-transform: uppercase;
+    margin: 0 0 20px 0;
+    line-height: 1rem;
+  }
+
+}
+
+.loadingContainer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(112, 112, 112, .4);
+  z-index: 4;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.close {
+  background: $close-icon;
+  background-size: 30px;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  z-index: 50;
+  transition: transform 200ms ease-in-out;
+  overflow: hidden;
+  outline: none;
+  border: 0;
+
+  &:active {
+    transform: scale(0.9, 0.9);
+  }
+}
