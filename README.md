@@ -1,4 +1,4 @@
-# Healthcare company project
+# Healthcare Frontend project
 ## Getting Started
 
     nvm install
@@ -54,17 +54,24 @@ Note that we motly use `useAsync`, `useAsyncRetry` and `useToggle`.
 We make it easy to get the current user or group-manager, use these functions, **do not**
 call the underlying APIs yourself.
 
+## Production/Non‐production
+
+The following hosts are considered non‐production:
+
+* localhost
+* staging.myhealthily.com
+* develop.myhealthily.com
 
 Everything else is considered “production” per this document
 and code that interprets configuration based on this parameter.
 
-## Configuring Backend
+## Configuring Pharaoh
 
 For locahost builds (only) you can set `REACT_APP_PHARAOH`, eg:
 
     REACT_APP_PHARAOH=http://localhost:8080 npm start
 
-Otherwise Backend is determined based on hostname.
+Otherwise Pharaoh is determined based on hostname.
 
 ## Configuring the White-Label
 
@@ -75,7 +82,7 @@ Label is determined from the group or if that is not available query-string (eg.
 
 ## “Environments”
 
-|------------|------------|-----------|
+|------------|------------|------------|
 | Env        | RDS        | Pharaoh    |
 |------------|------------|------------|
 | Develop    | Staging    | Develop    |
